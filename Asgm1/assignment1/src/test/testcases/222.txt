@@ -1,0 +1,8 @@
+
+            func foo(number foo[1])
+            begin
+                dynamic a <- "\\ 	 hello"
+            end
+
+            
+        

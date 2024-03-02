@@ -1,0 +1,7 @@
+
+            number a <- 1
+            func foo()
+            return
+            
+            func foofoo() return "'"PPL-Assignment1'""
+        

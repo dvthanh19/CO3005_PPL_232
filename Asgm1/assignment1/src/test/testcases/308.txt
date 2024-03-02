@@ -1,0 +1,7 @@
+    
+            func a()
+            begin
+                if (1)  return true
+                else 1 return true
+            end
+        

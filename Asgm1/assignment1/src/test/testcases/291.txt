@@ -1,0 +1,6 @@
+    
+        func a()
+            begin
+                c()[1] <- 1
+            end
+        

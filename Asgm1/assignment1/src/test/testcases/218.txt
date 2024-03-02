@@ -1,0 +1,4 @@
+
+            func foo(number foo[1])
+                a <- 1
+        

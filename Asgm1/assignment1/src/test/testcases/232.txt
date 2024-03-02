@@ -1,0 +1,6 @@
+ 
+            ##12
+            ##12
+            
+            func main(number a) var c <- 1
+        

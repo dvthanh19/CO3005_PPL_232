@@ -1,0 +1,23 @@
+
+        func main() begin 
+        end
+        func main() 
+            begin 
+                ## comment0
+            end
+        func main()
+            ## comment1
+            begin
+                ## comment2
+                
+                ## comment3
+                PpL1 <- 1 + 2 + fun()
+                PpL2[1+a] <- 1
+                
+                ## comment4
+                PpL3[3+4,2,4] <- 1
+                
+                ## comment5
+            end
+            ## comment
+        

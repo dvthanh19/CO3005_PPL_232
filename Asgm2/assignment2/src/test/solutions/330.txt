@@ -1,0 +1,1 @@
+Program([VarDecl(Id(c), None, var, ArrayCell(Id(a), [NumLit(1.0), NumLit(2.0)])), VarDecl(Id(c), None, var, ArrayCell(CallExpr(Id(fun), []), [NumLit(1.0), NumLit(2.0)])), VarDecl(Id(c), None, var, ArrayCell(CallExpr(Id(fun), [NumLit(1.0), NumLit(2.0)]), [NumLit(1.0), NumLit(3.0)]))])

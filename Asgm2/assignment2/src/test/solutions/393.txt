@@ -1,0 +1,1 @@
+Program([VarDecl(Id(a), None, var, CallExpr(Id(laptopLenovo), []))])

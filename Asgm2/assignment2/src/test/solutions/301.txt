@@ -1,0 +1,1 @@
+Program([VarDecl(Id(VoTien), NumberType, None, None)])

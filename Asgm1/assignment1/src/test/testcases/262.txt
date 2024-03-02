@@ -1,0 +1,16 @@
+
+        func main()
+        begin 
+            break
+            continue
+            for i until i >= 10 by 1 + 1 ... 3 / 2
+                begin
+                    break
+                    continue
+                end
+                
+            for i until i >= 10 by 1 print(1)
+            for i until i >= 10 by 1 
+                print(1)
+        end
+        

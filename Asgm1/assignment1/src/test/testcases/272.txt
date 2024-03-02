@@ -1,0 +1,22 @@
+
+            func isPrime(number x)
+            func main()
+                begin
+                    number x <- readNumber()
+                    if (isPrime(x)) printString("Yes")
+                    else printString("No")
+                end
+            func isPrime(number x)
+            begin
+            if (x <= 1) return false
+            var i <- 2
+            for i until i > x / 2 by 1
+            begin
+            if (x % i = 0) return false
+            end
+            return true
+            
+            
+            for i until i > x / 2 by 1 + 1 var c <- 1
+            end
+        

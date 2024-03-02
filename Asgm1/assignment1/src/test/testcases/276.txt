@@ -1,0 +1,6 @@
+    
+        func a()
+        begin
+            break continue
+        end
+        

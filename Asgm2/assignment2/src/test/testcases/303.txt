@@ -1,0 +1,6 @@
+
+            string Votien
+            bool Votien
+            string Votien <- 1
+            bool Votien <- 1
+        

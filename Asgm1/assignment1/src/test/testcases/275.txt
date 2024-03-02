@@ -1,0 +1,22 @@
+
+        func a()
+        begin
+        end
+        
+        func a()
+        begin
+
+            number x <- x
+            
+        end
+        
+        func a()
+        begin 
+        end
+        func a() begin 
+        end
+        func a() begin 
+        end
+        func a() begin ## comment
+        end
+        

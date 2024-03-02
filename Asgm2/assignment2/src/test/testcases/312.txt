@@ -1,0 +1,6 @@
+
+            var x <- 1
+            var x <- "123"
+            var x <- true
+            var x <- false
+        

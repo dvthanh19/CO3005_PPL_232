@@ -1,0 +1,7 @@
+
+            func main()
+            begin
+                if (kk<-88)
+                return 1
+            end
+        

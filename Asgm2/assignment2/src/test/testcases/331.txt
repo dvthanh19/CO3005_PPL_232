@@ -1,0 +1,10 @@
+
+            func main()
+            begin
+                var c <- 2e5
+                dynamic c <- 2.56
+                dynamic c
+                number c[2e2, 2] <- 3.6
+                string c[3.823]
+            end
+        

@@ -1,0 +1,6 @@
+
+            func main(number a)
+            func main(number a, string a, bool a[2])
+            func main(number Votien[1,2])
+                return
+        

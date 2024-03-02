@@ -1,0 +1,14 @@
+
+            func main()
+                begin
+                    for i until i > 2 by 1 + 1
+                        print(1)
+                end
+            func main()
+                begin
+                    for i until i by [1]
+                    begin
+                        print(1)
+                    end
+                end
+        

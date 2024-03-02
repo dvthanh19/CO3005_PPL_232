@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([If((BooleanLit(True), CallStmt(Id(print), [StringLit(Hello)])), [], CallStmt(Id(print), [StringLit(World)]))]))])

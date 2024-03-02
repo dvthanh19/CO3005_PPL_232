@@ -1,0 +1,5 @@
+    
+        func a()
+            begin
+            end var c <- 1
+        

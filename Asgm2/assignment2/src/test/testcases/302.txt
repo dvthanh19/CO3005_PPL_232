@@ -1,0 +1,3 @@
+
+            string VoTien <- 1
+        

@@ -1,0 +1,9 @@
+
+            number a <- 1
+            func foo(bool b, bool c[6969])
+            begin
+                a <- 1
+                ## comment
+                a[] <- 1
+            end
+        

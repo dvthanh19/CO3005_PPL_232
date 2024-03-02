@@ -1,0 +1,5 @@
+
+            number a
+            string b
+            bool c
+        

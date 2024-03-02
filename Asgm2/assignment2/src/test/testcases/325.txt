@@ -1,0 +1,11 @@
+
+            func main()
+                begin
+                    main(a)
+                    main(1,1)
+                end
+            func main()
+                begin
+                main()
+                end
+        

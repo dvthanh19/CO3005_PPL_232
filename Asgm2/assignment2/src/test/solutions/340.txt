@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([If((NumLit(1.0), CallStmt(Id(b), [])), [(NumLit(2.0), If((NumLit(3.0), CallStmt(Id(c), [])), [(NumLit(4.0), CallStmt(Id(d), []))], CallStmt(Id(e), [])))], None)]))])

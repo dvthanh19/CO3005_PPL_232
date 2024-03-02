@@ -1,0 +1,6 @@
+    
+        func a()
+            begin
+                PpL[] <- 1
+            end
+        

@@ -1,0 +1,12 @@
+
+        func main()
+        begin
+            number x <- "str"
+            string r <- 5
+            bool c <- value * aPi
+            var s <- 2.0*5 +6
+            r <- 2.0*5 +6
+            number a[5]
+            number b[5, 2]
+        end 
+        

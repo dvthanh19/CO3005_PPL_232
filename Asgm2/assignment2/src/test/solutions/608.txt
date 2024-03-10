@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(a), [], Block([Block([Block([Block([Block([Block([Block([CallStmt(Id(call), []), Block([CallStmt(Id(call), [])])])])])])])])]))])

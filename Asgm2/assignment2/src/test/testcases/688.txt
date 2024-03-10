@@ -1,0 +1,11 @@
+
+    var aaa <- "\'\''"\\" ## lV
+    func aa ()
+        begin
+            bbb("b[\'\''"\''\''"\'\''"\\", false)
+        end
+    func cv (number oisps)	return
+
+    var Tcgc <- "\'\''"J}#\\" ## 7_49NPx/gi
+    
+    

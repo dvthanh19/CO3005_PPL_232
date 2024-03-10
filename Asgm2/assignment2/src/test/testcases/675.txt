@@ -1,0 +1,13 @@
+
+    func aaa (bool a[2.32267], bool wwe)
+        return
+    func bbb ()
+        return
+
+    func ccc ()	return
+    func ddd (bool Q8)
+        begin
+            break
+        end
+        
+    

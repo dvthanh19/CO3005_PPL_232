@@ -1,0 +1,1 @@
+Program([VarDecl(Id(x), StringType, None, BinaryOp(..., StringLit(2\''"\''"\\), StringLit('"2222\\)))])

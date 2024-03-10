@@ -1,0 +1,16 @@
+
+    func a()
+        return
+    func b()
+    func a()
+        return
+    func b()
+    func a()
+        return
+    func b()
+    func a()
+        return
+    func b()
+    func c(number w)
+    
+    

@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(PvHu), [], Return(BooleanLit(False))), FuncDecl(Id(OzL), [VarDecl(Id(Zf), ArrayType([8.511e-90], NumberType), None, None)], Return())])

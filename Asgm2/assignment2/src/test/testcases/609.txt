@@ -1,0 +1,8 @@
+
+    dynamic x
+    func foo()
+        begin
+            var x <- 2
+        end
+
+    

@@ -1,0 +1,9 @@
+
+    func a() 
+        begin
+            if (d) if (b) d()
+            else return
+            else return
+        end
+
+    

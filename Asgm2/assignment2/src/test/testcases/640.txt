@@ -1,0 +1,21 @@
+
+
+    func a() 
+        begin
+        for doo until (doo <= 2) by "hello'""...l
+for doo until (doo <= 2) by "hello'""...l
+for doo until (doo <= 2) by "hello'""...l
+        if (a) 
+for doo until (doo <= 2) by "hello'""...l
+        return
+        elif (b) 
+for doo until (doo <= 2) by "hello'""...l
+        return
+        else no()
+        
+        
+        end
+        
+
+    
+    

@@ -1,0 +1,5 @@
+
+    string ttt[1,155E+91]
+    func lVL (bool bbb[13.178E+06,0.12345], string bbb[4,3,69])	return
+    
+    

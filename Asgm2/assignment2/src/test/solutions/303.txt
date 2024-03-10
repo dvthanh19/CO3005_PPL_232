@@ -1,1 +1,1 @@
-Program([VarDecl(Id(Votien), StringType, None, None), VarDecl(Id(Votien), BoolType, None, None), VarDecl(Id(Votien), StringType, None, NumLit(1.0)), VarDecl(Id(Votien), BoolType, None, NumLit(1.0))])
+Program([VarDecl(Id(ppl), StringType, None, None), VarDecl(Id(ppl), BoolType, None, None), VarDecl(Id(ppl), StringType, None, NumLit(1.0)), VarDecl(Id(ppl), BoolType, None, NumLit(1.0))])

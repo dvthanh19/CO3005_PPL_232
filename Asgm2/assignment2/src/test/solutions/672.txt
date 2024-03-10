@@ -1,0 +1,1 @@
+Program([VarDecl(Id(pR), None, dynamic, None), FuncDecl(Id(CK), [VarDecl(Id(JIMG), BoolType, None, None)], Block([])), FuncDecl(Id(Ykon), [VarDecl(Id(aVn), ArrayType([7.82326e+52], BoolType), None, None), VarDecl(Id(W8mB), ArrayType([3.0], BoolType), None, None), VarDecl(Id(ua), ArrayType([76173000000000.0, 0.0009279], NumberType), None, None)], Return(BooleanLit(True)))])

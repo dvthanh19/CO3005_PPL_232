@@ -1,0 +1,13 @@
+
+            func foo(number a, string a, bool a[2])
+            begin
+                for i until 0 by 1
+                    for j until 0 by -1
+                    begin
+                    end
+            end
+            
+            
+            func foo(number arr[1, 2], string arr[1, 9])
+                return 
+        

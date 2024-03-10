@@ -1,0 +1,23 @@
+
+    func a()
+        begin
+            begin
+                begin
+                    begin
+                        begin
+                            begin
+                                begin
+                                call()
+                                begin
+                                ##aaaa
+                                call()
+                                end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+    

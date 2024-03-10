@@ -1,0 +1,12 @@
+
+    func a() 
+        begin
+            if (d) if (b) d()
+            else return
+            else return
+            if (tiep) ha()
+            elif (dung) ha()
+        end
+        
+
+    

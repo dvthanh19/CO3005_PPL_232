@@ -1,0 +1,1 @@
+Program([VarDecl(Id(sVT), StringType, None, BooleanLit(True)), FuncDecl(Id(asd), [VarDecl(Id(bbb), NumberType, None, None)], Block([])), VarDecl(Id(hm8), NumberType, None, StringLit(+\\))])

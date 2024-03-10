@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(isEven), [VarDecl(Id(n), NumberType, None, None)], Block([Return(BinaryOp(=, BinaryOp(%, Id(n), NumLit(2.0)), NumLit(0.0)))])), FuncDecl(Id(main), [], Block([VarDecl(Id(num), None, var, CallExpr(Id(readNumber), [])), VarDecl(Id(result), None, var, CallExpr(Id(isEven), [Id(num)])), CallStmt(Id(print), [Id(result)])]))])

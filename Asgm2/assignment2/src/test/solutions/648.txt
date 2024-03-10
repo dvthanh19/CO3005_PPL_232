@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(T7b), [], Return()), FuncDecl(Id(f), [], Return())])

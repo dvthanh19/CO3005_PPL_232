@@ -1,0 +1,11 @@
+
+    bool aaa[9e8,55124,6.54121]
+    func ll ()
+        
+
+    func aaa ()	return
+    func cc (bool gb)	begin
+            ## aaaaa
+        end
+
+    

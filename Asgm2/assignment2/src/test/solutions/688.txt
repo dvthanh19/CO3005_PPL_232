@@ -1,0 +1,1 @@
+Program([VarDecl(Id(aaa), None, var, StringLit(\'\''"\\)), FuncDecl(Id(aa), [], Block([CallStmt(Id(bbb), [StringLit(b[\'\''"\''\''"\'\''"\\), BooleanLit(False)])])), FuncDecl(Id(cv), [VarDecl(Id(oisps), NumberType, None, None)], Return()), VarDecl(Id(Tcgc), None, var, StringLit(\'\''"J}#\\))])

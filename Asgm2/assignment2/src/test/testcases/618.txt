@@ -1,0 +1,7 @@
+
+    func PvHu ()	return false
+
+    func OzL (number Zf[8.511E-90])
+        return
+
+    

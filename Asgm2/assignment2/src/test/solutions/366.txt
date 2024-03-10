@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(gcd), [VarDecl(Id(a), NumberType, None, None), VarDecl(Id(b), NumberType, None, None)], Block([Return(Id(a))])), FuncDecl(Id(main), [], Block([VarDecl(Id(num1), None, var, CallExpr(Id(readNumber), [])), VarDecl(Id(num2), None, var, CallExpr(Id(readNumber), [])), CallStmt(Id(print), [CallExpr(Id(gcd), [Id(num1), Id(num2)])])]))])

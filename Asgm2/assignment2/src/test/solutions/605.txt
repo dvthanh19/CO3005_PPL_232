@@ -1,0 +1,1 @@
+Program([VarDecl(Id(lit), BoolType, None, BinaryOp(or, BinaryOp(and, BinaryOp(and, UnaryOp(not, BooleanLit(True)), BooleanLit(True)), BooleanLit(False)), NumLit(2.0)))])

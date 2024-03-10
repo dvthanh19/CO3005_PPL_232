@@ -1,0 +1,4 @@
+
+    func qq (number bbb, number qqq, string a)	return true
+
+    

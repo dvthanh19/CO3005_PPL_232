@@ -1,0 +1,4 @@
+
+    func IP (number aTdZ[6,742])	return E4
+
+    

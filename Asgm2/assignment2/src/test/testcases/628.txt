@@ -1,0 +1,8 @@
+
+    func a() 
+        begin
+            if (a) call()
+            else return
+        end
+
+    

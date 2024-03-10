@@ -1,0 +1,7 @@
+
+    func c18 (string Hhu, bool nR4)	return
+
+    func hpUs (bool D4K4)	
+
+    ## uRtsM
+    

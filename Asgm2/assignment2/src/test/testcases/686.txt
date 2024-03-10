@@ -1,0 +1,5 @@
+
+    func zzz (bool zz[936], string qqq)	return
+    ## vsasd
+    ## comment
+    

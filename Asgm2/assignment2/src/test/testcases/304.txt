@@ -1,4 +1,4 @@
 
-            string VoTien[5] <- 1
-            string VoTien[5]
+            string ppl[5] <- 1
+            string ppl[5]
         

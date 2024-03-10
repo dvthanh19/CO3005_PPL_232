@@ -1,0 +1,9 @@
+
+    func w1 (number CItc)
+        begin
+            continue
+        end
+
+    func UO (bool isGH[8,985], bool Le)	return
+    
+    

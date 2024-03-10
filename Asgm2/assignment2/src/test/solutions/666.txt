@@ -1,0 +1,1 @@
+Program([VarDecl(Id(eaku), None, var, NumLit(4.0))])

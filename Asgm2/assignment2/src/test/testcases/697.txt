@@ -1,0 +1,8 @@
+
+    ## JtA{OX
+    func hN (bool SB7o, number IT)	
+
+    func d2N (string MIXf)
+    
+        
+    

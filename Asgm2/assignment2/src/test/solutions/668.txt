@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(u1), [VarDecl(Id(qjj2), ArrayType([8.195, 4.94197e+84], NumberType), None, None)], Return(StringLit(\'\''"\''"\''"\\)))])

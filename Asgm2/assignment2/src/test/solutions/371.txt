@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(initArrValue), [], Return(ArrayLit(NumLit(1.0), ArrayLit(NumLit(1.0), NumLit(2.0)), ArrayLit(StringLit(a), StringLit(b), StringLit(c)), ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0), NumLit(4.0)), ArrayLit(BooleanLit(True), BooleanLit(False)))))])

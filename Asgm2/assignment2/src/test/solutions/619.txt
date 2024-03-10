@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(eKUz), [VarDecl(Id(TM), StringType, None, None)], Return()), FuncDecl(Id(hIZe), [VarDecl(Id(hIkf), ArrayType([1.77188e+84, 234.375], BoolType), None, None)], Block([AssignStmt(Id(bW), Id(kMUh))]))])

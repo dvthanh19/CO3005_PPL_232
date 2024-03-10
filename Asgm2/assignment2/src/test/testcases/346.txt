@@ -1,0 +1,5 @@
+
+            func foo(number a, string a, bool a[2])
+            func foo(number arr[1, 2], string arr[1, 9])
+                return 
+        

@@ -1,0 +1,22 @@
+
+    func a() 
+        begin
+        for doo until (doo <= 2) by "hello"...l
+            exe()
+            exe()
+            exe()
+            exe()
+            exe()
+            exe()
+                        exe()
+            exe()
+            exe()
+            if  (a) 
+            if (b) return
+            elif (c) return
+            else return
+            else return
+        end
+        
+
+    

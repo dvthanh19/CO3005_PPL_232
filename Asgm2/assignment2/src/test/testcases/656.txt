@@ -1,0 +1,13 @@
+
+    func asd ()	
+    func asd (bool yk6d)
+        return asd
+
+    func FUb ()
+        begin
+            begin
+                NVC <- "Z\\"
+            end
+        end
+
+    

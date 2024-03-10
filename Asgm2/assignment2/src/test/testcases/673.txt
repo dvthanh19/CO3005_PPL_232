@@ -1,0 +1,7 @@
+
+    func yt (string hgL[70.785E+47,32,1.516e-24], string ZF[38,2.233E+86], string r9o1[27.035,8])
+        return "\''"\''"\'\''"\'\''"\b'\''"\\"
+
+    ## &xizZXWQT~
+    
+    

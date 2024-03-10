@@ -1,0 +1,7 @@
+
+    func epic ()	begin
+            qwww()
+        end
+
+    string FWF[474E02] ## s:y,Dc
+    

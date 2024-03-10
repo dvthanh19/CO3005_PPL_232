@@ -1,0 +1,1 @@
+Program([VarDecl(Id(ttt), ArrayType([1.0, 1.55e+93], StringType), None, None), FuncDecl(Id(lVL), [VarDecl(Id(bbb), ArrayType([13178000.0, 0.12345], BoolType), None, None), VarDecl(Id(bbb), ArrayType([4.0, 3.0, 69.0], StringType), None, None)], Return())])

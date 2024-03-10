@@ -39,10 +39,10 @@ def serializedATN():
         30,1,31,1,31,1,31,1,31,1,31,3,31,331,8,31,1,32,1,32,1,32,1,33,1,
         33,1,33,1,34,1,34,3,34,341,8,34,1,34,1,34,1,35,1,35,1,35,1,35,1,
         35,1,35,1,36,1,36,1,36,1,36,1,36,1,36,1,37,1,37,1,38,1,38,3,38,361,
-        8,38,1,39,1,39,1,39,1,39,3,39,367,8,39,1,40,1,40,1,41,1,41,3,41,
-        373,8,41,1,42,1,42,1,42,1,42,1,42,3,42,380,8,42,1,43,1,43,3,43,384,
-        8,43,1,44,1,44,1,44,1,44,3,44,390,8,44,1,45,1,45,3,45,394,8,45,1,
-        46,1,46,1,46,1,46,1,46,3,46,401,8,46,1,47,1,47,1,47,1,47,1,47,1,
+        8,38,1,39,1,39,1,39,1,39,1,39,3,39,368,8,39,1,40,1,40,1,40,1,40,
+        1,40,1,40,3,40,376,8,40,1,41,1,41,3,41,380,8,41,1,42,1,42,1,42,1,
+        42,3,42,386,8,42,1,43,1,43,1,44,1,44,3,44,392,8,44,1,45,1,45,1,45,
+        1,45,1,45,3,45,399,8,45,1,46,1,46,3,46,403,8,46,1,47,1,47,1,47,1,
         47,3,47,409,8,47,1,47,0,3,26,28,30,48,0,2,4,6,8,10,12,14,16,18,20,
         22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,
         66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,0,5,1,0,30,36,1,0,22,
@@ -55,9 +55,9 @@ def serializedATN():
         46,270,1,0,0,0,48,272,1,0,0,0,50,289,1,0,0,0,52,291,1,0,0,0,54,300,
         1,0,0,0,56,306,1,0,0,0,58,317,1,0,0,0,60,320,1,0,0,0,62,325,1,0,
         0,0,64,332,1,0,0,0,66,335,1,0,0,0,68,338,1,0,0,0,70,344,1,0,0,0,
-        72,350,1,0,0,0,74,356,1,0,0,0,76,360,1,0,0,0,78,366,1,0,0,0,80,368,
-        1,0,0,0,82,372,1,0,0,0,84,379,1,0,0,0,86,383,1,0,0,0,88,389,1,0,
-        0,0,90,393,1,0,0,0,92,400,1,0,0,0,94,402,1,0,0,0,96,98,5,44,0,0,
+        72,350,1,0,0,0,74,356,1,0,0,0,76,360,1,0,0,0,78,367,1,0,0,0,80,369,
+        1,0,0,0,82,379,1,0,0,0,84,385,1,0,0,0,86,387,1,0,0,0,88,391,1,0,
+        0,0,90,398,1,0,0,0,92,402,1,0,0,0,94,408,1,0,0,0,96,98,5,44,0,0,
         97,96,1,0,0,0,98,101,1,0,0,0,99,97,1,0,0,0,99,100,1,0,0,0,100,102,
         1,0,0,0,101,99,1,0,0,0,102,103,3,2,1,0,103,104,5,0,0,1,104,1,1,0,
         0,0,105,106,3,4,2,0,106,107,3,2,1,0,107,110,1,0,0,0,108,110,3,4,
@@ -68,13 +68,13 @@ def serializedATN():
         126,3,10,5,0,123,126,3,12,6,0,124,126,3,14,7,0,125,122,1,0,0,0,125,
         123,1,0,0,0,125,124,1,0,0,0,126,9,1,0,0,0,127,128,5,1,0,0,128,129,
         5,43,0,0,129,130,5,3,0,0,130,131,3,20,10,0,131,11,1,0,0,0,132,133,
-        3,74,37,0,133,138,5,43,0,0,134,135,5,18,0,0,135,136,3,78,39,0,136,
+        3,74,37,0,133,138,5,43,0,0,134,135,5,18,0,0,135,136,3,84,42,0,136,
         137,5,19,0,0,137,139,1,0,0,0,138,134,1,0,0,0,138,139,1,0,0,0,139,
         142,1,0,0,0,140,141,5,3,0,0,141,143,3,20,10,0,142,140,1,0,0,0,142,
         143,1,0,0,0,143,13,1,0,0,0,144,145,5,2,0,0,145,148,5,43,0,0,146,
         147,5,3,0,0,147,149,3,20,10,0,148,146,1,0,0,0,148,149,1,0,0,0,149,
         15,1,0,0,0,150,151,5,4,0,0,151,152,5,43,0,0,152,153,5,16,0,0,153,
-        154,3,90,45,0,154,155,5,17,0,0,155,156,3,18,9,0,156,17,1,0,0,0,157,
+        154,3,76,38,0,154,155,5,17,0,0,155,156,3,18,9,0,156,17,1,0,0,0,157,
         159,3,6,3,0,158,157,1,0,0,0,158,159,1,0,0,0,159,162,1,0,0,0,160,
         163,3,68,34,0,161,163,3,72,36,0,162,160,1,0,0,0,162,161,1,0,0,0,
         163,166,1,0,0,0,164,166,3,6,3,0,165,158,1,0,0,0,165,164,1,0,0,0,
@@ -96,16 +96,16 @@ def serializedATN():
         1,0,0,0,220,33,1,0,0,0,221,222,5,25,0,0,222,225,3,34,17,0,223,225,
         3,36,18,0,224,221,1,0,0,0,224,223,1,0,0,0,225,35,1,0,0,0,226,229,
         5,43,0,0,227,229,3,40,20,0,228,226,1,0,0,0,228,227,1,0,0,0,229,230,
-        1,0,0,0,230,231,5,18,0,0,231,232,3,84,42,0,232,233,5,19,0,0,233,
+        1,0,0,0,230,231,5,18,0,0,231,232,3,90,45,0,232,233,5,19,0,0,233,
         236,1,0,0,0,234,236,3,38,19,0,235,228,1,0,0,0,235,234,1,0,0,0,236,
         37,1,0,0,0,237,245,5,43,0,0,238,245,3,42,21,0,239,240,5,16,0,0,240,
         241,3,20,10,0,241,242,5,17,0,0,242,245,1,0,0,0,243,245,3,40,20,0,
         244,237,1,0,0,0,244,238,1,0,0,0,244,239,1,0,0,0,244,243,1,0,0,0,
-        245,39,1,0,0,0,246,247,5,43,0,0,247,248,5,16,0,0,248,249,3,80,40,
+        245,39,1,0,0,0,246,247,5,43,0,0,247,248,5,16,0,0,248,249,3,86,43,
         0,249,250,5,17,0,0,250,41,1,0,0,0,251,256,5,40,0,0,252,256,5,42,
         0,0,253,256,5,38,0,0,254,256,3,44,22,0,255,251,1,0,0,0,255,252,1,
         0,0,0,255,253,1,0,0,0,255,254,1,0,0,0,256,43,1,0,0,0,257,258,5,18,
-        0,0,258,259,3,84,42,0,259,260,5,19,0,0,260,45,1,0,0,0,261,271,3,
+        0,0,258,259,3,90,45,0,259,260,5,19,0,0,260,45,1,0,0,0,261,271,3,
         48,24,0,262,271,3,56,28,0,263,271,3,58,29,0,264,271,3,60,30,0,265,
         271,3,64,32,0,266,271,3,66,33,0,267,271,3,68,34,0,268,271,3,70,35,
         0,269,271,3,72,36,0,270,261,1,0,0,0,270,262,1,0,0,0,270,263,1,0,
@@ -126,33 +126,33 @@ def serializedATN():
         0,314,315,1,0,0,0,315,316,3,46,23,0,316,57,1,0,0,0,317,318,3,8,4,
         0,318,319,3,6,3,0,319,59,1,0,0,0,320,321,3,62,31,0,321,322,5,3,0,
         0,322,323,3,20,10,0,323,324,3,6,3,0,324,61,1,0,0,0,325,330,5,43,
-        0,0,326,327,5,18,0,0,327,328,3,84,42,0,328,329,5,19,0,0,329,331,
+        0,0,326,327,5,18,0,0,327,328,3,90,45,0,328,329,5,19,0,0,329,331,
         1,0,0,0,330,326,1,0,0,0,330,331,1,0,0,0,331,63,1,0,0,0,332,333,5,
         11,0,0,333,334,3,6,3,0,334,65,1,0,0,0,335,336,5,12,0,0,336,337,3,
         6,3,0,337,67,1,0,0,0,338,340,5,7,0,0,339,341,3,20,10,0,340,339,1,
         0,0,0,340,341,1,0,0,0,341,342,1,0,0,0,342,343,3,6,3,0,343,69,1,0,
-        0,0,344,345,5,43,0,0,345,346,5,16,0,0,346,347,3,80,40,0,347,348,
+        0,0,344,345,5,43,0,0,345,346,5,16,0,0,346,347,3,86,43,0,347,348,
         5,17,0,0,348,349,3,6,3,0,349,71,1,0,0,0,350,351,5,5,0,0,351,352,
-        3,6,3,0,352,353,3,86,43,0,353,354,5,6,0,0,354,355,3,6,3,0,355,73,
+        3,6,3,0,352,353,3,92,46,0,353,354,5,6,0,0,354,355,3,6,3,0,355,73,
         1,0,0,0,356,357,7,4,0,0,357,75,1,0,0,0,358,361,3,78,39,0,359,361,
-        1,0,0,0,360,358,1,0,0,0,360,359,1,0,0,0,361,77,1,0,0,0,362,363,5,
-        40,0,0,363,364,5,20,0,0,364,367,3,78,39,0,365,367,5,40,0,0,366,362,
-        1,0,0,0,366,365,1,0,0,0,367,79,1,0,0,0,368,369,3,82,41,0,369,81,
-        1,0,0,0,370,373,3,84,42,0,371,373,1,0,0,0,372,370,1,0,0,0,372,371,
-        1,0,0,0,373,83,1,0,0,0,374,375,3,20,10,0,375,376,5,20,0,0,376,377,
-        3,84,42,0,377,380,1,0,0,0,378,380,3,20,10,0,379,374,1,0,0,0,379,
-        378,1,0,0,0,380,85,1,0,0,0,381,384,3,88,44,0,382,384,1,0,0,0,383,
-        381,1,0,0,0,383,382,1,0,0,0,384,87,1,0,0,0,385,386,3,46,23,0,386,
-        387,3,88,44,0,387,390,1,0,0,0,388,390,3,46,23,0,389,385,1,0,0,0,
-        389,388,1,0,0,0,390,89,1,0,0,0,391,394,3,92,46,0,392,394,1,0,0,0,
-        393,391,1,0,0,0,393,392,1,0,0,0,394,91,1,0,0,0,395,396,3,94,47,0,
-        396,397,5,20,0,0,397,398,3,92,46,0,398,401,1,0,0,0,399,401,3,94,
-        47,0,400,395,1,0,0,0,400,399,1,0,0,0,401,93,1,0,0,0,402,403,3,74,
-        37,0,403,408,5,43,0,0,404,405,5,18,0,0,405,406,3,78,39,0,406,407,
-        5,19,0,0,407,409,1,0,0,0,408,404,1,0,0,0,408,409,1,0,0,0,409,95,
-        1,0,0,0,40,99,109,115,120,125,138,142,148,158,162,165,174,181,191,
-        202,213,219,224,228,235,244,255,270,277,283,289,296,302,313,330,
-        340,360,366,372,379,383,389,393,400,408
+        1,0,0,0,360,358,1,0,0,0,360,359,1,0,0,0,361,77,1,0,0,0,362,363,3,
+        80,40,0,363,364,5,20,0,0,364,365,3,78,39,0,365,368,1,0,0,0,366,368,
+        3,80,40,0,367,362,1,0,0,0,367,366,1,0,0,0,368,79,1,0,0,0,369,370,
+        3,74,37,0,370,375,5,43,0,0,371,372,5,18,0,0,372,373,3,84,42,0,373,
+        374,5,19,0,0,374,376,1,0,0,0,375,371,1,0,0,0,375,376,1,0,0,0,376,
+        81,1,0,0,0,377,380,3,84,42,0,378,380,1,0,0,0,379,377,1,0,0,0,379,
+        378,1,0,0,0,380,83,1,0,0,0,381,382,5,40,0,0,382,383,5,20,0,0,383,
+        386,3,84,42,0,384,386,5,40,0,0,385,381,1,0,0,0,385,384,1,0,0,0,386,
+        85,1,0,0,0,387,388,3,88,44,0,388,87,1,0,0,0,389,392,3,90,45,0,390,
+        392,1,0,0,0,391,389,1,0,0,0,391,390,1,0,0,0,392,89,1,0,0,0,393,394,
+        3,20,10,0,394,395,5,20,0,0,395,396,3,90,45,0,396,399,1,0,0,0,397,
+        399,3,20,10,0,398,393,1,0,0,0,398,397,1,0,0,0,399,91,1,0,0,0,400,
+        403,3,94,47,0,401,403,1,0,0,0,402,400,1,0,0,0,402,401,1,0,0,0,403,
+        93,1,0,0,0,404,405,3,46,23,0,405,406,3,94,47,0,406,409,1,0,0,0,407,
+        409,3,46,23,0,408,404,1,0,0,0,408,407,1,0,0,0,409,95,1,0,0,0,40,
+        99,109,115,120,125,138,142,148,158,162,165,174,181,191,202,213,219,
+        224,228,235,244,255,270,277,283,289,296,302,313,330,340,360,367,
+        375,379,385,391,398,402,408
     ]
 
 class ZCodeParser ( Parser ):
@@ -222,16 +222,16 @@ class ZCodeParser ( Parser ):
     RULE_funcCall_stmt = 35
     RULE_block_stmt = 36
     RULE_typ = 37
-    RULE_numList = 38
-    RULE_numList_prime = 39
-    RULE_argList = 40
-    RULE_exprList = 41
-    RULE_exprList_prime = 42
-    RULE_stmtList = 43
-    RULE_stmtList_prime = 44
-    RULE_paramList = 45
-    RULE_paramList_prime = 46
-    RULE_param = 47
+    RULE_paramList = 38
+    RULE_paramList_prime = 39
+    RULE_param = 40
+    RULE_numList = 41
+    RULE_numList_prime = 42
+    RULE_argList = 43
+    RULE_exprList = 44
+    RULE_exprList_prime = 45
+    RULE_stmtList = 46
+    RULE_stmtList_prime = 47
 
     ruleNames =  [ "program", "declare_list", "declare", "newlines", "var_declare", 
                    "implicit_var", "keyword_var", "dynamic_var", "func_declare", 
@@ -241,9 +241,9 @@ class ZCodeParser ( Parser ):
                    "if_stmt", "elif_stmtList", "elif_stmt", "else_stmt", 
                    "for_stmt", "decl_stmt", "assign_stmt", "leftSide", "break_stmt", 
                    "continue_stmt", "return_stmt", "funcCall_stmt", "block_stmt", 
-                   "typ", "numList", "numList_prime", "argList", "exprList", 
-                   "exprList_prime", "stmtList", "stmtList_prime", "paramList", 
-                   "paramList_prime", "param" ]
+                   "typ", "paramList", "paramList_prime", "param", "numList", 
+                   "numList_prime", "argList", "exprList", "exprList_prime", 
+                   "stmtList", "stmtList_prime" ]
 
     EOF = Token.EOF
     VAR=1
@@ -2626,346 +2626,6 @@ class ZCodeParser ( Parser ):
         return localctx
 
 
-    class NumListContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def numList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.NumList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_numList
-
-
-
-
-    def numList(self):
-
-        localctx = ZCodeParser.NumListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 76, self.RULE_numList)
-        try:
-            self.state = 360
-            self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [40]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 358
-                self.numList_prime()
-                pass
-            elif token in [-1]:
-                self.enterOuterAlt(localctx, 2)
-
-                pass
-            else:
-                raise NoViableAltException(self)
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class NumList_primeContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def NUM_LIT(self):
-            return self.getToken(ZCodeParser.NUM_LIT, 0)
-
-        def COMMA(self):
-            return self.getToken(ZCodeParser.COMMA, 0)
-
-        def numList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.NumList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_numList_prime
-
-
-
-
-    def numList_prime(self):
-
-        localctx = ZCodeParser.NumList_primeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 78, self.RULE_numList_prime)
-        try:
-            self.state = 366
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,32,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 362
-                self.match(ZCodeParser.NUM_LIT)
-                self.state = 363
-                self.match(ZCodeParser.COMMA)
-                self.state = 364
-                self.numList_prime()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 365
-                self.match(ZCodeParser.NUM_LIT)
-                pass
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ArgListContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def exprList(self):
-            return self.getTypedRuleContext(ZCodeParser.ExprListContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_argList
-
-
-
-
-    def argList(self):
-
-        localctx = ZCodeParser.ArgListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 80, self.RULE_argList)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 368
-            self.exprList()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ExprListContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def exprList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.ExprList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_exprList
-
-
-
-
-    def exprList(self):
-
-        localctx = ZCodeParser.ExprListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 82, self.RULE_exprList)
-        try:
-            self.state = 372
-            self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [16, 18, 21, 25, 38, 40, 42, 43]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 370
-                self.exprList_prime()
-                pass
-            elif token in [17]:
-                self.enterOuterAlt(localctx, 2)
-
-                pass
-            else:
-                raise NoViableAltException(self)
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class ExprList_primeContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def expr(self):
-            return self.getTypedRuleContext(ZCodeParser.ExprContext,0)
-
-
-        def COMMA(self):
-            return self.getToken(ZCodeParser.COMMA, 0)
-
-        def exprList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.ExprList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_exprList_prime
-
-
-
-
-    def exprList_prime(self):
-
-        localctx = ZCodeParser.ExprList_primeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 84, self.RULE_exprList_prime)
-        try:
-            self.state = 379
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,34,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 374
-                self.expr()
-                self.state = 375
-                self.match(ZCodeParser.COMMA)
-                self.state = 376
-                self.exprList_prime()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 378
-                self.expr()
-                pass
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class StmtListContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def stmtList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.StmtList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_stmtList
-
-
-
-
-    def stmtList(self):
-
-        localctx = ZCodeParser.StmtListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 86, self.RULE_stmtList)
-        try:
-            self.state = 383
-            self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [1, 2, 5, 7, 8, 11, 12, 13, 37, 39, 41, 43]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 381
-                self.stmtList_prime()
-                pass
-            elif token in [6]:
-                self.enterOuterAlt(localctx, 2)
-
-                pass
-            else:
-                raise NoViableAltException(self)
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class StmtList_primeContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def stmt(self):
-            return self.getTypedRuleContext(ZCodeParser.StmtContext,0)
-
-
-        def stmtList_prime(self):
-            return self.getTypedRuleContext(ZCodeParser.StmtList_primeContext,0)
-
-
-        def getRuleIndex(self):
-            return ZCodeParser.RULE_stmtList_prime
-
-
-
-
-    def stmtList_prime(self):
-
-        localctx = ZCodeParser.StmtList_primeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 88, self.RULE_stmtList_prime)
-        try:
-            self.state = 389
-            self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,36,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 385
-                self.stmt()
-                self.state = 386
-                self.stmtList_prime()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 388
-                self.stmt()
-                pass
-
-
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
     class ParamListContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -2986,14 +2646,14 @@ class ZCodeParser ( Parser ):
     def paramList(self):
 
         localctx = ZCodeParser.ParamListContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 90, self.RULE_paramList)
+        self.enterRule(localctx, 76, self.RULE_paramList)
         try:
-            self.state = 393
+            self.state = 360
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [37, 39, 41]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 391
+                self.state = 358
                 self.paramList_prime()
                 pass
             elif token in [17]:
@@ -3039,24 +2699,24 @@ class ZCodeParser ( Parser ):
     def paramList_prime(self):
 
         localctx = ZCodeParser.ParamList_primeContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 92, self.RULE_paramList_prime)
+        self.enterRule(localctx, 78, self.RULE_paramList_prime)
         try:
-            self.state = 400
+            self.state = 367
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,38,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,32,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 395
+                self.state = 362
                 self.param()
-                self.state = 396
+                self.state = 363
                 self.match(ZCodeParser.COMMA)
-                self.state = 397
+                self.state = 364
                 self.paramList_prime()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 399
+                self.state = 366
                 self.param()
                 pass
 
@@ -3103,24 +2763,364 @@ class ZCodeParser ( Parser ):
     def param(self):
 
         localctx = ZCodeParser.ParamContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 94, self.RULE_param)
+        self.enterRule(localctx, 80, self.RULE_param)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 402
+            self.state = 369
             self.typ()
-            self.state = 403
+            self.state = 370
             self.match(ZCodeParser.IDENTIFIER)
-            self.state = 408
+            self.state = 375
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==18:
-                self.state = 404
+                self.state = 371
                 self.match(ZCodeParser.LSB)
-                self.state = 405
+                self.state = 372
                 self.numList_prime()
-                self.state = 406
+                self.state = 373
                 self.match(ZCodeParser.RSB)
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NumListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def numList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.NumList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_numList
+
+
+
+
+    def numList(self):
+
+        localctx = ZCodeParser.NumListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 82, self.RULE_numList)
+        try:
+            self.state = 379
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [40]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 377
+                self.numList_prime()
+                pass
+            elif token in [-1]:
+                self.enterOuterAlt(localctx, 2)
+
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NumList_primeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def NUM_LIT(self):
+            return self.getToken(ZCodeParser.NUM_LIT, 0)
+
+        def COMMA(self):
+            return self.getToken(ZCodeParser.COMMA, 0)
+
+        def numList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.NumList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_numList_prime
+
+
+
+
+    def numList_prime(self):
+
+        localctx = ZCodeParser.NumList_primeContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 84, self.RULE_numList_prime)
+        try:
+            self.state = 385
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,35,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 381
+                self.match(ZCodeParser.NUM_LIT)
+                self.state = 382
+                self.match(ZCodeParser.COMMA)
+                self.state = 383
+                self.numList_prime()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 384
+                self.match(ZCodeParser.NUM_LIT)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ArgListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def exprList(self):
+            return self.getTypedRuleContext(ZCodeParser.ExprListContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_argList
+
+
+
+
+    def argList(self):
+
+        localctx = ZCodeParser.ArgListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 86, self.RULE_argList)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 387
+            self.exprList()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ExprListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def exprList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.ExprList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_exprList
+
+
+
+
+    def exprList(self):
+
+        localctx = ZCodeParser.ExprListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 88, self.RULE_exprList)
+        try:
+            self.state = 391
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [16, 18, 21, 25, 38, 40, 42, 43]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 389
+                self.exprList_prime()
+                pass
+            elif token in [17]:
+                self.enterOuterAlt(localctx, 2)
+
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ExprList_primeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def expr(self):
+            return self.getTypedRuleContext(ZCodeParser.ExprContext,0)
+
+
+        def COMMA(self):
+            return self.getToken(ZCodeParser.COMMA, 0)
+
+        def exprList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.ExprList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_exprList_prime
+
+
+
+
+    def exprList_prime(self):
+
+        localctx = ZCodeParser.ExprList_primeContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 90, self.RULE_exprList_prime)
+        try:
+            self.state = 398
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,37,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 393
+                self.expr()
+                self.state = 394
+                self.match(ZCodeParser.COMMA)
+                self.state = 395
+                self.exprList_prime()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 397
+                self.expr()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class StmtListContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def stmtList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.StmtList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_stmtList
+
+
+
+
+    def stmtList(self):
+
+        localctx = ZCodeParser.StmtListContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 92, self.RULE_stmtList)
+        try:
+            self.state = 402
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [1, 2, 5, 7, 8, 11, 12, 13, 37, 39, 41, 43]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 400
+                self.stmtList_prime()
+                pass
+            elif token in [6]:
+                self.enterOuterAlt(localctx, 2)
+
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class StmtList_primeContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def stmt(self):
+            return self.getTypedRuleContext(ZCodeParser.StmtContext,0)
+
+
+        def stmtList_prime(self):
+            return self.getTypedRuleContext(ZCodeParser.StmtList_primeContext,0)
+
+
+        def getRuleIndex(self):
+            return ZCodeParser.RULE_stmtList_prime
+
+
+
+
+    def stmtList_prime(self):
+
+        localctx = ZCodeParser.StmtList_primeContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 94, self.RULE_stmtList_prime)
+        try:
+            self.state = 408
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,39,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 404
+                self.stmt()
+                self.state = 405
+                self.stmtList_prime()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 407
+                self.stmt()
+                pass
 
 
         except RecognitionException as re:

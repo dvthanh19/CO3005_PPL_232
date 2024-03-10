@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(lIPS), [VarDecl(Id(OMrG), ArrayType([3.0, 8.617e-25, 82.558], StringType), None, None), VarDecl(Id(hn), ArrayType([62.657], StringType), None, None), VarDecl(Id(BOP), ArrayType([6.0], StringType), None, None)], Return()), VarDecl(Id(Rz), ArrayType([8.4e+41, 5.286, 2e+59], BoolType), None, None)])

@@ -1,0 +1,13 @@
+
+            func gcd(number a, number b)
+                begin
+                    return a
+                end
+
+            func main()
+                begin
+                    var num1 <- readNumber()
+                    var num2 <- readNumber()
+                    print(gcd(num1, num2))
+                end
+        

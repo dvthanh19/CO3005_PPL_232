@@ -1,0 +1,8 @@
+
+    func a() 
+        begin
+        for doo until doo <= 2 by "hello\\'"" exe()
+        end
+        
+
+    

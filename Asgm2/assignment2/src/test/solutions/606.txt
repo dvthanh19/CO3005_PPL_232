@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(x), [], Block([CallStmt(Id(hello), []), CallStmt(Id(kkap), [CallExpr(Id(kk), [CallExpr(Id(yeah), [CallExpr(Id(ha), [CallExpr(Id(idk), [NumLit(2.0), NumLit(4.0), ArrayLit(NumLit(2.0), NumLit(4.0), ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(ArrayLit(NumLit(2.0)))))))))))), NumLit(45.0)), NumLit(4.0)])])])])])]))])

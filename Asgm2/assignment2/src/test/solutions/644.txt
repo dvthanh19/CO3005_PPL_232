@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(_1), [], None), FuncDecl(Id(_2), [], None), FuncDecl(Id(_3), [], None), FuncDecl(Id(a), [], Return())])

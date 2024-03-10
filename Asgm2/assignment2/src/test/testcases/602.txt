@@ -1,0 +1,11 @@
+
+    func a()
+        begin
+        end
+    var x <-2 
+    dynamic x <- "hello\\"..."world\'"----------22
+    func a()
+        begin
+        end
+        
+    

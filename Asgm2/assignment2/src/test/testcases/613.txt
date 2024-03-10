@@ -1,0 +1,3 @@
+
+    func a(number a,number b[2],number c[1])
+    

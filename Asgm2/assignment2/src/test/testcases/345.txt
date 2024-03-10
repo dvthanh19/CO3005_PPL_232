@@ -1,0 +1,5 @@
+
+            func main(number a, string a, bool a[2])
+            func main(number arr[1,2])
+                return 
+        

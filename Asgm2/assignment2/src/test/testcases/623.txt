@@ -1,0 +1,7 @@
+
+    func a() 
+        begin
+        if (a) if (b) if (c) if (d) if (e) if (f) if (g) if (j) if (a) return
+        end
+
+    

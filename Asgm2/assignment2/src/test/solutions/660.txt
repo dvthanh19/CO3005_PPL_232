@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(IP), [VarDecl(Id(aTdZ), ArrayType([6.0, 742.0], NumberType), None, None)], Return(Id(E4)))])

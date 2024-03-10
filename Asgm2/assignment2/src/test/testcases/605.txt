@@ -1,0 +1,4 @@
+
+    bool lit <- not true and true and false or 2 
+    
+    

@@ -1,0 +1,19 @@
+
+    var x <- 1+2+3*4-5
+    func main()
+    begin
+    if (1) return 1
+    elif (2) 
+        if (3) return 2
+        elif (4) return 3
+        elif (5) return 4
+        elif (a) 
+            if (c) return 2
+            elif(5) call()
+            else return
+        elif (6) return 5
+        elif (7) return 8
+        else return 6
+    else return
+    end
+    

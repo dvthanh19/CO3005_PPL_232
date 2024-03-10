@@ -1,0 +1,7 @@
+
+    func __aaa__()
+    begin
+        number arr[0, 0, 0] <- [[1, 2, 3], ["a\'" ... "b\'", foo()["index\\"]], [(a and not c) = d]]
+    end
+    
+    

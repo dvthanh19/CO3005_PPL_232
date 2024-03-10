@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([If((BinaryOp(..., StringLit(p), BinaryOp(==, StringLit(p), StringLit(L))), AssignStmt(Id(gpa), NumLit(10.0))), [], None)]))])

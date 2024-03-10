@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(epic), [], Block([CallStmt(Id(qwww), [])])), VarDecl(Id(FWF), ArrayType([47400.0], StringType), None, None)])

@@ -1,0 +1,1 @@
+Program([VarDecl(Id(Rwe), None, var, StringLit(}\'\''"f\\)), VarDecl(Id(Ram), None, dynamic, NumLit(2222.0))])

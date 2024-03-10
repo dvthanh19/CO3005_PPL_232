@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(qq), [VarDecl(Id(bbb), NumberType, None, None), VarDecl(Id(qqq), NumberType, None, None), VarDecl(Id(a), StringType, None, None)], Block([If((Id(a), Return()), [(Id(b), If((Id(c), If((Id(d), CallStmt(Id(call), [])), [], Return())), [], Return())), (Id(c), CallStmt(Id(call), []))], None)]))])

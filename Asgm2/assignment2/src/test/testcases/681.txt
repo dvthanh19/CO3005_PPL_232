@@ -1,0 +1,13 @@
+
+    ## M8q
+    ## h*{.> 
+        func qq (number bbb, number qqq, string a)	
+        begin
+        if(a) return
+        elif(b) if (c) if (d) call() 
+        else return
+        else return
+        elif (c) call()
+        end
+        
+    

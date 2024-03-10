@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(qq), [VarDecl(Id(bbb), NumberType, None, None), VarDecl(Id(qqq), NumberType, None, None), VarDecl(Id(a), StringType, None, None)], Return(BooleanLit(True)))])

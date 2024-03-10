@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(eee), [VarDecl(Id(r), ArrayType([8e+23, 459.221324], StringType), None, None), VarDecl(Id(vUu), ArrayType([41233000.0, inf], StringType), None, None), VarDecl(Id(bb), StringType, None, None)], Return()), FuncDecl(Id(www), [], Block([])), FuncDecl(Id(qqq), [VarDecl(Id(www), StringType, None, None)], Block([])), FuncDecl(Id(b8), [], Return())])

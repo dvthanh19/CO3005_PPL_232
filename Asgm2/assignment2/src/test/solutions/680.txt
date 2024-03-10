@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(bbb), [VarDecl(Id(asd), ArrayType([470.689, 722.0], StringType), None, None), VarDecl(Id(Y8), ArrayType([4.12176, 486.96125], StringType), None, None), VarDecl(Id(Dccc), BoolType, None, None)], None), VarDecl(Id(aaa), ArrayType([53336.214, 222.0], StringType), None, StringLit(\''"\''"8\''"\''"\\))])

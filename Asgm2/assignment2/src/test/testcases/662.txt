@@ -1,0 +1,6 @@
+
+    func sofJ (number fu0)	return G2
+    func q9 (number pTEB, number Gqbl, number HBz[51e-54,42.038E25])	return Pb9p
+    bool YyHw[63,0.351e+80] <- L82
+    
+    

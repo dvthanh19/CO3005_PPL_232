@@ -1,0 +1,1 @@
+Program([VarDecl(Id(eeqr), ArrayType([347.0, 23.031], BoolType), None, None), VarDecl(Id(aasd), BoolType, None, None)])

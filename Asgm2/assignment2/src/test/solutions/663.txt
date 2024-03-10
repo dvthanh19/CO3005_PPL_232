@@ -1,0 +1,1 @@
+Program([VarDecl(Id(vm5b), ArrayType([297.574, 2.657e+88, 20.053], BoolType), None, BooleanLit(False)), VarDecl(Id(a), ArrayType([258.0, 5.71469e+49], BoolType), None, None), VarDecl(Id(RCs), None, var, BinaryOp(or, Id(a), Id(b))), FuncDecl(Id(MZp), [VarDecl(Id(ICjQ), ArrayType([1e-39, 1.69761e+60], BoolType), None, None)], Return())])

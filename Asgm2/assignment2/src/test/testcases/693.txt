@@ -1,0 +1,7 @@
+
+    func abc (bool aaa, string ccc)
+        return 1.326E+02
+    bool oQ4e[30.720E84,15e+06,3.626e-88]
+    string u6CZ[269,54,96683] <- "FP"
+    
+    

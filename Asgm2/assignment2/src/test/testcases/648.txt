@@ -1,0 +1,6 @@
+
+    func T7b ()	return
+    ## a
+    func f() return
+    
+    

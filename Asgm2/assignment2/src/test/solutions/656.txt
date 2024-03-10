@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(asd), [], None), FuncDecl(Id(asd), [VarDecl(Id(yk6d), BoolType, None, None)], Return(Id(asd))), FuncDecl(Id(FUb), [], Block([Block([AssignStmt(Id(NVC), StringLit(Z\\))])]))])

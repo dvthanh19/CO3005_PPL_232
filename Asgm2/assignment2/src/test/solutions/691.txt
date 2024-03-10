@@ -1,0 +1,1 @@
+Program([VarDecl(Id(hello), None, var, BinaryOp(..., StringLit(Hello), StringLit(hi))), FuncDecl(Id(a), [], None)])

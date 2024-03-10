@@ -1,0 +1,11 @@
+
+    func a() 
+        begin
+            if (d) if (b) if(g) d()
+            else return
+            else return
+            elif (j) return 2
+            
+        end
+        
+    

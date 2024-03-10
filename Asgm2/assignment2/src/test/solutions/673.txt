@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(yt), [VarDecl(Id(hgL), ArrayType([7.0785e+48, 32.0, 1.516e-24], StringType), None, None), VarDecl(Id(ZF), ArrayType([38.0, 2.233e+86], StringType), None, None), VarDecl(Id(r9o1), ArrayType([27.035, 8.0], StringType), None, None)], Return(StringLit(\''"\''"\'\''"\'\''"\b'\''"\\)))])

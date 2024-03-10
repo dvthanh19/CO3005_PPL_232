@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(main), [], Block([CallStmt(Id(print), [StringLit(Ket thuc 100 test)])]))])

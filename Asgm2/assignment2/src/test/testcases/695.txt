@@ -1,0 +1,10 @@
+
+    func aaa ()	
+        begin
+            pW("D,\'\\", 359, false)
+        end
+    number bbb[339,4,0]
+    number ccc ## ddd
+    string YBj[85.902E+67,1E-45,52.542]
+    
+    

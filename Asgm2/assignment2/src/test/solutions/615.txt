@@ -1,0 +1,1 @@
+Program([VarDecl(Id(x), None, var, NumLit(2.0)), VarDecl(Id(v), None, dynamic, None), VarDecl(Id(a), StringType, None, StringLit('"...'"'")), VarDecl(Id(b), StringType, None, BinaryOp(+, BinaryOp(-, NumLit(203.0), NumLit(3.0)), BinaryOp(*, NumLit(4.0), BinaryOp(*, NumLit(2.0), CallExpr(Id(foo), [NumLit(4.0)])))))])

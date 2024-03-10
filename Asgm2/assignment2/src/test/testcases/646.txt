@@ -1,0 +1,5 @@
+
+    string a  <- "		aaaa\\"
+    string b <- a...b ==2
+
+    

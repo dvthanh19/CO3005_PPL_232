@@ -2,9 +2,10 @@
             func main()
                 begin
                     if (true) return 1
-                    elif (true) return 1
-                    elif (true) return 1
-                    else return 1
                 end
-
+            func main()
+                begin
+                    if (true) return 2
+                    else return 3
+                end
         

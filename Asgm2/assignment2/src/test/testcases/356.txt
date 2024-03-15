@@ -1,3 +1,5 @@
 
-            var fun <- -10 and not b
-        
+                number a
+                string b
+                bool c
+            

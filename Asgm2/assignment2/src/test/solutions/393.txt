@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a), None, var, CallExpr(Id(ppl), []))])
+Program([FuncDecl(Id(main), [], Block([If((BinaryOp(>=, Id(abc), BinaryOp(and, NumLit(234.0), UnaryOp(not, Id(def)))), Block([AssignStmt(Id(_var), ArrayCell(Id(arr), [NumLit(1.0), NumLit(5.0)]))])), [], None)]))])

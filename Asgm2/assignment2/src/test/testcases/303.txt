@@ -1,6 +1,6 @@
-
-            string ppl
-            bool ppl
-            string ppl <- 1
-            bool ppl <- 1
+number list[5,6] <- [[[[5,4,3,2,1],[66.78,77.e-4,89.1,50.00]],[5.e-4,65.9E+3,20.6E-3]],[1E-78]]
+        bool test[5] <- [[[true,false,true,false,true]]]
+        string abc[20] <- ["abcdefg","","123@\n"]
+        dynamic dym
+        var abc <- "a string with numbers like '"1.123e-3'", '"0.23E-50'"?"
         

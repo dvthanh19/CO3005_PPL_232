@@ -1,3 +1,10 @@
 
-            var x <- e and y or a and n or l
+            func main()
+                begin
+                    if (true)
+                        if(true) return 1
+                        elif (true) return 1
+                        elif (true) return 1
+                end
+
         

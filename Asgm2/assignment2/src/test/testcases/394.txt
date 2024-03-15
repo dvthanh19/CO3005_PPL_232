@@ -1,9 +1,8 @@
+func main() begin
+            number a_1 <- funcfunc()
+            for a_1 until exp = 1000 and not exp2 by a + arr[0] begin
+                return 
+            end
+        end
 
-            func main()
-                begin
-                    if (true)
-                        print("Hello")
-                    else
-                        print("World") 
-                end 
         

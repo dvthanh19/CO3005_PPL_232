@@ -1,4 +1,4 @@
- 
-            func main() begin
-            end
+func main() begin
+            if ((a <= b) and (b != c) or (d > e)) x <- 1
+        end
         

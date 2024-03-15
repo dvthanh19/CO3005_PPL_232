@@ -1,3 +1,6 @@
 
-            bool x <- "M10" > "Cr7"
+            func main()
+                begin
+                break
+                end
         

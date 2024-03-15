@@ -1,1 +1,1 @@
-Program([VarDecl(Id(fun), None, var, BinaryOp(and, UnaryOp(-, NumLit(10.0)), UnaryOp(not, Id(b))))])
+Program([VarDecl(Id(a), NumberType, None, None), VarDecl(Id(b), StringType, None, None), VarDecl(Id(c), BoolType, None, None)])

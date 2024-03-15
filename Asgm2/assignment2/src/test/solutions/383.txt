@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a), ArrayType([1.2, 3.4], NumberType), None, StringLit(hello)), VarDecl(Id(b), ArrayType([1.0, 2.0], BoolType), None, None), VarDecl(Id(c), ArrayType([2.0, 3.0], StringType), None, ArrayLit(ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0)), ArrayLit(NumLit(4.0), NumLit(5.0), NumLit(6.0))))])
+Program([FuncDecl(Id(main), [], Block([VarDecl(Id(a), NumberType, None, None)]))])

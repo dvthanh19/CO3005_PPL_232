@@ -1,11 +1,11 @@
-
-            func main()
-            begin
-                if (true) 
-                    if (true) return 1.1
-                    elif (false) return 1.2
-                    elif (false) return 1.3
-                    else return 1.4
-                else return 2
-            end
-        
+## looping test
+func main()
+begin
+    if (a > b)
+        if (a > b) number c1
+        elif (a > b) number c2
+        elif (a > b) number c3
+        else number c4
+    else
+        x <- x100 + 1
+end

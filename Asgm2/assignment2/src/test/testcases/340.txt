@@ -1,15 +1,3 @@
 
-            func main()
-                begin
-                    if (1)
-                        b()
-                    elif (2)
-                        if (3)
-                            c()
-                        elif (4)
-                            d()
-                        else
-                            e()
-                end
-
+            var x <- [1, "a", true, false]
         

@@ -1,8 +1,14 @@
 
-            func main()
-            begin
-                if (true) return 1
-                elif (false) return 2  
-                else return 3
-            end
+        func main ()
+        begin
+            if (1)
+                b()
+            elif (2)
+                if (3)
+                    c()
+                elif (4)
+                    d()
+                else
+                    e()
+        end
         

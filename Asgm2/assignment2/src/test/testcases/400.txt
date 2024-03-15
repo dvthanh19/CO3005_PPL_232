@@ -1,5 +1,8 @@
-func main()
-                begin
-                    print("Ket thuc 100 test")
-                end
-                
+func main() begin
+                for i until temp1*temp2%(temp3-temp4)=temp5 by 1e-3 begin
+                if (i%x=1) then<-5
+                elif (i%x=2) eles<-10
+                else i<-i/2
+            end
+        end
+        

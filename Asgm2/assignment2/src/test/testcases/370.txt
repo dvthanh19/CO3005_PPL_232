@@ -1,13 +1,9 @@
 
-        func isEven(number n)
-        begin
-            return n % 2 = 0
-        end
-
-        func main()
-        begin
-            var num <- readNumber()
-            var result <- isEven(num)
-            print(result)
-        end
+            func main()
+                begin
+                    if (true)
+                        print("Hello")
+                    else
+                        print("World") 
+                end 
         

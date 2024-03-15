@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [VarDecl(Id(a), NumberType, None, None)], None), FuncDecl(Id(main), [VarDecl(Id(a), NumberType, None, None), VarDecl(Id(a), StringType, None, None), VarDecl(Id(a), ArrayType([2.0], BoolType), None, None)], None), FuncDecl(Id(main), [VarDecl(Id(ppl), ArrayType([1.0, 2.0], NumberType), None, None)], Return())])
+Program([VarDecl(Id(a), None, dynamic, NumLit(1.0)), VarDecl(Id(b), None, dynamic, None)])

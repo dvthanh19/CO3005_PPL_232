@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a), NumberType, None, None), VarDecl(Id(b), StringType, None, None), VarDecl(Id(c), BoolType, None, None)])
+Program([FuncDecl(Id(foo), [VarDecl(Id(a), NumberType, None, None), VarDecl(Id(a), StringType, None, None), VarDecl(Id(a), ArrayType([2.0], BoolType), None, None)], Block([For(Id(i), NumLit(0.0), NumLit(1.0), For(Id(j), NumLit(0.0), UnaryOp(-, NumLit(1.0)), Block([])))])), FuncDecl(Id(foo), [VarDecl(Id(arr), ArrayType([1.0, 2.0], NumberType), None, None), VarDecl(Id(arr), ArrayType([1.0, 9.0], StringType), None, None)], Return())])

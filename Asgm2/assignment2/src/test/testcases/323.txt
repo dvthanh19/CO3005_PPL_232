@@ -2,12 +2,5 @@
             func main()
                 begin
                     continue
-                    continue
-                    break
-                    begin
-                        continue
-                        continue
-                        break                    
-                    end
                 end
         

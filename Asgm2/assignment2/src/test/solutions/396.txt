@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [], Block([AssignStmt(Id(a), Id(b)), Continue]))])
+Program([FuncDecl(Id(main), [], Block([])), FuncDecl(Id(main), [], Block([Return(BinaryOp(and, BooleanLit(True), UnaryOp(not, BinaryOp(and, BooleanLit(False), StringLit(NA)))))]))])

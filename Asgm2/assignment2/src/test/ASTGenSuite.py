@@ -1818,4 +1818,40 @@ end
                                                                                                            "+", Id("i"), NumberLiteral(1.0))),
                                                                                                        CallStmt(Id("print"), [Id("i")])), Return(NumberLiteral(0.0))])), FuncDecl(Id("main"), [], Block([CallStmt(Id("call"), [])]))]))
         # print(expect)
-        self.assertTrue(TestAST.test(input, expect, 399))    
+        self.assertTrue(TestAST.test(input, expect, 399))
+    
+   
+    def test_400(self):
+        input = """
+        func loop(string a[1, 2, 3, 3], number _112_[0], bool cc_c)
+        begin
+            if (a > b)
+                for a until a + 1 by b + 1 if (a > b)
+                        if (a > b) number c
+                        elif (a > b) number c
+                        elif (a > b) number c
+                        else number c
+                    else
+                        break
+            else
+                if (a < b)
+                    if (a == b) number c
+                else number c
+        end
+"""
+        expect = str(Program([
+            FuncDecl(Id("loop"), [VarDecl(Id("a"), ArrayType([1.0, 2.0, 3.0, 3.0], StringType())), VarDecl(Id("_112_"), ArrayType([0.0], NumberType())), VarDecl(Id("cc_c"), BoolType())], Block([
+                If(BinaryOp(">", Id("a"), Id("b")),
+                For(Id("a"), BinaryOp("+", Id("a"), NumberLiteral(1.0)), BinaryOp("+", Id("b"), NumberLiteral(1.0)),
+                    If(BinaryOp(">", Id("a"), Id("b")),
+                        If(BinaryOp(">", Id("a"), Id("b")), VarDecl(Id("c"), NumberType()), [
+                            (BinaryOp(">", Id("a"), Id("b")), VarDecl(Id("c"), NumberType())), 
+                            (BinaryOp(">", Id("a"), Id("b")), VarDecl(Id("c"), NumberType()))
+                            ], VarDecl(Id("c"), NumberType())  
+                        ), [], Break()
+                    )
+                ), [], If(BinaryOp("<", Id("a"), Id("b")), If(BinaryOp("==", Id("a"), Id("b")), VarDecl(Id("c"), NumberType()), [], VarDecl(Id("c"), NumberType())), [])
+            )
+        ]))]))
+        # print(expect)
+        self.assertTrue(TestAST.test(input, expect, 400))

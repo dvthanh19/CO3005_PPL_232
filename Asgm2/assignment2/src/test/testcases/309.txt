@@ -1,5 +1,4 @@
 
-            func main()
-                begin
-                end
+            string a[5] <- 1
+            string b[5]
         

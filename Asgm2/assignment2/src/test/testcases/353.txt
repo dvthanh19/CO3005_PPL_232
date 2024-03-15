@@ -1,3 +1,5 @@
 
-            number x <- [foo(1), foo(true), foo("ppl")]
+            func main()
+                begin
+                end
         

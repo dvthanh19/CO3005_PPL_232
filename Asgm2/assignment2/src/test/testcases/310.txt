@@ -1,6 +1,4 @@
 
-            func main()
-                begin
-                break
-                end
+            number a[5,3,4.2] <- 1
+            bool b[2,3,4]
         

@@ -2,9 +2,7 @@ from ZCodeVisitor import ZCodeVisitor
 from ZCodeParser import ZCodeParser
 from AST import *
 
-def toBool(str):
-    if (str == 'true'): return True
-    elif (str == 'false'): return False
+    
 
 class ASTGeneration(ZCodeVisitor):
     # program:		NEWLINE* declare_list EOF;
@@ -29,12 +27,6 @@ class ASTGeneration(ZCodeVisitor):
     # var_declare: 	implicit_var | keyword_var | dynamic_var;
     # Visit a parse tree produced by ZCodeParser#var_declare.
     def visitVar_declare(self, ctx: ZCodeParser.Var_declareContext):
-        # if (ctx.implicit_var()):    
-        #     return self.visit(ctx.implicit_var())
-        # elif (ctx.keyword_var()):
-        #     return self.visit(ctx.keyword_var())
-        # elif (ctx.dynamic_var()):
-        #     return self.visit(ctx.dynamic_var())
         return self.visit(ctx.getChild(0))
 
 
@@ -50,7 +42,8 @@ class ASTGeneration(ZCodeVisitor):
     # Visit a parse tree produced by ZCodeParser#keyword_var.
     def visitKeyword_var(self, ctx: ZCodeParser.Keyword_varContext):
         varType = self.visit(ctx.typ())
-        if (ctx.numList_prime()): varType = ArrayType(self.visit(ctx.numList_prime()), varType)
+        if (ctx.numList_prime()): 
+            varType = ArrayType(self.visit(ctx.numList_prime()), varType)
     
         varInit = self.visit(ctx.expr()) if (ctx.expr()) else None
         
@@ -213,13 +206,6 @@ class ASTGeneration(ZCodeVisitor):
             return self.visit(ctx.expr())
         elif (ctx.funcCall()):
             return self.visit(ctx.funcCall())
-        
-        # if (ctx.expr()):
-        #     return self.visit(ctx.expr())
-        # elif (ctx.IDENTIFIER()):
-        #     return Id(ctx.IDENTIFIER().getText())
-        # else:
-        #     return self.visit(ctx.getChild(0))
     
     
     
@@ -238,7 +224,7 @@ class ASTGeneration(ZCodeVisitor):
         elif (ctx.STRING_LIT()):
             return StringLiteral(ctx.STRING_LIT().getText())
         elif (ctx.BOOL_LIT()):
-            return BooleanLiteral(toBool(ctx.BOOL_LIT().getText()))
+            return BooleanLiteral(ctx.BOOL_LIT().getText()  == 'true')
         elif (ctx.array_lit()):
             return self.visit(ctx.array_lit())
     
@@ -254,24 +240,6 @@ class ASTGeneration(ZCodeVisitor):
     # stmt:   if_stmt|for_stmt|decl_stmt|assign_stmt|break_stmt|continue_stmt|return_stmt|funcCall_stmt|block_stmt;
     # Visit a parse tree produced by ZCodeParser#stmt.
     def visitStmt(self, ctx:ZCodeParser.StmtContext):
-        # if (ctx.if_stmt()):
-        #     return self.visit(ctx.if_stmt())
-        # elif (ctx.for_stmt()):
-        #     return self.visit(ctx.for_stmt())
-        # elif (ctx.decl_stmt()):
-        #     return self.visit(ctx.decl_stmt())
-        # elif (ctx.assign_stmt()):
-        #     return self.visit(ctx.assign_stmt())
-        # elif (ctx.break_stmt()):
-        #     return self.visit(ctx.break_stmt())
-        # elif (ctx.continue_stmt()):
-        #     return self.visit(ctx.continue_stmt())
-        # elif (ctx.return_stmt()):
-        #     return self.visit(ctx.return_stmt())
-        # elif (ctx.funcCall_stmt()):
-        #     return self.visit(ctx.funcCall_stmt())
-        # elif (ctx.block_stmt()):
-        #     return self.visit(ctx.block_stmt())
         return self.visit(ctx.getChild(0))
 
 

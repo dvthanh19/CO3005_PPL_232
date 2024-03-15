@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [], Block([CallStmt(Id(print), [StringLit(Ket thuc 100 test)])]))])
+Program([FuncDecl(Id(main), [], Block([For(Id(i), BinaryOp(=, BinaryOp(%, BinaryOp(*, Id(temp1), Id(temp2)), BinaryOp(-, Id(temp3), Id(temp4))), Id(temp5)), NumLit(0.001), Block([If((BinaryOp(=, BinaryOp(%, Id(i), Id(x)), NumLit(1.0)), AssignStmt(Id(then), NumLit(5.0))), [(BinaryOp(=, BinaryOp(%, Id(i), Id(x)), NumLit(2.0)), AssignStmt(Id(eles), NumLit(10.0)))], AssignStmt(Id(i), BinaryOp(/, Id(i), NumLit(2.0))))]))]))])

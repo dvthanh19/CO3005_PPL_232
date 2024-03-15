@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [], Block([]))])
+Program([FuncDecl(Id(main), [], Block([If((BinaryOp(or, BinaryOp(and, BinaryOp(<=, Id(a), Id(b)), BinaryOp(!=, Id(b), Id(c))), BinaryOp(>, Id(d), Id(e))), AssignStmt(Id(x), NumLit(1.0))), [], None)]))])

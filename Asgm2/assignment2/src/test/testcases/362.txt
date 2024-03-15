@@ -1,6 +1,3 @@
-
-		func main()
-					begin
-						a[2,3] <- 2<a ... b > 2
-					end
-		
+ 
+            dynamic b
+        

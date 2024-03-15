@@ -1,3 +1,9 @@
+func funct(number _, number __) begin
+            s <- 3
+        end
 
-            var a <- [1,"hello",true]
+        func main() begin
+            a[1+2,2*3] <- _ + __
+        end
+
         

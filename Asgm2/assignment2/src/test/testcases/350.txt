@@ -1,6 +1,5 @@
 
-            func main()
-            begin
-            if ("p" ... "p" == "L") gpa <- 10.0
-            end
+            func foo()
+                return "'"'"'""
+            var a <- 3
         

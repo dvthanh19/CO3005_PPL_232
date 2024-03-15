@@ -1,3 +1,15 @@
+func main() 
 
-            func main() 
+
+        begin
+
+
+            number au<-100
+            var bc<--2e-3
+            number c
+            c<-au*bc+100/1000
+            number arr[4] <- [au,bc,c,au+bc+c]
+
+            return arr[3]
+        end
         

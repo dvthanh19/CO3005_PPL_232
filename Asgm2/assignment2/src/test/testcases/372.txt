@@ -1,16 +1,7 @@
 
-            func printMultiplicationTable(number n)
-                begin
-                    var i <- 1
-                    for i until i <= 10 by 1
-                        var result <- n * i
-                        print(n, " * ", i, " = ", result)
-                end
-
             func main()
                 begin
-                    var numberToPrint <- readNumber()
-                    print("Multiplication Table for", numberToPrint)
-                    printMultiplicationTable(numberToPrint)
+                    a <- b
+                    continue
                 end
         

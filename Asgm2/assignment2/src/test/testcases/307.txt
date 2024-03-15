@@ -1,3 +1,6 @@
-
-            var ppl <- 1
+func main()
+begin
+aPI <- 3.14
+l[3] <- value * aPI ## This is a comment
+end
         

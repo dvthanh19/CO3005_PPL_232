@@ -1,3 +1,6 @@
-
-            var a <- ppl()
+func main() begin
+            if (abc >= 234 and not def) begin
+                _var <- arr[1, 5]
+            end
+        end
         

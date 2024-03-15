@@ -1,7 +1,7 @@
+func main() begin
+        end
+        func main() begin
+            return true and not (false and "NA")
+        end
 
-            func main()
-                begin
-                    a <- b
-                    continue
-                end
         

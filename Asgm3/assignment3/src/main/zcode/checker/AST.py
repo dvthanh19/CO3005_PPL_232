@@ -288,6 +288,7 @@ class VoidType(Type):
     def __str__(self):
         return "VoidType"
 
+
 class ArrayType(Type):
     # size: List[float]
     # eleType: Type

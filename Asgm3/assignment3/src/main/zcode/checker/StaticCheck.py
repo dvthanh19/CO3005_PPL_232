@@ -22,8 +22,6 @@ class FuncZcode(Zcode):
         self.body = body
 
 class VarZcode(Zcode):
-    #* typ : Type có thể là number, bool, string, arrayType or None (có thể hiểu nhanh đang FuncZcode)
-        #! -> nên khi gọi callFunc thì trả về typ nếu có (khác None) không thì trả về chính nó this (VarZcode)    
     def __init__(self, typ = None):
         # typ = {number, bool, string, arrayType, None}
         self.typ = typ    
@@ -162,19 +160,20 @@ class StaticChecker(BaseVisitor, Utils):
     # varInit: Expr = None  # None if there is no initial
     def visitVarDecl(self, ast:VarDecl, param):
         if ast.name in param[0]:
-            raise Redeclared(Variable(), ast.name)
-
-
+            raise Redeclared(Variable(), ast.name.name)
         
-        if ast.varInit != None:
+        if ast.varInit is not None:
             rhs = self.visit(ast.varInit)
+            
+            # number x <- x + 1 (RHS use undeclared x => Add LHS into param after done checking RHS)
+            param[0][ast.name.name] = VarZcode(ast.varType)
             lhs = self.visit(ast.name.name)
+            
             
             # Both sides need infering
             if isinstance(lhs, Zcode) and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)):
                 raise TypeCannotBeInferred(ast)           
 
-            
             # LHS not need infering
             if (not isinstance(lhs, Zcode)) and isinstance(rhs, ArrayZcode):
                 if type(lhs) in [NumberType, BoolType, StringType]:
@@ -185,22 +184,25 @@ class StaticChecker(BaseVisitor, Utils):
                         raise TypeMismatchInStatement(ast)
             
             # RHS infer type for LHS 
-            elif isinstance(lhs, Zcode) and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]):
+            # elif isinstance(lhs, Zcode) and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]):
+            elif isinstance(lhs, Zcode): # Can remove the and ... because we have check for rhs in the first if 
                 lhs.typ = rhs
             
             # LHS infer type for RHS
-            elif isinstance(rhs, Zcode) and (type(lhs) in [NumberType, BoolType, StringType, ArrayType]):
+            elif isinstance(rhs, Zcode):
                 rhs.typ = lhs
             
             # Both sides not need infer type
-            elif  (type(lhs) in [NumberType, BoolType, StringType, ArrayType]) \
+            elif (type(lhs) in [NumberType, BoolType, StringType, ArrayType]) \
             and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]):
                 if not self.compareType(lhs, rhs):
                     raise TypeMismatchInStatement(ast)
+            
+        else:
+            param[0][ast.name.name] = VarZcode(ast.varType)
 
         
-        # number x <- x + 1 (RHS use undeclared x => Add LHS into param after done checking)
-        param[0][ast.name.name] = VarZcode(ast.varType)
+        
         
     
     # name: Id
@@ -212,60 +214,39 @@ class StaticChecker(BaseVisitor, Utils):
         # Build paramList and paramType
         paramList = {}
         paramType = []
-        for x in param:
-            if x.name in paramList:
-                raise Redeclared(Variable(), x.name)
+        for x in ast.param:
+            if x.name.name in paramList:
+                raise Redeclared(Variable(), x.name.name)
             
-            paramList[x.name] = self.visit(x)
-            paramType.append(paramList[x.name].typ)
+            paramList[x.name.name] = VarZcode(x.varType)
+            paramType.append(x.varType)
 
         
-        self.function = method
+        
         self.returnStmt = False
-        returnType = VoidType()
+
+        # Redeclared function
+        if method and not (not method.body and ast.body):
+            raise Redeclared(Function(), ast.name.name)
         
-        
-        if ast.body:
-            self.function = ast
-            returnTyp = self.visit(ast.body, [paramList] + param)
-        
-        
-        # Decalred method
-        if method: 
-            # Case 1: Same param, but not define detail for function (func foo(), func foo() begin end)
-            if (method['param'] == paramType):
-                if not (method['body'] and not ast.body):
-                    raise Redeclared(Function(), ast.name.name)
-                else:
-                    method['body'] = True
-                    method['typ'] = returnType
-            else:
-                raise Redeclared(Function(), ast.name.name)
-        
-        # Undeclared method
+                
+        if ast.body is None:
+            self.funcList[ast.name.name] = FuncZcode(paramType, VoidType(), False)        
         else:
-            if ast.body is None:
-                self.funcList[ast.name.name] = FuncZcode(paramType, VoidType(), False)
-            else:                    
-                self.funcList[ast.name.name] = FuncZcode(paramType, returnTyp, True)
+            if method:
+                method.body = True
+                self.function = method
+            else:
+                self.function = self.funcList[ast.name.name] = FuncZcode(paramType, None, False)
+                
+            self.visit(ast.body, [paramList] + param)
+            if not self.Return:
+                method.typ = VoidType()
+
         
+        self.function = None
+        self.returnStmt = False
         
-        
-        
-        # self.function = method
-        
-        # if ast.body is None:
-        #     if method:
-        #         raise Redeclared(Function(), ast.name.name)
-        #     else:
-        #         self.funcList[ast.name.name] = FuncZcode(paramType, None, True)
-        
-        
-        # if method:
-        #     if method['param'] == paramType:
-        #         raise Redeclared(Function(), ast.name.name)
-        # else:
-        #     pass
     
     
     # op: str
@@ -323,15 +304,32 @@ class StaticChecker(BaseVisitor, Utils):
                 
                 return block[ast.name]
                
-        raise Undeclared(ast)
+        raise Undeclared(ast, ast.name)
     
     
     # arr: Expr
     # idx: List[Expr]
     def visitArrayCell(self, ast, param):
         arr = self.visit(ast.arr, param)
+        
         if type(arr) is not ArrayType:
             raise TypeMismatchInExpression(ast)
+        
+        for x in ast.idx:
+            idx = self.visit(x, param)
+            if type(idx) is not NumberType:
+                raise TypeMismatchInExpression(ast)
+        
+        if len(arr.size) < len(ast.idx):
+            raise TypeMismatchInExpression(ast)
+        
+        if len(arr.size) == len(ast.idx):
+            return arr.eleType
+        
+        if len(arr.size) > len(ast.idx):
+            return ArrayType(arr.size[len(ast.idx):], arr.eleType)
+        
+        
         
         # ...
         
@@ -341,10 +339,7 @@ class StaticChecker(BaseVisitor, Utils):
     # stmt: List[Stmt]  # empty list if there is no statement in block
     def visitBlock(self, ast, param):
         for x in ast.stmt:
-            if type(x) is Block:
-                self.visit(x, [{}] + param)
-            else:
-                self.visit(x, param)
+            self.visit(x, param if type(x) is Block else [{}] + param)
     
     
     # expr: Expr
@@ -352,7 +347,20 @@ class StaticChecker(BaseVisitor, Utils):
     # elifStmt: List[Tuple[Expr, Stmt]] # empty list if there is no elif statement
     # elseStmt: Stmt = None  # None if there is no else branch
     def visitIf(self, ast, param):
-        pass
+        cond = self.visit(ast.expr, param)
+        if type(cond) is not BoolType:
+            raise TypeMismatchInStatement(ast)
+        self.visit(ast.thenStmt, [{}] + param)
+        
+        for (elifExpr, elifStmt) in ast.elifStmt:
+            cond = self.visit(elifExpr, param)
+            if type(cond) is not BoolType:
+                raise TypeMismatchInStatement(ast)
+            
+            self.visit(elifStmt, [{}] + param)
+            
+        if ast.elseStmt is not None:
+            self.visit(ast.elseStmt, [{}] + param)
     
     
     # name: Id
@@ -360,11 +368,22 @@ class StaticChecker(BaseVisitor, Utils):
     # updExpr: Expr
     # body: Stmt
     def visitFor(self, ast, param):
-        self.inLoop = 1
+        i = self.visit(ast.name, param)
+        if type(i) is not NumberType:
+            raise TypeMismatchInStatement(ast)
+        
+        cond = self.visit(ast.condExpr, param)
+        if type(cond) is not BoolType:
+            raise TypeMismatchInStatement(ast)
+        
+        updExpr = self.visit(ast.updExpr, param)
+        if type(updExpr) is not NumberType:
+            raise TypeMismatchInStatement(ast)
         
         
-        
-        self.inLoop = 0
+        self.inLoop += 1
+        self.visit(ast.body, [{}] + param)
+        self.inLoop -= 1
     
     
     def visitContinue(self, ast, param):
@@ -381,32 +400,65 @@ class StaticChecker(BaseVisitor, Utils):
     def visitReturn(self, ast, param):
         self.returnStmt = True
         
-        lhs = self.function.typ if self.function.typ else self.function
-        rhs = self.visit(ast.expr, param) if ast.expr else VoidType()
+        funcType = self.function.typ if self.function.typ else self.function
+        retType = self.visit(ast.expr, param) if ast.expr else VoidType()
         
-        if type(lhs) is FuncZcode:
-            
         
+        # Case 1: not sure: func foo() begin if a then return k else return 1
+            # Can we from 1 infer a then infer func  
+        if (isinstance(funcType, Zcode) or isinstance(funcType, ArrayZcode)) \
+        and (isinstance(retType, Zcode) or isinstance(retType, ArrayZcode)):
+            raise TypeCannotBeInferred(ast)
 
+        # Case 2: retType is ArrayZcode and can be infered by funcType
+        if not (isinstance(funcType, Zcode) or isinstance(funcType, ArrayZcode))\
+        and (isinstance(retType, ArrayZcode)):
+            if type(funcType) in [NumberType, StringType, BoolType]:
+                raise TypeMismatchInStatement(ast)
+            
+            # funcType is arraytype
+            if not self.setTypeArray(funcType, retType):     
+                raise TypeMismatchInStatement(ast)
+     
+        elif isinstance(funcType, Zcode):
+            funcType.typ = retType
+        
+        elif isinstance(retType, Zcode):
+            retType.typ = funcType
+
+        elif not self.compareType(funcType, retType):
+            raise TypeMismatchInStatement(ast)
+        
+        
     # lhs: Expr
     # exp: Expr
     def visitAssign(self, ast, param):
         rhs = self.visit(ast.exp, param)
         lhs = self.visit(ast.lhs, param)
         
+        # Case 1: both side can not be infered
         if (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode)) \
-        and (not (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode))) :
+        and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)):
+            raise TypeCannotBeInferred(ast)
+        
+        # Case 2: rhs is ArrayZcode and can be infered by lhs
+        if not (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode))\
+        and (isinstance(rhs, ArrayZcode)):
+            if type(lhs) in [NumberType, StringType, BoolType]:
+                raise TypeMismatchInStatement(ast)
+            
+            # lhs is arraytype
+            if not self.setTypeArray(lhs, rhs):     
+                raise TypeMismatchInStatement(ast)
+     
+        elif isinstance(lhs, Zcode):
             lhs.typ = rhs
         
-        if (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)) \
-        and (not (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode))) :
-            rhs.typ = lhs # ???
-        
-        if not self.compareType(lhs, rhs):
+        elif isinstance(rhs, Zcode):
+            rhs.typ = lhs
+
+        elif not self.compareType(lhs, rhs):
             raise TypeMismatchInStatement(ast)
-        
-        # ...
-        
         
     
     # name: Id

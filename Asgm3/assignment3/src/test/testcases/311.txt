@@ -1,5 +1,0 @@
-
-            number a
-            number b
-            var c <- d
-        

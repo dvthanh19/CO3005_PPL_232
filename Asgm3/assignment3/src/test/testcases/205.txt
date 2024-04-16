@@ -1,4 +1,0 @@
-
-            number a <- 1
-            func foo(number a <- 5, string b, bool c[1])
-		

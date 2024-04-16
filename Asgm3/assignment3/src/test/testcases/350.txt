@@ -1,6 +1,0 @@
-
-            func main()
-            begin
-            if ("p" ... "p" == "L") gpa <- 10.0
-            end
-        

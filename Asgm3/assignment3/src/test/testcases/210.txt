@@ -1,8 +1,0 @@
-
-            number a <- 1
-            func foo()
-            begin
-            end
-            
-            func foofoo() return "'"PPL-Assignment1'""
-        

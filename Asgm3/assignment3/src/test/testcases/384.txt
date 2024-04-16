@@ -1,5 +1,0 @@
-
-            var a <- 1
-            dynamic b <- "hello"
-            var c <- true 
-        

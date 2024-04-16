@@ -1,2 +1,0 @@
-for i until i < 100 by 1 
- a <- 1

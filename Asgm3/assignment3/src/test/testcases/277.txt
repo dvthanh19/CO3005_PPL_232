@@ -1,6 +1,0 @@
-    
-        func a()
-        begin
-            return 1 break
-        end
-        

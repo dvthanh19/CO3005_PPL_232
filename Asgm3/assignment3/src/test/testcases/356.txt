@@ -1,3 +1,0 @@
-
-            var fun <- -10 and not b
-        

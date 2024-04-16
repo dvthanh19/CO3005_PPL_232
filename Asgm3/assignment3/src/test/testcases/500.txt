@@ -1,5 +1,0 @@
-func main ()
-        begin
-            writeNumber(1)
-        end
-        

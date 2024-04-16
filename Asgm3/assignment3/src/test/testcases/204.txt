@@ -1,4 +1,0 @@
-
-            number a <- 1
-            func foo(number a, string b, bool c[99])
-		

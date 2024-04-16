@@ -1,7 +1,0 @@
- 
-            var PpL1 <- true and "true" or 1 
-            var PpL2 <- 1 and 2 and 3 or 4 or 4
-            var PpL3 <- 1 + 2 - 2 + 3 and 3
-            var PpL4 <- 1 / 2 * 3 % 4
-            var PpL5 <- 1 / 2 / 2 * 3 % 4
-        

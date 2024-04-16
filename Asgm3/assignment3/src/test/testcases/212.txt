@@ -1,6 +1,0 @@
-
-            number a <- 1
-            func foo() begin 
-                return "PPL"
-            end
-        

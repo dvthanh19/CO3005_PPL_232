@@ -1,3 +1,0 @@
-
-        func a() return 1 ## 12
-        

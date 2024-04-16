@@ -1,1 +1,1 @@
-'isn''t'
+bool  return string      var dynamic func for until by break continue if else

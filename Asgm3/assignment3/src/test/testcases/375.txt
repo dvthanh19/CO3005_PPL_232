@@ -1,0 +1,10 @@
+
+        func calculateAverage(number arr)
+            begin
+                var total <- 0
+                for i until len by 1
+                    total <- total + arr[i]
+                return total / len
+            end
+        func main() return calculateAverage([1, 2, 3, 4, 5])
+        

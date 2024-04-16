@@ -1,0 +1,4 @@
+ 
+            func main(number a[1,2,3]) ##12
+                break
+        

@@ -1,0 +1,7 @@
+
+                func main()
+                begin
+                number i <- 5
+                i <- false + 1
+                end
+        

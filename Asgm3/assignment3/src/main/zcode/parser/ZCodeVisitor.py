@@ -54,21 +54,6 @@ class ZCodeVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by ZCodeParser#paramList.
-    def visitParamList(self, ctx:ZCodeParser.ParamListContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by ZCodeParser#paramList_prime.
-    def visitParamList_prime(self, ctx:ZCodeParser.ParamList_primeContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by ZCodeParser#param.
-    def visitParam(self, ctx:ZCodeParser.ParamContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by ZCodeParser#body.
     def visitBody(self, ctx:ZCodeParser.BodyContext):
         return self.visitChildren(ctx)
@@ -209,6 +194,26 @@ class ZCodeVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by ZCodeParser#typ.
+    def visitTyp(self, ctx:ZCodeParser.TypContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by ZCodeParser#paramList.
+    def visitParamList(self, ctx:ZCodeParser.ParamListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by ZCodeParser#paramList_prime.
+    def visitParamList_prime(self, ctx:ZCodeParser.ParamList_primeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by ZCodeParser#param.
+    def visitParam(self, ctx:ZCodeParser.ParamContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by ZCodeParser#numList.
     def visitNumList(self, ctx:ZCodeParser.NumListContext):
         return self.visitChildren(ctx)
@@ -241,11 +246,6 @@ class ZCodeVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by ZCodeParser#stmtList_prime.
     def visitStmtList_prime(self, ctx:ZCodeParser.StmtList_primeContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by ZCodeParser#typ.
-    def visitTyp(self, ctx:ZCodeParser.TypContext):
         return self.visitChildren(ctx)
 
 

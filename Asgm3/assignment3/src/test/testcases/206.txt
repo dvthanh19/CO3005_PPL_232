@@ -1,0 +1,4 @@
+
+            number a <- 1
+            func foo(bool b, bool c[69 + 96])
+		

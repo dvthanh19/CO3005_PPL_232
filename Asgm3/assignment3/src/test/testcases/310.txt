@@ -1,0 +1,7 @@
+
+            number a
+            func foo(number a,string b)
+                begin
+                    c <- a
+                end
+        

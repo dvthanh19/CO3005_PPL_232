@@ -1,0 +1,13 @@
+
+            func foo(number foo[2])
+            begin
+                number avgScore <- 10*0.1 + 9.3*0.3 + 10*0.2 + 9.75*0.4
+                string a <- "Average_score: " + toSTring(avgScore)
+                if (a >= 9.5) print("A+")
+                else if (a >= 8.5) print("A")
+                elif (a >= 8) print("B+")
+                elif (a >= 7) print("B")
+                else print("C+")
+                return 1
+            end
+        

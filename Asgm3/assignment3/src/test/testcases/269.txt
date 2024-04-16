@@ -1,0 +1,20 @@
+
+        func main()
+            begin
+                begin
+                    begin
+                        x <- 1
+                    end
+                    
+                    begin
+                        return true
+                    end
+                    
+                    return false
+                end
+                
+                begin
+                end
+                return true
+            end
+        

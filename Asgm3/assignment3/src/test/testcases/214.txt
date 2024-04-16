@@ -1,0 +1,7 @@
+
+            func foo(number foo[2])
+            begin
+                a[1] <- c[foo(arr1) + foo(arr2), "PPL_PPL"] + 2 + ("I love " ... "PPL ") ... "very much"
+                return "PPL"
+            end
+        

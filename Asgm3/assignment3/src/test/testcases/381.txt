@@ -1,0 +1,8 @@
+ 
+            string a <- "hello"
+            number b <- 1
+            bool c <- true
+            number d
+            string e
+            bool f
+        

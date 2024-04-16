@@ -1,0 +1,9 @@
+
+        func main()
+                begin
+                    number a ## This comment is not allowed in ZCode.
+                    ###### Hello
+                    #### How are you
+                    ## Nice to meet you
+                end
+        

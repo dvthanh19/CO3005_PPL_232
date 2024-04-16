@@ -1,0 +1,7 @@
+
+            func main()
+                begin
+                    a <- b
+                    continue
+                end
+        

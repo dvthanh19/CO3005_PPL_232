@@ -146,7 +146,7 @@ class StaticChecker(BaseVisitor, Utils):
             for x in typeArrayZcode.eleType:
                 
                 if type(x) in [ArrayZcode, ArrayType]:
-                    print('setTypeArray 2')
+                    # print('setTypeArray 2')
                     return False
                 
                 if isinstance(x, Zcode):
@@ -233,7 +233,7 @@ class StaticChecker(BaseVisitor, Utils):
                     raise TypeMismatchInStatement(ast)
                 
                 if type(lhs) is ArrayType:
-                    if not self.setTypeArray(lhs, rhs):
+                    if not self.setTypeArray(self.normalizeArrayType(lhs), rhs):
                         raise TypeMismatchInStatement(ast)
             
             # RHS infer type for LHS 
@@ -398,7 +398,7 @@ class StaticChecker(BaseVisitor, Utils):
                 # print('CallExpr 5')
                 y = self.setType(x, y).typ
                 
-            elif isinstance(y, ArrayZcode) and (not self.setTypeArray(x, y)):
+            elif isinstance(y, ArrayZcode) and (not self.setTypeArray(self.normalizeArrayType(x), y)):
                 raise TypeMismatchInExpression(ast)
         
             
@@ -553,7 +553,7 @@ class StaticChecker(BaseVisitor, Utils):
                 raise TypeMismatchInStatement(ast)
             
             # lhs is arraytype
-            if not self.setTypeArray(lhs, rhs):
+            if not self.setTypeArray(self.normalizeArrayType(lhs), rhs):
                 # print('Assign 2.2')
                 raise TypeMismatchInStatement(ast)
             # print('Assign 2.3')
@@ -642,14 +642,9 @@ class StaticChecker(BaseVisitor, Utils):
         return StringType()
     
     
-    # ...... still
     # value: List[Expr]
     def visitArrayLiteral(self, ast, param):
         # print('visitArrayLiteral')
-        
-        # ... ???
-        # if ast not in self.ast:
-        #     self.ast.append(ast)
             
         typ = None
         # Get the 1st ele has primitive type
@@ -669,11 +664,9 @@ class StaticChecker(BaseVisitor, Utils):
                 if type(ele) in [VarZcode, FuncZcode]:
                     if not self.setType(NumberType(), ele):
                         # print('arrayLiteral 1.1')
-                        # raise TypeMismatchInExpression(self.ast[0])
                         raise TypeMismatchInExpression(ast)
                 
                 if (type(ele) in [ArrayZcode, ArrayType]) or (not self.compareType(typ, ele)):
-                    # raise TypeMismatchInExpression(self.ast[0])
                     # print('arrayLiteral 1.2')
                     raise TypeMismatchInExpression(ast)
                 
@@ -694,13 +687,11 @@ class StaticChecker(BaseVisitor, Utils):
                     ele = self.setType(typ, ele).typ
                     
                 elif type(ele) is ArrayZcode:
-                    if not self.setTypeArray(typ, ele):
-                        # raise TypeMismatchInExpression(self.ast[0])
+                    if not self.setTypeArray(self.normalizeArrayType(typ), ele):
                         # print('arrayLiteral 2.2')
                         raise TypeMismatchInExpression(ast)
                 
-                elif not self.compareType(typ, ele): 
-                    # raise TypeMismatchInExpression(self.ast[0])
+                elif not self.compareType(typ, ele):
                     # print('arrayLiteral 2.2')
                     raise TypeMismatchInExpression(ast)
             

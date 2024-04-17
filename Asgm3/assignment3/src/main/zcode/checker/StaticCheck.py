@@ -215,13 +215,10 @@ class StaticChecker(BaseVisitor, Utils):
             raise Redeclared(Variable(), ast.name.name)
         
         if ast.varInit is not None:
-            
-            
-            # number x <- x + 1 (RHS use undeclared x => Add LHS into param after done checking RHS)
             param[0][ast.name.name] = VarZcode(ast.varType)
             lhs = self.visit(ast.name, param)
             rhs = self.visit(ast.varInit, param)
-            
+            lhs = self.visit(ast.name, param)
             
             # Case 1: Both sides need infering
             if isinstance(lhs, Zcode) and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)):
@@ -237,8 +234,8 @@ class StaticChecker(BaseVisitor, Utils):
                         raise TypeMismatchInStatement(ast)
             
             # RHS infer type for LHS 
-            # elif isinstance(lhs, Zcode) and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]):
-            elif isinstance(lhs, Zcode): # Can remove the and ... because we have check for rhs in the first if 
+            # elif isinstance(lhs, Zcode) and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]): # Can remove the 'and ...' because we have check for rhs in the first if 
+            elif isinstance(lhs, Zcode):
                 lhs.typ = rhs
                 # lhs = self.visit(ast.name.name, param)
             
@@ -281,6 +278,7 @@ class StaticChecker(BaseVisitor, Utils):
         
         
         self.returnStmt = False
+        self.function = None
         
         # Redeclared function
         if method:
@@ -293,9 +291,6 @@ class StaticChecker(BaseVisitor, Utils):
                 and not (False in [type(paramType[i]) is type(method.param[i]) for i in range(len(paramType))])):
                     # print('FuncDecl 3.1')
                     raise Redeclared(Function(), ast.name.name)
-                
-        # if method and (method.body or not (ast.body and (paramType == method.param))):
-        #     raise Redeclared(Function(), ast.name.name)
         
         
         if ast.body is None:
@@ -309,22 +304,16 @@ class StaticChecker(BaseVisitor, Utils):
             else:
                 self.funcList[ast.name.name] = FuncZcode(paramType, None, True)
                 self.function = self.funcList[ast.name.name]
-                # print("function:    ", self.funcList[ast.name.name], self.function)
                 
-            # print('param list: ', [paramList] + param)    
-            self.visit(ast.body, [paramList] + param)
-            
+
+            self.visit(ast.body, ([paramList] + param) if (type(ast.body) is Block) else ([{}] + [paramList] + param))
             
             if not self.returnStmt:
                 self.function.typ = VoidType()
             
             if inferedType and (type(inferedType) is not type(self.function.typ)):
                 raise TypeMismatchInStatement(Return(None))
-            
-        
-        self.function = None
-        self.returnStmt = False
-     
+                 
     
     
     # ====================================================================================================================
@@ -412,8 +401,9 @@ class StaticChecker(BaseVisitor, Utils):
     def visitBlock(self, ast, param):
         # print('visitBlock')
         # print('blockparam: ', param)
+        block_param = [{}] + param
         for x in ast.stmt:
-            self.visit(x, ([{}] + param) if (type(x) is Block) else param)
+            self.visit(x, ([{}] + block_param) if (type(x) is Block) else block_param)
     
     
     # expr: Expr
@@ -433,7 +423,7 @@ class StaticChecker(BaseVisitor, Utils):
             raise TypeMismatchInStatement(ast)
         
         # ThenStmt
-        self.visit(ast.thenStmt, [{}] + param)
+        self.visit(ast.thenStmt, param)
         
         # ElifStmt
         for (elifExpr, elifStmt) in ast.elifStmt:
@@ -444,11 +434,11 @@ class StaticChecker(BaseVisitor, Utils):
             if type(cond) is not BoolType:
                 raise TypeMismatchInStatement(ast)
             
-            self.visit(elifStmt, [{}] + param)
+            self.visit(elifStmt, param)
         
         # ElseStmt
         if ast.elseStmt:
-            self.visit(ast.elseStmt, [{}] + param)
+            self.visit(ast.elseStmt, param)
     
     
     # name: Id
@@ -479,7 +469,7 @@ class StaticChecker(BaseVisitor, Utils):
         
         # body
         self.inLoop += 1    # 1 go in Loop
-        self.visit(ast.body, [{}] + param)
+        self.visit(ast.body, param)
         self.inLoop -= 1    # 1 go out Loop
     
     
@@ -536,6 +526,8 @@ class StaticChecker(BaseVisitor, Utils):
     # lhs: Expr
     # rhs: Expr
     def visitAssign(self, ast, param):
+        # ...
+        lhs = self.visit(ast.lhs, param)  # You can comment this line for checking
         rhs = self.visit(ast.rhs, param)
         lhs = self.visit(ast.lhs, param)
         
@@ -579,7 +571,6 @@ class StaticChecker(BaseVisitor, Utils):
     def visitCallStmt(self, ast, param):
         method = self.funcList.get(ast.name.name)
         
-        # ...
         # if (method is None) or (method and ast.name.name in param[0]):
         if not method:
             raise Undeclared(Function(), ast.name.name)
@@ -606,7 +597,6 @@ class StaticChecker(BaseVisitor, Utils):
         for i in range(len(args)):
             x = method.param[i] # x always have primitive types
             y = args[i]  
-            
             
             if (not (isinstance(y, Zcode) or isinstance(y, ArrayZcode))) \
             and (not self.compareType(x, y)):
@@ -661,8 +651,8 @@ class StaticChecker(BaseVisitor, Utils):
             for x in ast.value:
                 ele = self.visit(x, param)
                 
-                if type(ele) in [VarZcode, FuncZcode]:
-                    if not self.setType(NumberType(), ele):
+                if isinstance(ele, Zcode):
+                    if not self.setType(typ, ele):
                         # print('arrayLiteral 1.1')
                         raise TypeMismatchInExpression(ast)
                 

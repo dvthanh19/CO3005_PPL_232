@@ -1,0 +1,8 @@
+
+        func main()
+        begin
+            dynamic x
+            dynamic y
+            number a[2, 1] <- [[x], [y]]
+        end
+        

@@ -137,46 +137,58 @@ class StaticChecker(BaseVisitor, Utils):
         
     # Infer type for array
     def setTypeArray(self, typeArray:ArrayType, typeArrayZcode:ArrayZcode):
+        # print('setTypeArray')
         if typeArray.size[0] != len(typeArrayZcode.eleType):
             # print('setTypeArray 1')
             return False
 
+        # print('setTypeArray 1.1')
         # Base case: 1D array
         if len(typeArray.size) == 1:
+            # print('setTypeArray 2')
             for x in typeArrayZcode.eleType:
-                
                 if type(x) in [ArrayZcode, ArrayType]:
-                    # print('setTypeArray 2')
+                    # print('setTypeArray 2.1')
                     return False
                 
-                if isinstance(x, Zcode):
-                    x = self.setType(typeArray.eleType, x)
+                elif isinstance(x, Zcode):
+                    # print('setTypeArray 2.2')
+                    x = self.setType(typeArray.eleType, x).typ
+                    
+                    if not x:
+                        # print('setTypeArray 2.2.1')
+                        return False
+                         
         
         # >2D array
         else:
+            # print('setTypeArray 3: ', len(typeArrayZcode.eleType))
             for x in typeArrayZcode.eleType:
                 # number x[2][3][1] = [[y], [[6], [6], [6]]] --> y is number[3][1]
                 # base case
                 if isinstance(x, Zcode):
+                    # print('setTypeArray3.1')
                     x.typ = ArrayType(typeArray.size[1:], typeArray.eleType)
                 
-                if type(x) is ArrayZcode:
-                    self.setTypeArray(ArrayType(typeArray.size[1:], typeArray.eleType), x)
-
+                elif type(x) is ArrayZcode:
+                    # print('setTypeArray3.2')
+                    res = self.setTypeArray(ArrayType(typeArray.size[1:], typeArray.eleType), x)
+                    if not res:
+                        return False
         return True
     
                     
     def setType(self, typ, zObject):
         if type(zObject) is VarZcode:
-            zObject.typ = typ
-            return zObject
+            if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
+                zObject.typ = typ
+                return zObject
         
         if type(zObject) is FuncZcode:
-            if zObject.typ is None:
+            if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
                 zObject.typ = typ
                 return zObject
             
-        
         return False
     
     
@@ -373,21 +385,24 @@ class StaticChecker(BaseVisitor, Utils):
             # print('CallExpr 3')
             raise TypeMismatchInExpression(ast)
         
+        
         args = [self.visit(arg, param) for arg in ast.args]
         for i in range(len(args)):
             x = method.param[i] # x always have primitive types
             y = args[i]  
             
-            if (not (isinstance(y, Zcode) or isinstance(y, ArrayZcode))) \
-            and (type(y) is not type(x)):
-                # print('CallExpr 4')
-                raise TypeMismatchInExpression(ast)
+            
+            if (not (isinstance(y, Zcode) or isinstance(y, ArrayZcode))):
+                if (type(y) is not type(x)):
+                    # print('CallExpr 4')
+                    raise TypeMismatchInExpression(ast)
             
             if isinstance(y, Zcode):
                 # print('CallExpr 5')
                 y = self.setType(x, y).typ
                 
             elif isinstance(y, ArrayZcode) and (not self.setTypeArray(self.normalizeArrayType(x), y)):
+                # print('CallExpr 6')
                 raise TypeMismatchInExpression(ast)
         
             
@@ -411,7 +426,7 @@ class StaticChecker(BaseVisitor, Utils):
     # elifStmt: List[Tuple[Expr, Stmt]] # empty list if there is no elif statement
     # elseStmt: Stmt = None  # None if there is no else branch
     def visitIf(self, ast, param):
-        # print('visitIf')
+        print('visitIf')
         # If stmt
         cond = self.visit(ast.expr, param)
         if isinstance(cond, Zcode):

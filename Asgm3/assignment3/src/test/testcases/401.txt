@@ -1,7 +1,0 @@
-
-        func main() 
-        begin
-            dynamic x
-            dynamic a <- [[[x]], [[[1]]]]
-        end
-        

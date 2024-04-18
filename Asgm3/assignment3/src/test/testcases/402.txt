@@ -1,7 +1,0 @@
-
-        func main() 
-        begin
-            dynamic x 
-            x <- [1, x]
-        end
-        

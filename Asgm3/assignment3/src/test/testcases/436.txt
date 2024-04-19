@@ -1,0 +1,7 @@
+
+            number VoTien
+            var a <- VoTien
+            number b <- a
+
+            func main() return
+        

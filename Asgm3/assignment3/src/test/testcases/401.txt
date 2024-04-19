@@ -1,0 +1,6 @@
+
+            func main()
+            func main() begin
+                number main
+            end
+        

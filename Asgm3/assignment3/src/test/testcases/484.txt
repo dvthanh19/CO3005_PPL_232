@@ -1,0 +1,4 @@
+
+            dynamic x
+            number a <- [x]
+        

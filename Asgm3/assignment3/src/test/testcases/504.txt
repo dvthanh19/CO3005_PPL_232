@@ -1,0 +1,11 @@
+
+            func foo() begin
+                dynamic x
+                dynamic y
+                return [[1], [2]]
+                return [x, y]
+                x <- [1]
+                y <- x
+            end
+            func main() return 
+        

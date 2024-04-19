@@ -1,0 +1,6 @@
+
+            dynamic VoTien
+            var a <- VoTien
+
+            func main() return
+        

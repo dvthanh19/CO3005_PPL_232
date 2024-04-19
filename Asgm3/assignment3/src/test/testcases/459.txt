@@ -1,0 +1,9 @@
+
+            func foo() begin
+                number a
+                return 1
+                return a
+                return "!"
+            end
+            func main() return
+        

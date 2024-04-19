@@ -1,0 +1,10 @@
+
+            func foo()
+            func main() begin 
+                number a[1,3]
+                dynamic c
+                a <- foo()
+            end
+            func foo()
+                return [1,2,3]
+        

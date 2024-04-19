@@ -1,0 +1,12 @@
+
+            number a
+            func VoTien() return
+            func main()begin
+                number a
+                begin
+                    number a
+                    string a
+                end
+                
+            end
+        

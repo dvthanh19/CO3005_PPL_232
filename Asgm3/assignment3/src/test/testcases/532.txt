@@ -1,0 +1,10 @@
+
+            func main() begin 
+                number a
+                string b
+                dynamic c
+                c <- a
+                b <- c
+
+            end
+        

@@ -1,0 +1,9 @@
+
+            dynamic x
+            number a[3] <- [x, 1, 2]
+            func  main()
+            begin
+                x <- 1
+            end
+
+        

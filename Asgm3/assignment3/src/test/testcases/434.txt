@@ -1,0 +1,10 @@
+
+            func foo() begin
+                number a
+                dynamic b
+                b <- a
+                b <- 1
+            end
+
+            func main() return
+        

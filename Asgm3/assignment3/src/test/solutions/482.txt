@@ -1,0 +1,1 @@
+Type Cannot Be Inferred: VarDecl(Id(VoTien), None, var, Id(VoTien))

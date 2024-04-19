@@ -187,22 +187,22 @@ class StaticChecker(BaseVisitor, Utils):
     
                     
     def setType(self, typ, zObject):
-        print('setType')
+        # print('setType ', zObject)
         if type(zObject) is VarZcode:
-            print('setType 1')
+            # print('setType 1')
             if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
-                print('setType 1.1')
+                # print('setType 1.1')
                 zObject.typ = typ
                 return zObject
         
         if type(zObject) is FuncZcode:
-            print('setType 2')
+            # print('setType 2')
             if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
-                print('setType 2.1')
+                # print('setType 2.1')
                 zObject.typ = typ
                 return zObject
         
-        print('setType 3')
+        # print('setType 3')
         return False
     
     
@@ -282,9 +282,9 @@ class StaticChecker(BaseVisitor, Utils):
             param[0][ast.name.name] = VarZcode(ast.varType)
             # print('visitVarDecl - visitLeft1')
             lhs = self.visit(ast.name, param)
-            print('visitVarDecl - visitRight-------------------')
+            # print('visitVarDecl - visitRight-------------------')
             rhs = self.visit(ast.varInit, param)
-            print('visitVarDecl - visitLeft2-------------------')
+            # print('visitVarDecl - visitLeft2-------------------')
             lhs = self.visit(ast.name, param)
             
             # Case 1: Both sides need infering
@@ -717,9 +717,9 @@ class StaticChecker(BaseVisitor, Utils):
     
     # value: List[Expr]
     def visitArrayLiteral(self, ast, param):
-        print('visitArrayLiteral', ast.value)
+        # print('visitArrayLiteral', ast.value)
         minimumSize = self.getSizeArrayLit(ast)[:-1]
-        print('minimumSize', minimumSize)
+        # print('minimumSize', minimumSize)
         
         self.arrayLit.append(ast)
         typ = None
@@ -733,41 +733,50 @@ class StaticChecker(BaseVisitor, Utils):
                 
             
         # print('arrayLiteral  - check')
-        # print('longest: ',  longestArray.eleType)
         if typ is None: # There is no primitive type
-            print('arrayLiteral 1.0')
+            # print('arrayLiteral 1.0')
             vir_param = copy.deepcopy(param)
             for x in ast.value:
-                print(x)
+                # print('x = ', x)
+                # print('vir_param: ', vir_param, ' ===========================')
                 ele = self.visit(x, vir_param)
-                print(ele)
+                # print('ele = ', ele)
                 
                 
                 if type(ele) is VarZcode:
                     if (len(minimumSize) != 0):
-                        print('arrayLiteral 1.1.1')
-                        print(ele.typ)
-                        if ele.typ != None and ele.typ.size != minimumSize and type(ele.typ.eleType) is not NumberType:
+                        # print('arrayLiteral 1.1.1')
+                        # print(ele.typ)
+                        if (ele.typ != None) and (ele.typ.size != minimumSize) and (type(ele.typ.eleType) is not NumberType):
                             raise TypeMismatchInExpression(self.arrayLit[0])
                         else: ele.typ = ArrayType(minimumSize, VarZcode(NumberType()))
                         
                     elif (len(minimumSize) == 0):
-                        print('arrayLiteral 1.1.2')
+                        # print('arrayLiteral 1.1.2: ', ele)
+                        # ele.typ = NumberType()
+                        # print('ele.typ', ele.typ, '--------------------')
+                        # print('ele.typ', ele.typ, '--------------------')
+                        
                         if (not self.setType(NumberType(), ele)):
                             raise TypeMismatchInExpression(self.arrayLit[0])
+                        # print('type1: ', ele)
+                        # print('vir_param: ', vir_param)
+                        # ele = self.visit(x, vir_param)
+                        # print('type2: ', ele)
                         
                     
                 elif type(ele) is ArrayZcode:
-                    if self.setTypeArray(ArrayType(minimumSize, VarZcode(NumberType())), ele) <= 0:
-                        print('arrayLiteral 1.2')
+                    # print('arrayLiteral 1.2')
+                    if self.setTypeArray(ArrayType(minimumSize, NumberType()), ele) <= 0:
+                        # print('arrayLiteral 1.2.1')
                         raise TypeMismatchInExpression(self.arrayLit[0])
                 else:
-                    print('arrayLiteral 1.3')
+                    # print('arrayLiteral 1.3')
                     if (len(minimumSize) == 0):
                         if not self.compareType(ele, NumberType()):
                             raise TypeMismatchInExpression(self.arrayLit[0])
                     else:
-                        if not self.compareType(ele, ArrayType(minimumSize, VarZcode(NumberType()))):
+                        if not self.compareType(ele, ArrayType(minimumSize, NumberType())):
                             raise TypeMismatchInExpression(self.arrayLit[0])
                         
             self.arrayLit = self.arrayLit[:-1]
@@ -822,8 +831,11 @@ class StaticChecker(BaseVisitor, Utils):
         # print('visitId')
         for block in param:
             if ast.name in block:
-                if block[ast.name].typ:
+                if block[ast.name].typ is not None:
+                    # print('visitId - type  ', block[ast.name], block[ast.name].typ)
                     return block[ast.name].typ
+
+                # print('visitId - nontype')
                 return block[ast.name]
                
         raise Undeclared(Identifier(), ast.name)

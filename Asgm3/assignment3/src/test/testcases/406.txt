@@ -1,5 +1,7 @@
 
-            func foo(number a) return   
+            number a
+            var y <- [a, a]
+            number arr[2,2] <- [a, [y]]
         
             func main() return
         

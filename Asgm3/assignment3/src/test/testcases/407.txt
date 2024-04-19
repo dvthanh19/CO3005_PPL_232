@@ -1,5 +1,7 @@
 
-            func foo(number a) 
+            dynamic x
+            dynamic y
+            number arr[2,2,1] <- [[y,[x]], [x,x]]
         
             func main() return
         

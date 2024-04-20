@@ -1,10 +1,6 @@
 
-            func foo() begin
-                ## dynamic x
-                dynamic y
-                return [[y], [y]]
-                ## return x
-                ## return [[1], [2]]
-            end
-            func main() return 
+            number a
+            string a 
+            
+            func main() return
         

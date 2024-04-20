@@ -682,4 +682,3 @@ class CheckerSuite(unittest.TestCase):
         """
         expect = "Type Mismatch In Statement: Return(NumLit(1.0))"
         self.assertTrue(TestChecker.test(input, expect, 458))
-# Type Mismatch In Expression: ArrayLit(ArrayLit(ArrayLit(Id(x))), ArrayLit(ArrayLit(ArrayLit(NumLit(1.0)))))

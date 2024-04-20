@@ -1,8 +1,6 @@
 
-            dynamic x
-            number a
-            var y <- [a, a]
-            number arr[2,2] <- [x, [y]]
+            func foo(number a)
+            func foo(number a) return     
         
             func main() return
         

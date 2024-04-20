@@ -1,8 +1,4 @@
- 
-            func main()
-            begin
-                dynamic x
-                number a[2,2] <- [x,[x,x]]
-                
+
+            func main(number a) begin
             end
         

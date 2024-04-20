@@ -28,9 +28,10 @@ class VarZcode(Zcode):
         self.typ = typ    
 
 class ArrayZcode(Type):
-    def __init__(self, eleType):
+    def __init__(self, eleType, size=[]):
         # List[Type] (Type = {Zcode, ArrayZcode, String, Bool, Number, Arraytype})
-        self.eleType = eleType  
+        self.eleType = eleType
+        self.size = size
 
 
 
@@ -211,6 +212,43 @@ class StaticChecker(BaseVisitor, Utils):
                         break
         
         return a
+    
+    
+    def setTypeArrayZcode(self, baseZ, inferZ):
+        # print("base",baseZ.eleType, baseZ.size)
+        # print("inferZ",inferZ.eleType, inferZ.size)
+        if baseZ.size[0] != len(inferZ.eleType):
+            return False
+
+        if len(baseZ.size) == 0:
+            for x in inferZ.eleType:
+                if type(x) is ArrayZcode:
+                    # print("x",x.typ.eleType,x.typ.size)
+                    # print("baseZ",baseZ.eleType, baseZ.size)
+                    return False
+                
+                if isinstance(x, Zcode):
+                    if type(x.typ) is ArrayZcode:
+                        # print("x",x.typ.eleType,x.typ.size)
+                        # print("baseZ",baseZ.eleType, baseZ.size)
+                        return False
+                    x.typ = baseZ
+        else:
+            for x in inferZ.eleType:
+                if isinstance(x, Zcode):
+                    # if type(x.typ) is ArrayZcode: 
+                        # if len(x.typ.eleType) != baseZ.size[0]:
+                        #     print("x",x.typ.eleType, x.typ.size)
+                        #     print("baseZ",baseZ.eleType, baseZ.size)
+                        #     return False
+                    x.typ = ArrayZcode(baseZ.eleType, baseZ.size[1:])
+                elif isinstance(x, ArrayZcode):
+                    if not self.setTypeArrayZcode(ArrayZcode(baseZ.eleType, baseZ.size[1:]), x):
+                        # print("x",x.typ.eleType, x.typ.size)
+                        # print("baseZ",baseZ.eleType, baseZ.size)
+                        return False
+        return True
+    
     
     
     
@@ -425,7 +463,7 @@ class StaticChecker(BaseVisitor, Utils):
         # print('blockparam: ', param)
         block_param = [{}] + param
         for x in ast.stmt:
-            self.visit(x, ([{}] + block_param) if (type(x) is Block) else block_param)
+            self.visit(x, block_param)
     
     
     # expr: Expr
@@ -609,8 +647,11 @@ class StaticChecker(BaseVisitor, Utils):
             if isinstance(y, Zcode):
                 y = self.setType(x, y).typ
                 
-            elif isinstance(y, ArrayZcode) and (self.setTypeArray(self.normalizeArray(x), y) <= 0):
-                raise TypeMismatchInStatement(ast)
+            elif isinstance(y, ArrayZcode):
+                if type(x) is not ArrayType:
+                    raise TypeMismatchInStatement(ast)
+                if (self.setTypeArray(self.normalizeArray(x), y) <= 0):
+                    raise TypeMismatchInStatement(ast)
         
             
         return method.typ if method.typ else method
@@ -639,89 +680,100 @@ class StaticChecker(BaseVisitor, Utils):
         # print('visitArrayLiteral', ast.value)
         minimumSize = self.getStandardEleSize(ast)[:-1]
         # print('minimumSize', minimumSize)
+        largestArr = None
         
         self.arrayLit.append(ast)
-        typ = None
+        baseType = None
         
         # Get the 1st ele has primitive type
         for x in ast.value:
             ele = self.visit(x, param)
-            if not (isinstance(ele, Zcode) or isinstance(ele, ArrayZcode)):
-                typ = ele
-                break
+            
+            if (baseType is None) and not (isinstance(ele, Zcode) or isinstance(ele, ArrayZcode)):
+                baseType = ele
+            
+            elif isinstance(ele, ArrayZcode):
+                if largestArr is None:
+                    largestArr = ele
+                    
+                elif len(largestArr.size) < len(ele.size):
+                    largestArr = ele
+                    
+                elif len(largestArr.size) == len(ele.size):
+                    for i in range(len(ele.size)):
+                        if largestArr.size[i] < ele.size[i]:
+                            largestArr = ele
+            
+            elif isinstance(ele, Zcode) and (type(ele.typ) is ArrayZcode):
+                tmp = ele.typ
+                if largestArr is None:
+                    largestArr = tmp
+                    
+                elif len(largestArr.size) < len(tmp.size):
+                    largestArr = tmp
+                    
+                elif  len(largestArr.size) == len(tmp.size):
+                    for i in range(len(tmp.size)):
+                        if largestArr.size[i] < tmp.size[i]:
+                            largestArr = tmp
                 
             
         # print('arrayLiteral  - check')
-        if typ is None: # There is no primitive type
-            # print('arrayLiteral 1.0')
-            vir_param = copy.deepcopy(param)
+        if baseType is None: # There is no primitive type
+            res = []
             for x in ast.value:
-                # print('x = ', x)
-                # print('vir_param: ', vir_param, ' ===========================')
-                ele = self.visit(x, vir_param)
-                # print('ele = ', ele)
-                
-                if type(ele) is VarZcode:
-                    if (len(minimumSize) != 0):
-                        # print('arrayLiteral 1.1.1')
-                        # print(ele.typ)
-                        if (ele.typ != None) and (type(ele.typ) is ArrayType): # ...
-                            if (ele.typ.size != minimumSize) or (type(ele.typ.eleType) is not NumberType):# ...
-                                # print('arrayLiteral 1.1.1.1')
-                                raise TypeMismatchInExpression(self.arrayLit[0])
-                        else:
-                            # print('arrayLiteral 1.1.1.2')
-                            ele.typ = ArrayType(minimumSize, NumberType())
+                res.append(self.visit(x, param))
+            
+            if largestArr:
+                for x in ast.value:
+                    ele = self.visit(x, param)
+                    if isinstance(ele, Zcode):
+                        ele.typ = largestArr
                         
+                    elif isinstance(ele, ArrayZcode):
+                        if len(ele.size) > len(largestArr.size):
+                            raise TypeMismatchInExpression(ast)
                         
-                    elif (len(minimumSize) == 0):
-                        # print('arrayLiteral 1.1.2: ', ele)
-                        # ele.typ = NumberType()
-                        # print('ele.typ', ele.typ, '--------------------')
-                        # print('ele.typ', ele.typ, '--------------------')
-                        
-                        if (not self.setType(NumberType(), ele)):
-                            # print('arrayLiteral 1.1.2.1: ', ele)
-                            raise TypeMismatchInExpression(self.arrayLit[0])
-                        # print('type1: ', ele)
-                        # print('vir_param: ', vir_param)
-                        # ele = self.visit(x, vir_param)
-                        # print('type2: ', ele)
-                        
+                        for i in range(len(ele.size)):
+                            if ele.size[i] != largestArr.size[i]:
+                                raise TypeMismatchInExpression(ast)
+                            
+                        if len(ele.size) < len(largestArr.size):
+                            if not self.setTypeArrayZcode(largestArr, ele):
+                                raise TypeMismatchInExpression(ast)
+                            
+                for x in ast.value:
+                    ele = self.visit(x, param)
                     
-                elif type(ele) is ArrayZcode:
-                    # print('arrayLiteral 1.2')
-                    if self.setTypeArray(ArrayType(minimumSize, NumberType()), ele) <= 0:
-                        # print('arrayLiteral 1.2.1')
-                        raise TypeMismatchInExpression(self.arrayLit[0])
-                else:
-                    # print('arrayLiteral 1.3')
-                    if (len(minimumSize) == 0):
-                        if not self.compareType(ele, NumberType()):
-                            raise TypeMismatchInExpression(self.arrayLit[0])
-                    else:
-                        if not self.compareType(ele, ArrayType(minimumSize, NumberType())):
-                            raise TypeMismatchInExpression(self.arrayLit[0])
+                    if isinstance(ele, Zcode):
+                        if (type(ele.typ) is ArrayZcode) and (ele.typ.size != largestArr.size):
+                            raise TypeMismatchInExpression(ast)
                         
-            self.arrayLit = self.arrayLit[:-1]
-            return ArrayZcode([self.visit(x, param) for x in ast.value])
+                    if isinstance(ele, ArrayZcode) and (ele.size != largestArr.size):
+                        # print("long",largestArr.eleType, largestArr.size, ast)
+                        # print("m",ele.eleType[0].typ.size, ele.size)
+                        raise TypeMismatchInExpression(ast)
+
+                return ArrayZcode(res, [len(ast.value)] + largestArr.size)
+            
+            return ArrayZcode(res, [len(ast.value)]) 
         
-        elif type(typ) in [StringType, BoolType, NumberType]:
+        elif type(baseType) in [StringType, BoolType, NumberType]:
             # print('arrayLiteral 2.0')
             for x in ast.value:
                 ele = self.visit(x, param)
                 
                 if isinstance(ele, Zcode):
-                    if not self.setType(typ, ele):
+                    if not self.setType(baseType, ele):
                         # print('arrayLiteral 2.1')
                         raise TypeMismatchInExpression(ast)
                 
-                if (type(ele) in [ArrayZcode, ArrayType]) or (not self.compareType(typ, ele)):
+                if (type(ele) in [ArrayZcode, ArrayType]) or (not self.compareType(baseType, ele)):
                     # print('arrayLiteral 2.2')
                     raise TypeMismatchInExpression(ast)
             
             self.arrayLit = self.arrayLit[:-1]
-            return ArrayType([len(ast.value)], typ)
+            return ArrayType([len(ast.value)], baseType)
         
         else: # typ is arrayType
             # print('arrayLiteral 3.0')
@@ -735,26 +787,26 @@ class StaticChecker(BaseVisitor, Utils):
                     raise TypeMismatchInExpression(ast)
                 
                 if isinstance(ele, Zcode):
-                    ele = self.setType(typ, ele).typ
+                    ele = self.setType(baseType, ele).typ
                     
                 elif type(ele) is ArrayZcode:
-                    if self.setTypeArray(self.normalizeArray(typ), ele) <= 0:
+                    if self.setTypeArray(self.normalizeArray(baseType), ele) <= 0:
                         # print('arrayLiteral 3.2')
                         raise TypeMismatchInExpression(ast)
                 
-                elif not self.compareType(typ, ele):
+                elif not self.compareType(baseType, ele):
                     # print('arrayLiteral 3.2')
                     raise TypeMismatchInExpression(ast)
             
             self.arrayLit = self.arrayLit[:-1]
-            return ArrayType([len(ast.value)], typ)
+            return ArrayType([len(ast.value)], baseType)
 
     
     # name: str+
     def visitId(self, ast, param):
         for block in param:
             if ast.name in block:
-                if block[ast.name].typ is not None:
+                if (block[ast.name].typ is not None) and (type(block[ast.name].typ) is not ArrayZcode):
                     return block[ast.name].typ
 
                 return block[ast.name]

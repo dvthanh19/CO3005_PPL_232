@@ -1,9 +1,0 @@
-
-            func fun() begin
-                return 1
-                return "string"
-            end
-            func main() begin 
-               
-            end
-        

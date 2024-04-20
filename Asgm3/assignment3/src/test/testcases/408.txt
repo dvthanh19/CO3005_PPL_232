@@ -1,6 +1,0 @@
-
-            number a
-            string a 
-            
-            func main() return
-        

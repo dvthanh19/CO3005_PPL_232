@@ -1,1 +1,0 @@
-Type Mismatch In Statement: If((ArrayLit(Id(a)), Return()), [], None)

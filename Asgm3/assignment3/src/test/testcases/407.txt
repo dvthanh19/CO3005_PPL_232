@@ -1,5 +1,0 @@
-
-            func foo(number a) 
-        
-            func main() return
-        

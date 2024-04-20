@@ -1,8 +1,0 @@
-
-            func foo() return
-
-            func main()begin
-                foo()
-                foo(1)
-            end
-        

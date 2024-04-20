@@ -1,4 +1,0 @@
-
-            var VoTien <- VoTien
-            func main() return
-        

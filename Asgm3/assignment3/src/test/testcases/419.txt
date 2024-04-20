@@ -1,8 +1,0 @@
-
-            number a
-            func VoTien(number a, number VoTien, number c, string c)
-            begin
-            end
-            
-            func main() return
-        

@@ -1,9 +1,0 @@
-
-            func foo() begin
-                number a
-                return a
-                return 1
-            end
-
-            func main() return
-        

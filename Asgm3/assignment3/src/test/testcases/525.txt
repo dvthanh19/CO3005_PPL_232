@@ -1,8 +1,0 @@
-
-            func main() begin 
-                return 1
-                begin
-                    return "string"
-                end
-            end
-        

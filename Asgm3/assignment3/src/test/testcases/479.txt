@@ -1,5 +1,0 @@
-
-            dynamic VoTien
-            var x <- VoTien + VoTien * VoTien
-            number y <- VoTien
-        

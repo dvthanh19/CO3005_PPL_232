@@ -1,7 +1,0 @@
-
-            func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- a["1"]
-            end
-        

@@ -167,12 +167,12 @@ class StaticChecker(BaseVisitor, Utils):
     def setType(self, typ, zObject):
         # print('setType ', zObject)
         if type(zObject) is VarZcode:
-            if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
+            if (zObject.typ is None) or self.compareType(zObject.typ, typ):
                 zObject.typ = typ
                 return zObject
         
         if type(zObject) is FuncZcode:
-            if (zObject.typ is None) or (type(zObject.typ) is type(typ)):
+            if (zObject.typ is None) or self.compareType(zObject.typ, typ):
                 zObject.typ = typ
                 return zObject
         
@@ -305,9 +305,9 @@ class StaticChecker(BaseVisitor, Utils):
         if method:
             if method.body:
                 raise Redeclared(Function(), ast.name.name)
-            else:
+            else:   # not method.body
                 if not (ast.body and len(paramType) == len(method.param) \
-                and not (False in [type(paramType[i]) is type(method.param[i]) for i in range(len(paramType))])):
+                and not (False in [self.compareType(paramType[i], method.param[i]) for i in range(len(paramType))])):
                     raise Redeclared(Function(), ast.name.name)
         
         # Create function
@@ -400,13 +400,17 @@ class StaticChecker(BaseVisitor, Utils):
                     # print('CallExpr 4')
                     raise TypeMismatchInExpression(ast)
             
-            if isinstance(y, Zcode):
+            elif isinstance(y, Zcode):
                 # print('CallExpr 5')
                 y = self.setType(x, y).typ
                 
-            elif isinstance(y, ArrayZcode) and (self.setTypeArray(self.normalizeArray(x), y) <= 0):
-                # print('CallExpr 6')
-                raise TypeMismatchInExpression(ast)
+            elif isinstance(y, ArrayZcode):
+                if type(x) is not ArrayType:
+                    raise TypeMismatchInExpression(ast)
+                if (self.setTypeArray(self.normalizeArray(x), y) <= 0):
+                    # print('CallExpr 6')
+                    raise TypeMismatchInExpression(ast)
+                
         
             
         return method.typ if method.typ else method

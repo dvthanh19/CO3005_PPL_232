@@ -1,7 +1,0 @@
-
-            func a() return
-            func main() begin
-                number a
-                a()
-            end
-        

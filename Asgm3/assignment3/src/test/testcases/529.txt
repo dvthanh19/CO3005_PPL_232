@@ -1,8 +1,0 @@
-
-            func main() begin 
-                number a
-                dynamic b
-                dynamic c
-                b <- c
-            end
-        

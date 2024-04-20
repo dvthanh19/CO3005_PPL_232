@@ -1,3 +1,6 @@
+# Author:       Thanh Dinh
+# Updated at:   00:51, Sun, 21/04/3024
+
 from AST import *
 from Visitor import *
 from Utils import Utils
@@ -329,7 +332,7 @@ class StaticChecker(BaseVisitor, Utils):
         paramList = {}
         paramType = []
         for x in ast.param:
-            if x.name.name in paramList:
+            if (x.name.name in paramList) and (ast.body is not None):
                 raise Redeclared(Parameter(), x.name.name)
             
             paramList[x.name.name] = VarZcode(x.varType)

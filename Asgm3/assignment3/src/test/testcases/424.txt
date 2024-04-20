@@ -1,6 +1,11 @@
 
-            func foo(number a, string c) 
-            func foo(number a) return
-            
-            func main() return
+            dynamic a
+            func main()
+            begin
+                dynamic a
+                string a
+                number b[2,2] <- [a[2], [1,1]]
+                number c[2] <- a[2]
+                
+            end
         

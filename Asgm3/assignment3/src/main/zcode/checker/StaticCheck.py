@@ -340,7 +340,6 @@ class StaticChecker(BaseVisitor, Utils):
 
         
         self.returnStmt = False
-        self.function = None
         
         # Redeclared function
         if method:
@@ -371,6 +370,9 @@ class StaticChecker(BaseVisitor, Utils):
             
             if inferedType and (type(inferedType) is not type(self.function.typ)):
                 raise TypeMismatchInStatement(Return(None))
+            
+            
+        self.function = None
                  
     
     

@@ -1,0 +1,9 @@
+
+            func foo(number a) return
+
+            func main()begin
+                dynamic a
+                foo(a)
+                number c <- a
+            end
+        

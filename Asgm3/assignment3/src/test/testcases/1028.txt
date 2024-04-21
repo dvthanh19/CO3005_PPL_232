@@ -1,0 +1,6 @@
+
+            dynamic a
+            func main() begin
+                if ([a + 1] + 1) return
+            end
+        

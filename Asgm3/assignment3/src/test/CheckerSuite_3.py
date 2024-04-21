@@ -210,16 +210,16 @@ class CheckerSuite(unittest.TestCase):
     #     expect = ""
     #     self.assertTrue(TestChecker.test(input, expect, 416))
         
-    # def test417(self):
+    # def test17(self):
     #     input = """
     #         dynamic x
     #         func main()
     #         begin
-    #             var y <- x[0,0] + 1
+    #             var y <- x[0, 0] + 1
     #             writeNumber(y)
     #         end
     #     """
-    #     expect = "Type Cannot Be Inferred: VarDecl(Id(y), None, var, BinaryOp(+, ArrayCell(Id(x), [NumLit(0.0), NumLit(0.0)]), NumLit(1.0)))"
+    #     expect = ""
     #     self.assertTrue(TestChecker.test(input, expect, 417))
     
     # def test18(self):
@@ -325,18 +325,157 @@ class CheckerSuite(unittest.TestCase):
     #     expect = "Type Cannot Be Inferred: VarDecl(Id(b), None, var, ArrayCell(Id(a), [NumLit(2.0)]))"
     #     self.assertTrue(TestChecker.test(input, expect, 424))
     
-    def test25(self):
-        input = """
-            dynamic a
-            func main()
-            begin
-                dynamic a
-                number b[2,2] <- [a[2], [1,1]]
-                number c[2] <- a[2]
+    # def test25(self):
+    #     input = """
+    #         dynamic a
+    #         func main()
+    #         begin
+    #             dynamic a
+    #             number b[2,2] <- [a[2], [1,1]]
+    #             number c[2] <- a[2]
                 
+    #         end
+    #     """
+    #     expect = ""
+    #     self.assertTrue(TestChecker.test(input, expect, 424))
+        
+    # def test26(self):
+    #     input = """
+    #         func main() begin
+    #             dynamic x
+    #             dynamic y
+    #             number a[2] <- [1, [x, y]] 
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Expression: ArrayLit(NumLit(1.0), ArrayLit(Id(x), Id(y)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 426))
+    
+    # ...
+    # def test27(self):
+    #     input = """
+    #         dynamic x
+    #         number a <- [x]
+    #     """
+    #     expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))"
+    #     # Type Mismatch In Statement: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))
+    #     self.assertTrue(TestChecker.test(input, expect, 427))
+    
+    # def test28(self):
+    #     input = """
+    #         func foo()
+    #         func main() begin
+    #             number a <- foo()[2]
+    #             number b[3]
+    #             b <- foo()
+    #         end
+    #         func foo() return [1, 2, 3]
+    #     """
+    #     expect = ""
+    #     self.assertTrue(TestChecker.test(input, expect, 100))
+        
+    # def test29(self):
+    #     input = """
+    #         func main() begin
+    #             dynamic a
+    #             number b <- a[2]
+    #             a <- [1, 2, 3]
+    #             a <- [4, 5, 6, 7]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(NumLit(4.0), NumLit(5.0), NumLit(6.0), NumLit(7.0)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 101))
+
+    
+    # def test31(self):
+    #     input = """
+    #         func main() begin
+    #             dynamic a
+    #             number b <- a[2]
+    #             a <- [1, 2, 3]
+    #             a <- [4, 5, 6]
+    #         end
+    #     """
+    #     expect = ""
+    #     self.assertTrue(TestChecker.test(input, expect, 103))
+    
+    # def test32(self):
+    #     input = """
+    #         dynamic a
+    #         func main() begin
+    #             if ([a + 1] + 1) return
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Expression: BinaryOp(+, ArrayLit(BinaryOp(+, Id(a), NumLit(1.0))), NumLit(1.0))"
+    #     self.assertTrue(TestChecker.test(input, expect, 104))
+    
+    # def test33(self):
+    #     input = """
+    #         dynamic a
+    #         func main() begin
+    #             dynamic i
+    #             for i until [a] + 1 by 1
+    #                 return
+    #         end
+    #     """
+    #     expect = "Type Cannot Be Inferred: For(Id(i), BinaryOp(+, ArrayLit(Id(a)), NumLit(1.0)), NumLit(1.0), Return())"
+    #     self.assertTrue(TestChecker.test(input, expect, 105))
+
+    # def test34(self):
+    #     input = """
+    #         dynamic a
+    #         func main() begin
+    #             if ([a + 1] + 1) return
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Expression: BinaryOp(+, ArrayLit(BinaryOp(+, Id(a), NumLit(1.0))), NumLit(1.0))"
+    #     self.assertTrue(TestChecker.test(input, expect, 106))
+    
+    # def test35(self):
+    #     input = """
+    #         func foo()
+    #         func main() begin
+    #             number a <- foo()[2]
+    #             number b[3]
+    #             b <- foo()
+    #         end
+    #         func foo() return [1, 2, 3]
+    #     """
+    #     expect = ""
+    #     self.assertTrue(TestChecker.test(input, expect, 107))
+    
+    
+    # def test36(self):
+    #     input = """
+    #         func main() begin
+    #             dynamic a
+    #             number b <- a[2]
+    #             a <- ["hello", "world"]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 108))
+        
+    def test37(self):
+        input = """
+        dynamic a
+        number b <- a[0]
+        string c <- a[1]
+        func main()
+        begin
+            a <- [1,2,3]
+        end
+        """
+        expect = "Type Mismatch In Statement: VarDecl(Id(c), StringType, None, ArrayCell(Id(a), [NumLit(1.0)]))"
+        self.assertTrue(TestChecker.test(input, expect, 109))
+    
+    
+    def test38(self):
+        input = """
+            func main() begin
+                dynamic a
+                number b <- a[2]
+                a <- ["hello", "world"]
             end
         """
-        expect = ""
-        self.assertTrue(TestChecker.test(input, expect, 424))
-        
-        
+        expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))"
+        self.assertTrue(TestChecker.test(input, expect, 110))

@@ -1,0 +1,1 @@
+Type Cannot Be Inferred: AssignStmt(Id(a), Id(b))

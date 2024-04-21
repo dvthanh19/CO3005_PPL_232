@@ -1,0 +1,9 @@
+
+            func foo() begin
+                dynamic a
+                dynamic b
+                a <- b
+            end
+
+            func main() return
+        

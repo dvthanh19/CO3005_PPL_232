@@ -1,0 +1,5 @@
+
+            func foo(number a[1,2,3])
+            func foo(number a[1,2]) return
+            func main() return
+        

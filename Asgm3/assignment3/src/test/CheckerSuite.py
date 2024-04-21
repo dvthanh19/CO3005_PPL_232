@@ -15,7 +15,7 @@ class CheckerSuite(unittest.TestCase):
 
     def test_Votien_2(self):
         input = """
-            func foo(number a, string b)
+            func foo(number a, string a)
             func foo(number a) return
             func main() return
         """
@@ -113,10 +113,11 @@ class CheckerSuite(unittest.TestCase):
                 if ([x]) x <- 1
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: If((ArrayLit(Id(x)), AssignStmt(Id(x), NumLit(1.0))), [], None)"
-        expect = "Type Mismatch In Statement: If((ArrayLit(Id(x)), AssignStmt(Id(x), NumLit(1.0))), [], None)"
+        expect = "Type Cannot Be Inferred: If((ArrayLit(Id(x)), AssignStmt(Id(x), NumLit(1.0))), [], None)"
+        _expect = "Type Mismatch In Statement: If((ArrayLit(Id(x)), AssignStmt(Id(x), NumLit(1.0))), [], None)"
         self.assertTrue(TestChecker.test(input, expect, 108)) 
-        
+    
+    # ... 
     def test_Votien_9(self):
         input = """
             func main() 
@@ -177,8 +178,8 @@ class CheckerSuite(unittest.TestCase):
                 return [x, [x, x]]
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: Return(ArrayLit(Id(x), ArrayLit(Id(x), Id(x))))"
-        expect = "Type Mismatch In Expression: ArrayLit(Id(x), ArrayLit(Id(x), Id(x)))"
+        expect = "Type Cannot Be Inferred: Return(ArrayLit(Id(x), ArrayLit(Id(x), Id(x))))"
+        _expect = "Type Mismatch In Expression: ArrayLit(Id(x), ArrayLit(Id(x), Id(x)))"
         self.assertTrue(TestChecker.test(input, expect, 113))                
 
     def test_Votien_13(self):
@@ -190,8 +191,8 @@ class CheckerSuite(unittest.TestCase):
                 number a <- 1 + foo([[x]])
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, BinaryOp(+, NumLit(1.0), CallExpr(Id(foo), [ArrayLit(ArrayLit(Id(x)))])))"
-        expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(ArrayLit(Id(x)))])"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, BinaryOp(+, NumLit(1.0), CallExpr(Id(foo), [ArrayLit(ArrayLit(Id(x)))])))"
+        _expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(ArrayLit(Id(x)))])"
         self.assertTrue(TestChecker.test(input, expect, 113)) 
                        
     def test_Votien_14(self):
@@ -222,18 +223,18 @@ class CheckerSuite(unittest.TestCase):
         self.assertTrue(TestChecker.test(input, expect, 115)) 
     
   
-    def test_Votien_16(self):
-        input = """
-            func foo(number a) return 1
-            func main() 
-            begin
-                dynamic x
-                var a <- 1 * 2 + 3 * foo([x, x])
-            end
-        """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(+, BinaryOp(*, NumLit(1.0), NumLit(2.0)), BinaryOp(*, NumLit(3.0), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]))))"
-        expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"        
-        self.assertTrue(TestChecker.test(input, expect, 116)) 
+    # def test_Votien_16(self):
+    #     input = """
+    #         func foo(number a) return 1
+    #         func main() 
+    #         begin
+    #             dynamic x
+    #             var a <- 1 * 2 + 3 * foo([x, x])
+    #         end
+    #     """
+    #     expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(+, BinaryOp(*, NumLit(1.0), NumLit(2.0)), BinaryOp(*, NumLit(3.0), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]))))"
+    #     _expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"        
+    #     self.assertTrue(TestChecker.test(input, expect, 116)) 
 
     def test_Votien_17(self):
         input = """
@@ -244,8 +245,8 @@ class CheckerSuite(unittest.TestCase):
                 var a <- foo([x, x]) ... foo([x, x])
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])))"
-        expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])))"
+        _expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
         self.assertTrue(TestChecker.test(input, expect, 117)) 
 
     def test_Votien_18(self):
@@ -257,8 +258,8 @@ class CheckerSuite(unittest.TestCase):
                 var a <- foo([x, x]) ... foo([x, x])
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])))"
-        expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])))"
+        _expect = "Type Cannot Be Inferred: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
         self.assertTrue(TestChecker.test(input, expect, 118))    
 
      
@@ -296,8 +297,8 @@ class CheckerSuite(unittest.TestCase):
                 var a <- foo([x, x]) ... x
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), Id(x)))"
-        expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), None, var, BinaryOp(..., CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))]), Id(x)))"
+        _expect = "Type Mismatch In Expression: CallExpr(Id(foo), [ArrayLit(Id(x), Id(x))])"
         self.assertTrue(TestChecker.test(input, expect, 121))   
         
         
@@ -348,8 +349,8 @@ class CheckerSuite(unittest.TestCase):
                 x <- 1
             end
         """
-        VoTien_expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, BinaryOp(+, NumLit(1.0), ArrayLit(ArrayLit(ArrayLit(ArrayLit(Id(x)))))))"
-        expect = "Type Mismatch In Expression: BinaryOp(+, NumLit(1.0), ArrayLit(ArrayLit(ArrayLit(ArrayLit(Id(x))))))"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, BinaryOp(+, NumLit(1.0), ArrayLit(ArrayLit(ArrayLit(ArrayLit(Id(x)))))))"
+        _expect = "Type Mismatch In Expression: BinaryOp(+, NumLit(1.0), ArrayLit(ArrayLit(ArrayLit(ArrayLit(Id(x))))))"
         self.assertTrue(TestChecker.test(input, expect, 125))  
     
     

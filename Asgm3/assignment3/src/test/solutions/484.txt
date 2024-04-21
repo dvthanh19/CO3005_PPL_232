@@ -1,0 +1,1 @@
+Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))

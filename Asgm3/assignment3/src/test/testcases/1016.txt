@@ -1,0 +1,9 @@
+
+            func foo() return true
+
+            func foo1() begin
+                if (true) return 1 + foo()
+            end
+
+            func main() return
+        

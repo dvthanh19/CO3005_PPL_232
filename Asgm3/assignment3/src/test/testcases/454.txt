@@ -1,0 +1,20 @@
+
+            func main()begin
+                dynamic a
+                if (a) begin
+                    number a
+                end
+                elif (a) return
+                else begin
+                    number a
+                end
+                
+                if(true) begin
+                    number a
+                end
+                elif (1)
+                begin 
+                    number a
+                end
+            end
+        

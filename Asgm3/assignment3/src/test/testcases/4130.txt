@@ -1,0 +1,6 @@
+func a (number x) begin
+        end
+        number b <- a
+        func main () begin
+        end
+        

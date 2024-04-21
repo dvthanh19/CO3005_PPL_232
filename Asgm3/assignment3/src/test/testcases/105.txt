@@ -1,0 +1,10 @@
+
+            number a
+            func foo(number a)
+            begin
+                number a
+                if (true) number b
+                else number b
+            end
+            func main() return
+        

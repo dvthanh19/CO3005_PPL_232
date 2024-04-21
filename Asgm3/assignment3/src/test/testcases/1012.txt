@@ -1,0 +1,8 @@
+
+            func main() begin
+                dynamic a
+                dynamic b
+                dynamic c
+                for a until b >= 10 by c continue
+            end
+        

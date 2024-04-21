@@ -1,0 +1,11 @@
+
+            func foo(number a) return 1
+            func main() 
+            begin
+                dynamic x
+                dynamic y
+                var a <- [x, [[1,2]], [[y, 1]]]
+                x <- [[0,0]]
+                y <- x[0,0]
+            end
+        

@@ -1,0 +1,8 @@
+
+            func foo(number a[2,2]) return
+            func main() begin
+                dynamic x
+                foo([x])
+                x <- [1]
+            end
+        

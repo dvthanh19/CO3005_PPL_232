@@ -1,0 +1,11 @@
+
+            func foo(number a)
+
+            func main() begin
+                dynamic a
+                number x[6]
+                for a until foo(1) >= 10 by x[5] continue
+            end
+
+            func foo(number b) return 1
+        

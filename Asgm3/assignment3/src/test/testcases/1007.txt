@@ -1,0 +1,11 @@
+
+            number a
+            func f(string a) begin
+                number a <- a + a
+                string x <- x ... "hello"
+                return x
+            end
+            func main() begin
+                string a <- f(a)
+            end
+        

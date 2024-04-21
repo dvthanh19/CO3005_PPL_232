@@ -1,0 +1,6 @@
+
+            func main() begin
+                string a
+                if (true) number a <- 1
+            end
+        

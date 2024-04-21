@@ -1,0 +1,10 @@
+
+            func fun() begin
+                return 
+                return
+                return 1
+            end
+            func main() begin 
+               
+            end
+        

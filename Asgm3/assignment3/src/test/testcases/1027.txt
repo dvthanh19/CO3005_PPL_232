@@ -1,0 +1,8 @@
+
+            dynamic a
+            func main() begin
+                dynamic i
+                for i until [a] + 1 by 1
+                    return
+            end
+        

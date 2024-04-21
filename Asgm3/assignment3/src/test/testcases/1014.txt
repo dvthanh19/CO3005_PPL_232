@@ -1,0 +1,7 @@
+
+            dynamic a
+            dynamic b
+            func main() begin
+                number x[2] <- [a,b]
+            end
+        

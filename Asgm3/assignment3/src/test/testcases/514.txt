@@ -1,0 +1,10 @@
+
+            func fun() begin
+                number a[2,2]
+                return [[1,2], [3,4]]
+                return a
+            end
+            func main() begin 
+               
+            end
+        

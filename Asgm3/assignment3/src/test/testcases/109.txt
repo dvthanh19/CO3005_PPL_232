@@ -1,0 +1,9 @@
+
+            func main() 
+            begin
+                dynamic x
+                dynamic y
+                for x until y[1] by 1
+                    return
+            end
+        

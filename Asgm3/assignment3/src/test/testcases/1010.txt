@@ -1,0 +1,5 @@
+
+            func main() begin
+                var x <- [1, x]
+            end
+        

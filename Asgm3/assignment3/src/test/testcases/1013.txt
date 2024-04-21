@@ -1,0 +1,15 @@
+
+            dynamic a
+            dynamic b
+            dynamic c
+
+            func foo(number d)
+
+            number x[2, 3] <- c
+
+            func main() begin
+                c[1] <- [a, b, foo(1)]
+            end
+
+            func foo(number d) return 1 + 1
+        

@@ -1,0 +1,12 @@
+
+            func foo() begin
+                dynamic a
+                dynamic b
+                dynamic c
+                for a until b by c return
+                a <- 1
+                b <- true
+                c <- 1
+            end
+            func main() return
+        

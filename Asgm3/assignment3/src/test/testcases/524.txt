@@ -1,0 +1,11 @@
+
+            func fun1() return [1,2]
+            func fun2() return [3,4]
+            func fun3()
+            
+            func main() begin 
+               return fun1()
+               return fun2()
+               return fun3()
+            end 
+        

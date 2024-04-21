@@ -1,0 +1,7 @@
+
+            func main() 
+            begin
+                dynamic x
+                if ([x]) x <- 1
+            end
+        

@@ -1,0 +1,24 @@
+
+            number a
+            func foo(number a)
+            begin
+                number a
+                if (true)
+                begin
+                    number a
+                end
+                
+                begin
+                    number a
+                end
+                
+                for a until true by 1
+                begin
+                    number a
+                end
+            end
+            func main() 
+            begin
+                number a
+            end
+        

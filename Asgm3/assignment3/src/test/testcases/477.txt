@@ -1,0 +1,8 @@
+
+            func VoTien()
+            func main() begin
+                number VoTien_ <- VoTien()
+            end
+            func VoTien() begin
+            end
+        

@@ -1,0 +1,9 @@
+
+            func foo()
+            func main() begin
+                number a <- foo()[2]
+                number b[3]
+                b <- foo()
+            end
+            func foo() return [1, 2, 3]
+        

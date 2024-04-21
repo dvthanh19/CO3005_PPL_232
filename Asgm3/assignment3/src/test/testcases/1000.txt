@@ -1,0 +1,13 @@
+
+                dynamic a
+                dynamic b
+                dynamic c
+                dynamic d
+                dynamic e
+                dynamic f
+                dynamic g
+                dynamic h
+                func main() begin
+                    number x[2, 2, 2] <- [[[a, b], [c, d]], [[e, f], [g, h]]]
+                end
+            

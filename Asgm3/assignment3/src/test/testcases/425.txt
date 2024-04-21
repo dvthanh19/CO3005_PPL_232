@@ -1,0 +1,7 @@
+
+            number a <- a
+            func main() begin
+                number b <- a
+                number c <- e
+            end
+        

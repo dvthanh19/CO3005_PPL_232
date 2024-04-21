@@ -1,0 +1,11 @@
+
+            func a() return 1
+            func main() begin
+                number a
+                begin 
+                    number d
+                end
+                number b <- a
+                number c <- d
+            end
+        

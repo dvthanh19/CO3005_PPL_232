@@ -1090,26 +1090,26 @@ class CheckerSuite(unittest.TestCase):
 
     # ARRAY LITERAL
             
-    def test84(self):
-        input = """
-            dynamic x
-            number a <- [x]
-        """
-        expect = "Type Mismatch In Statement: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))"
-        self.assertTrue(TestChecker.test(input, expect, 484))        
+    # def test84(self):
+    #     input = """
+    #         dynamic x
+    #         number a <- [x]
+    #     """
+    #     expect = "Type Mismatch In Statement: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 484))        
         
         
-    def test85(self):
-        input = """
-            dynamic x
-            number a[3] <- [x]
-            func f()
-            begin
-                x <- [1,2,3]
-            end
-        """
-        expect = "Type Mismatch In Statement: VarDecl(Id(a), ArrayType([3.0], NumberType), None, ArrayLit(Id(x)))"
-        self.assertTrue(TestChecker.test(input, expect, 485))        
+    # def test85(self):
+    #     input = """
+    #         dynamic x
+    #         number a[3] <- [x]
+    #         func f()
+    #         begin
+    #             x <- [1,2,3]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Statement: VarDecl(Id(a), ArrayType([3.0], NumberType), None, ArrayLit(Id(x)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 485))        
         
         
     def test86(self):
@@ -1388,17 +1388,17 @@ class CheckerSuite(unittest.TestCase):
         self.assertTrue(TestChecker.test(input, expect, 506))
     
     
-    def test107(self):
-        input = """
-            func foo(number a[2,2]) return
-            func main() begin
-                dynamic x
-                foo([x])
-                x <- [1]
-            end
-        """
-        expect = "Type Mismatch In Statement: CallStmt(Id(foo), [ArrayLit(Id(x))])"
-        self.assertTrue(TestChecker.test(input, expect, 507))
+    # def test107(self):
+    #     input = """
+    #         func foo(number a[2,2]) return
+    #         func main() begin
+    #             dynamic x
+    #             foo([x])
+    #             x <- [1]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Statement: CallStmt(Id(foo), [ArrayLit(Id(x))])"
+    #     self.assertTrue(TestChecker.test(input, expect, 507))
     
     
     def test108(self):

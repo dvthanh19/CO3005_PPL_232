@@ -1,0 +1,6 @@
+
+            func main() begin
+                dynamic a
+                number b[2,1] <- [a[0],1]
+            end
+        

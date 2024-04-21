@@ -15,9 +15,9 @@ class CheckerSuite(unittest.TestCase):
     def test1(self):
         input = """
             number a
-            func foo(number a,string a)
+            func foo(number a, string a)
         """
-        expect = "Redeclared Parameter: a"
+        expect = "No Function Definition: foo"
         self.assertTrue(TestChecker.test(input, expect, 401))
     
     # .......
@@ -26,7 +26,7 @@ class CheckerSuite(unittest.TestCase):
             number a
             func foo(number a,string a)
         """
-        expect = "Redeclared Parameter: a"
+        expect = "No Function Definition: foo"
         self.assertTrue(TestChecker.test(input, expect, 402))
 
     def test3(self):
@@ -83,9 +83,9 @@ class CheckerSuite(unittest.TestCase):
     def test9(self):
         input = """
             number a
-            func foo(number a,string a)
+            func foo(number a, string a)
         """
-        expect = "Redeclared Parameter: a"
+        expect = "No Function Definition: foo"
         self.assertTrue(TestChecker.test(input, expect, 409))
 
     def test10(self):

@@ -1,1 +1,1 @@
-Type Mismatch In Expression: ArrayCell(Id(a), [NumLit(1.0), NumLit(2.0), NumLit(3.0)])
+Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(NumLit(4.0), NumLit(5.0), NumLit(6.0), NumLit(7.0)))

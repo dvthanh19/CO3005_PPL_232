@@ -1,3 +1,5 @@
-
-            number VoTien
+number a
+        var a <- 0
+        func main() begin
+        end
         

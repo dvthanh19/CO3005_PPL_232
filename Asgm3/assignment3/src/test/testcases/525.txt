@@ -1,8 +1,9 @@
 
+            func fun1() return 1
+            func fun2() return
+            func fun3()
+            
             func main() begin 
-                return 1
-                begin
-                    return "string"
-                end
+               return fun3()
             end
         

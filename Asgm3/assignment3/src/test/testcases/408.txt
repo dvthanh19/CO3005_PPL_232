@@ -1,6 +1,4 @@
-
-            number a
-            string a 
-            
-            func main() return
+number a <- -"x"
+        func main () begin
+        end
         

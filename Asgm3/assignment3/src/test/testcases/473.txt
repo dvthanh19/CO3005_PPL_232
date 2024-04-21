@@ -1,7 +1,7 @@
 
             func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- a["1"]
+                dynamic a
+                number b <- a[2]
+                a <- ["hello", "world"]
             end
         

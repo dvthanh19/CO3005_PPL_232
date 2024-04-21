@@ -1,8 +1,8 @@
 
             func fun() begin
-                number a[3,2]
-                return [[1,2], [3,4]]
-                return a
+                return 
+                return
+                return 1
             end
             func main() begin 
                

@@ -2,7 +2,7 @@ import unittest
 from TestUtils import TestChecker
 from AST import *
 
-class CheckerSuite(unittest.TestCase):
+class CheckSuite(unittest.TestCase):
 
     def test0(self):
         input = """
@@ -423,7 +423,7 @@ class CheckerSuite(unittest.TestCase):
                 x <- [1]
             end
         """
-        expect = "Type Mismatch In Statement: CallStmt(Id(foo), [ArrayLit(Id(x))])"
+        expect = "Type Cannot Be Inferred: CallStmt(Id(foo), [ArrayLit(Id(x))])"
         self.assertTrue(TestChecker.test(input, expect, 436))
     
     def test37(self):
@@ -1013,7 +1013,7 @@ class CheckerSuite(unittest.TestCase):
             dynamic x
             number a <- [x]
         """
-        expect = "Type Mismatch In Statement: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), NumberType, None, ArrayLit(Id(x)))"
         self.assertTrue(TestChecker.test(input, expect, 484))        
         
     def test85(self):
@@ -1025,7 +1025,7 @@ class CheckerSuite(unittest.TestCase):
                 x <- [1,2,3]
             end
         """
-        expect = "Type Mismatch In Statement: VarDecl(Id(a), ArrayType([3.0], NumberType), None, ArrayLit(Id(x)))"
+        expect = "Type Cannot Be Inferred: VarDecl(Id(a), ArrayType([3.0], NumberType), None, ArrayLit(Id(x)))"
         self.assertTrue(TestChecker.test(input, expect, 485))        
         
     def test86(self):

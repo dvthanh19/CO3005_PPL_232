@@ -1,11 +1,15 @@
 
-            func fun1() return [1,2]
-            func fun2() return [3,4]
-            func fun3()
+            func fun() begin
+                return [1,2]
+                return [3,4]
+            end
+            
+            func fun1() begin
+                return [[1,2], [3,4]]
+                return [[1,5], [3,4]]
+            end
             
             func main() begin 
-               return fun1()
-               return fun2()
-               return fun3()
-            end 
+               
+            end
         

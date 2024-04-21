@@ -1,3 +1,4 @@
-
-            func main() return 1   
+func foo()
+        func main() begin
+        end
         

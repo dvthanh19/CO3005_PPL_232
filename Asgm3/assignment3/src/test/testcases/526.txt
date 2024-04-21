@@ -1,7 +1,10 @@
 
+            func fun1() return 1
+            func fun2() return
+            func fun3()
+            
             func main() begin 
-                dynamic i
-                return 1
-                return i
+               return fun1()
             end
+            func fun3() return 1   
         

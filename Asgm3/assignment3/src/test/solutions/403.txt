@@ -1,1 +1,1 @@
-No Entry Point
+No Function Definition: foo

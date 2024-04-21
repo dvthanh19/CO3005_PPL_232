@@ -1,1 +1,1 @@
-Type Mismatch In Statement: Return(StringLit(string))
+No Function Definition: fun3

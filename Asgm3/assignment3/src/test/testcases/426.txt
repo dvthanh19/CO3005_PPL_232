@@ -1,7 +1,7 @@
 
-            func a()
+            number a <- a
             func main() begin
-                a()
+                number b <- a
+                number c <- e
             end
-            func a() return
         

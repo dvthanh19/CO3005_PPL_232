@@ -1,7 +1,8 @@
 
+            func foo(string x) return ["hello", "hi"]
+
             func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- b[1]
+                dynamic a
+                string b <- a ... foo(a)[1]
             end
         

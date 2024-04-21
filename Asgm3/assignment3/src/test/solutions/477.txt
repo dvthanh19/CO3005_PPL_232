@@ -1,1 +1,1 @@
-Type Mismatch In Statement: Return()
+Type Cannot Be Inferred: Return(Id(a))

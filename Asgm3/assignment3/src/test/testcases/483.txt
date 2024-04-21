@@ -1,3 +1,9 @@
 
-            func main() return main()
+            func main() begin
+                string a[2]
+                dynamic b
+                var x <- a[-----b % 3]
+                dynamic c <- x == x
+                var y <- [not c and true or not false and (1 > 2), (x ... x) == x]
+            end
         

@@ -1,8 +1,10 @@
 
             func foo() begin
                 number a
-                a <- 1
-                a <- true
+                dynamic b
+                b <- a
+                b <- 1
             end
+
             func main() return
         

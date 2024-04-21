@@ -1,6 +1,4 @@
-
-            func foo(number a)
-            func foo(number a) return     
-        
-            func main() return
+number a <- "x"
+        func main () begin
+        end
         

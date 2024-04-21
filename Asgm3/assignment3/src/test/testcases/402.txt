@@ -1,4 +1,6 @@
-
-            func main(number a) begin
-            end
+number a
+        func main() begin
+        end
+        func readNumber() begin
+        end
         

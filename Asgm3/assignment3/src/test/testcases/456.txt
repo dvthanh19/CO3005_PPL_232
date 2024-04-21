@@ -1,6 +1,6 @@
 
             func foo() begin
-                dynamic a <- true
+                var a <- true
                 dynamic b
                 dynamic c
                 for a until b by c return

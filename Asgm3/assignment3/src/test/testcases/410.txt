@@ -1,6 +1,6 @@
 
-            func foo() return
-            func foo()
+            number a
+            string a 
             
             func main() return
         

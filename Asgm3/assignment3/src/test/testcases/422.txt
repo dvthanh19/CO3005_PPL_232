@@ -1,6 +1,12 @@
 
-            func foo(number a) 
-            func foo(string a) return
+            number a
+            func VoTien(number a, number VoTien, number c)
+            begin
+                begin
+                    number a
+                end
+                number a
+            end
             
             func main() return
         

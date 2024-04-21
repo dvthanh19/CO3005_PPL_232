@@ -1,4 +1,8 @@
 
-            dynamic VoTien
-            var x <- VoTien > VoTien ... VoTien < VoTien
+            func foo() begin
+                number a
+                a <- 1
+                a <- true
+            end
+            func main() return
         

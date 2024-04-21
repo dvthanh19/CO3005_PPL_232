@@ -1,1 +1,1 @@
-No Function Definition: a
+Type Mismatch In Expression: UnaryOp(not, StringLit(a))

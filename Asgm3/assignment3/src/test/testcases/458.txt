@@ -2,7 +2,7 @@
             func foo() begin
                 dynamic a 
                 dynamic b
-                dynamic c <- "1"
+                var c <- "1"
                 for a until b by c return
             end
             func main() return

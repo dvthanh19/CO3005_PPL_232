@@ -1,1 +1,1 @@
-Type Cannot Be Inferred: VarDecl(Id(VoTien), None, var, Id(VoTien))
+Type Mismatch In Expression: BinaryOp(and, BinaryOp(or, BinaryOp(and, UnaryOp(not, Id(c)), BooleanLit(True)), UnaryOp(not, BooleanLit(False))), NumLit(1.0))

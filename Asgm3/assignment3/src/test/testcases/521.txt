@@ -1,9 +1,10 @@
 
-            func fun1() return 1
-            func fun2() return
-            func fun3()
-            
+            func fun() begin
+                string a[2,2, 3]
+                return a
+                return [["1","2"], ["3","4"]]
+            end
             func main() begin 
-               return fun3()
+               
             end
         

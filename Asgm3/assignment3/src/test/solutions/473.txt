@@ -1,1 +1,1 @@
-Type Mismatch In Expression: ArrayCell(Id(a), [StringLit(1)])
+Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))

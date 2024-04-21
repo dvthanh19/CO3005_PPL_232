@@ -1,6 +1,3 @@
 
-            func main()
-            func main() begin
-                number main
-            end
+            func main() return
         

@@ -1,8 +1,11 @@
 
-            func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- a[1,3]
-                c <- 1
-            end
+        func foo()
+        begin
+            return
+        end
+        
+        func main()
+        begin
+            bool a <- foo()
+        end
         

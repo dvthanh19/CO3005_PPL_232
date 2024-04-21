@@ -1,1 +1,1 @@
-Type Mismatch In Statement: Return(StringLit(string))
+Type Cannot Be Inferred: Return(CallExpr(Id(fun3), []))

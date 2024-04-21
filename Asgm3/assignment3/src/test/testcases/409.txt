@@ -1,6 +1,4 @@
-
-            func a()
-            number a
-            
-            func main() return
+number a <- not "a"
+        func main () begin
+        end
         

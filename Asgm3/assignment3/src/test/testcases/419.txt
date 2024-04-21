@@ -1,8 +1,12 @@
 
             number a
-            func VoTien(number a, number VoTien, number c, string c)
-            begin
+            func VoTien() return
+            func main()begin
+                number a
+                begin
+                    number a
+                    string a
+                end
+                
             end
-            
-            func main() return
         

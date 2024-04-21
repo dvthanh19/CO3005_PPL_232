@@ -1,8 +1,10 @@
 
+            func foo(string a, bool b) return [[1, 2], [1, 2]]
             func main() begin
-                number a[1,2]
-                dynamic b
-                var c <- a[b, 1]
-                b <- 1
+                dynamic a
+                dynamic b   
+                number x <- 1 + foo(a, b)[1, 2]
+                a <- "hello"
+                b <- not (a == "hi")
             end
         

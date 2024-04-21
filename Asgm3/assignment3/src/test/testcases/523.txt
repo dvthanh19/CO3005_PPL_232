@@ -1,10 +1,10 @@
 
-            func fun1() return 1
-            func fun2() return
-            func fun3()
-            
-            func main() begin 
-               number a <- fun3()
+            func fun() begin
+                string a[1,1,1,1,1]
+                return a
+                return [[[[["1"]]]]]
             end
-            func fun3() return "1"  
+            func main() begin 
+               
+            end
         

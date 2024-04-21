@@ -1,1 +1,1 @@
-Type Mismatch In Expression: BinaryOp(..., BinaryOp(>, Id(VoTien), Id(VoTien)), BinaryOp(<, Id(VoTien), Id(VoTien)))
+Type Mismatch In Statement: AssignStmt(Id(a), BooleanLit(True))

@@ -1,11 +1,5 @@
 
-            func areDivisors(number num1, number num2)
-            return ((num1 % num2 = 0) or (num2 % num1 = 0))
-            func main()
-            begin
-            var num1 <- readNumber()
-            var num2 <- readNumber()
-            if (areDivisors(num1, num2)) writeString("Yes")
-            else writeString("No")
+            func main() begin
+                var x <- - x + 1 and true or false
             end
         

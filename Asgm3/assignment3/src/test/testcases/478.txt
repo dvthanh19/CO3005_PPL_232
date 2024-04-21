@@ -1,4 +1,7 @@
 
-            dynamic VoTien
-            var x <- VoTien and (VoTien > VoTien)
+            func main() begin
+                dynamic x
+                var y <- not not not x
+                x <- y
+            end
         

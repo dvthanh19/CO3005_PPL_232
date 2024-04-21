@@ -1,5 +1,5 @@
 # Author:       Thanh Dinh
-# Updated at:   12:16, Sun, 21/04/3024
+# Updated at:   19:50, Sun, 21/04/3024
 
 from AST import *
 from Visitor import *
@@ -475,7 +475,7 @@ class StaticChecker(BaseVisitor, Utils):
         
         idx = self.visit(ast.name, param)
         
-        if (type(idx) in [ArrayType, ArrayZcode]) or ((isinstance(idx, Zcode)) and idx.typ and (type(idx.typ) is ArrayZcode)):
+        if (type(idx) is ArrayZcode) or ((isinstance(idx, Zcode)) and idx.typ and (type(idx.typ) is ArrayZcode)):
             raise TypeCannotBeInferred(self.curStmt)
         
         if isinstance(idx, Zcode):
@@ -485,7 +485,7 @@ class StaticChecker(BaseVisitor, Utils):
         
         # condExpr
         cond = self.visit(ast.condExpr, param)
-        if (type(cond) in [ArrayType, ArrayZcode]) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
+        if (type(cond) is ArrayZcode) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
             raise TypeCannotBeInferred(ast)
         
         if isinstance(cond, Zcode):
@@ -496,7 +496,7 @@ class StaticChecker(BaseVisitor, Utils):
         # upExpr
         updExpr = self.visit(ast.updExpr, param)
         
-        if (type(updExpr) in [ArrayType, ArrayZcode]) or ((isinstance(updExpr, Zcode)) and updExpr.typ and (type(updExpr.typ) is ArrayZcode)):
+        if (type(updExpr) is ArrayZcode) or ((isinstance(updExpr, Zcode)) and updExpr.typ and (type(updExpr.typ) is ArrayZcode)):
             raise TypeCannotBeInferred(self.curStmt)
         
         if isinstance(updExpr, Zcode):
@@ -539,11 +539,11 @@ class StaticChecker(BaseVisitor, Utils):
         elif (not (isinstance(funcType, Zcode) or isinstance(funcType, ArrayZcode)))\
         and (isinstance(retType, ArrayZcode)):
             if type(funcType) in [NumberType, StringType, BoolType]:
-                raise TypeCannotBeInferred(ast)
+                raise TypeCannotBeInferred(self.curStmt)
             
             # funcType is arraytype
             if not self.setTypeArray(self.normalizeArray(funcType), retType):
-                raise TypeMismatchInStatement(ast)
+                raise TypeCannotBeInferred(self.curStmt)
 
         # Case 3: funcType need infering from retType
         elif isinstance(funcType, Zcode):
@@ -576,7 +576,7 @@ class StaticChecker(BaseVisitor, Utils):
         if (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode)) \
         and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)):
             # print('assign 1')
-            raise TypeCannotBeInferred(ast)
+            raise TypeCannotBeInferred(self.curStmt)
         
         # Case 2: rhs is ArrayZcode and can be infered by lhs
         elif not (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode))\

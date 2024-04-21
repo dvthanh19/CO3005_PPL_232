@@ -1,9 +1,11 @@
 
-            func a() begin
-                a()
-            end
-            func main() begin
-                a()
-                b()
-            end
+        func main () begin
+        var i <- 0
+        dynamic x
+        for i until i > 3 by 1
+        begin
+            x <- 5
+        end
+        x <- x ... "a"
+        end
         

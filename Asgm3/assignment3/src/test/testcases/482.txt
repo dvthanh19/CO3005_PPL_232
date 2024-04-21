@@ -1,4 +1,9 @@
 
-            var VoTien <- VoTien
-            func main() return
+            func main() begin
+                number a[2]
+                dynamic b
+                dynamic c
+                number x <- a[-b]
+                a <- [not c and true or not false and 1 > 2, x - 3 - 3]
+            end
         

@@ -1,9 +1,0 @@
- 
-            var PpL1 <- true > "true" 
-            var PpL2 <- true >= "true"
-            var PpL3 <- true = "true"
-            var PpL4 <- true == "true"
-            var PpL5 <- true < "true"
-            var PpL6 <- true <= "true"
-            var PpL7 <- true >= "true" ... 1 > 2
-        

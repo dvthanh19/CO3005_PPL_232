@@ -1,4 +1,5 @@
-func foo() begin
-            i <- [1,2, [1 + 2], [1 + 2, 3 + 4]] + 5 + (str...lit > (v <= t...c))
-            end
+
+            func main(number a, string a, bool a[2])
+            func main(number arr[1,2])
+                return 
         

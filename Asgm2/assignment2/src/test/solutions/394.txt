@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [], Block([VarDecl(Id(a_1), NumberType, None, CallExpr(Id(funcfunc), [])), For(Id(a_1), BinaryOp(=, Id(exp), BinaryOp(and, NumLit(1000.0), UnaryOp(not, Id(exp2)))), BinaryOp(+, Id(a), ArrayCell(Id(arr), [NumLit(0.0)])), Block([Return()]))]))])
+Program([FuncDecl(Id(main), [], Block([If((BooleanLit(True), CallStmt(Id(print), [StringLit(Hello)])), [], CallStmt(Id(print), [StringLit(World)]))]))])

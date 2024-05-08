@@ -1,6 +1,4 @@
 
-            func main(number a)
-            func main(number a, string a, bool a[2])
-            func main(number a[1,2])
-                return
+            var x <- [[1], [1]]
+            var x <- [[1]]
         

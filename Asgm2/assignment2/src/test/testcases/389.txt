@@ -1,9 +1,6 @@
-func main() begin
-            number a[2, 3] <- [[1,2,3],[4,5,6]]
-            for i until i >= 2 by 1 begin
-                for j until j >= 3 by 1 begin
-                    a[i, j] <- i + j
+ 
+            func main()
+                begin 
+                    break
                 end
-            end
-        end
         

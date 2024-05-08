@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a), NumberType, None, BinaryOp(+, NumLit(3.0), BinaryOp(/, NumLit(4.0), NumLit(2.0))))])
+Program([VarDecl(Id(ppl), StringType, None, NumLit(10.0))])

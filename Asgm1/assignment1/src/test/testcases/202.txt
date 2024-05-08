@@ -1,6 +1,0 @@
-
-            number a <- 1
-            number b
-            string c <- "hello world!"
-            bool d <- true
-		

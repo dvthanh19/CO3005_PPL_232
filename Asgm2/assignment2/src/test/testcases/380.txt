@@ -1,6 +1,5 @@
 
-            func main()
-            begin
-            if ("p" ... "p" == "L") gpa <- 10.0
-            end
+            string a <- "hello"
+            number b <- 1
+            bool c <- true 
         

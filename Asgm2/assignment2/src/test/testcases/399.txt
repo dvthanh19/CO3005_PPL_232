@@ -1,10 +1,20 @@
-func main() begin
-            x <- 10
-            i <- 0
-            for i until i > x by x-2
-                if (i >= 1) break
-                elif (x <= 1) continue
-                elif (a[10,2+3] < b[1,2-2,3*4]) funcfunc(1,2,3)
-                else i <- i*10
-        end
+ 
+            func call()
+                begin
+                    continue
+                    continue
+                    break 
+                    break
+                    no <- yes
+                    begin
+                        return 0
+                    end
+                    for i until i < 10 by i=i+1
+                        print(i)
+                    return 0 
+                end
+            func main()
+                begin
+                    call() 
+                end 
         

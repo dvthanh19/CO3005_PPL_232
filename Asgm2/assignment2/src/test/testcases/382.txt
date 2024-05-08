@@ -1,12 +1,4 @@
 
-                func multiply(number a, number b)
-            begin
-                return a * b
-            end
-
-        func calculate(number x, number y)
-            begin
-                var result <- multiply(x, y) + multiply(x + y, y - x)
-                return result
-            end
+            number a[4,5]
+            number b[2,3] <- [[1,2,3],[4,5,6]] 
         

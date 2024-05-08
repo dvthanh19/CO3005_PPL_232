@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main), [], Block([Break]))])
+Program([VarDecl(Id(x), BoolType, None, BinaryOp(>, StringLit(M10), StringLit(Cr7)))])

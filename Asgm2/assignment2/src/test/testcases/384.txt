@@ -1,8 +1,5 @@
-func main() begin
-            string s <- "abc\n\t'""
-            string ss <- "123.\t\b"
-            s <- s...ss
-            s <- s...ss
-            return s
-        end
+
+            var a <- 1
+            dynamic b <- "hello"
+            var c <- true 
         

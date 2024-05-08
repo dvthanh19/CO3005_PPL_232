@@ -1,11 +1,3 @@
-string strarr[3] <- ["123E.-3","hello"..."world","\n\b\f"]
-        number numarr[3] <- [3+4,3-1*23,20.3+12.7+1.]
-        func main()
-        begin
-            for i until i>=size(strarr) by 1
-                print(extract(strarr[i],numarr[i]))
-        end
-
-        func extract(string a, number b)
-            return a[b]
+ 
+            dynamic b
         

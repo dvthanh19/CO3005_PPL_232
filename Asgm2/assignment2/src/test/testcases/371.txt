@@ -1,7 +1,4 @@
 
-            func main()
-                begin
-                    for i until i < 10 by i=i+1
-                        print(i) 
-                end
+        func initArrValue() 
+            return [1, [1,2], ["a","b","c"] , [1,2,3,4], [true, false]]
         

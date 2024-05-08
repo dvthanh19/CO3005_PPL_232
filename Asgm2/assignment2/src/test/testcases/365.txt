@@ -1,3 +1,11 @@
 
-            func main() return 0
+        func main()
+        begin
+            number a <- 0 
+            bool flag <- true
+            if (flag) a <- a + 1
+            else 
+                if (not flag) a <- a + 2
+                else a <- a + 3
+        end
         

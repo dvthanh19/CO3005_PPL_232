@@ -1,15 +1,11 @@
- 
-            func swap(number a, number b)
-                begin
-                    var temp <- a
-                    a <- b
-                    b <- temp
-                end
+
+            func add(number a, number b)
+                return a + b
             func main()
-                begin
-                    number a <- 1
-                    number b <- 2
-                    swap(a, b)
-                    return 0
-                end
+            begin
+                number a <- 10
+                number b <- 3
+                number sum <- add(a, b)
+                print(sum)
+            end
         

@@ -1,15 +1,12 @@
 
-            func main()
-                begin
-                    var a <- 1
-                    var b <- 2
-                    var c <- 3
-                    if (a < b)
-                        print("a < b")
-                    elif (a > b)
-                        print("a > b")
-                    else
-                        print("a = b")
-                    return 0
-                end 
+                func multiply(number a, number b)
+            begin
+                return a * b
+            end
+
+        func calculate(number x, number y)
+            begin
+                var result <- multiply(x, y) + multiply(x + y, y - x)
+                return result
+            end
         

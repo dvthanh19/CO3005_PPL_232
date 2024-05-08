@@ -1,9 +1,5 @@
 
-        func main()
-                begin
-                    number a ## This comment is not allowed in ZCode.
-                    ###### Hello
-                    #### How are you
-                    ## Nice to meet you
-                end
+            number a[1.2,3.4]<-"hello"
+            bool b[1,2]
+            string c[2,3]<-[[1,2,3],[4,5,6]]
         

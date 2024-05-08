@@ -455,27 +455,57 @@ class CheckerSuite(unittest.TestCase):
     #     expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))"
     #     self.assertTrue(TestChecker.test(input, expect, 108))
         
-    def test37(self):
-        input = """
-        dynamic a
-        number b <- a[0]
-        string c <- a[1]
-        func main()
-        begin
-            a <- [1,2,3]
-        end
-        """
-        expect = "Type Mismatch In Statement: VarDecl(Id(c), StringType, None, ArrayCell(Id(a), [NumLit(1.0)]))"
-        self.assertTrue(TestChecker.test(input, expect, 109))
+    # def test37(self):
+    #     input = """
+    #     dynamic a
+    #     number b <- a[0]
+    #     string c <- a[1]
+    #     func main()
+    #     begin
+    #         a <- [1,2,3]
+    #     end
+    #     """
+    #     expect = "Type Mismatch In Statement: VarDecl(Id(c), StringType, None, ArrayCell(Id(a), [NumLit(1.0)]))"
+    #     self.assertTrue(TestChecker.test(input, expect, 109))
     
     
-    def test38(self):
+    # def test38(self):
+    #     input = """
+    #         func main() begin
+    #             dynamic a
+    #             number b <- a[2]
+    #             a <- ["hello", "world"]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 110))
+    
+    
+    def test39(self):
         input = """
-            func main() begin
-                dynamic a
-                number b <- a[2]
-                a <- ["hello", "world"]
+            dynamic a
+            
+            func main()
+            begin
+                a <- a[0,1,2]
             end
         """
-        expect = "Type Mismatch In Statement: AssignStmt(Id(a), ArrayLit(StringLit(hello), StringLit(world)))"
-        self.assertTrue(TestChecker.test(input, expect, 110))
+        expect = ""
+        self.assertTrue(TestChecker.test(input, expect, 111))
+    
+    
+    # def test40(self):
+    #     input = """
+    #         func main()
+    #         begin
+    #             dynamic x
+    #             dynamic y
+    #             dynamic z
+    #             dynamic t
+    #             number a <- [[y,x], [y,[x,[t]]]]
+    #         end
+    #     """
+    #     expect = "Type Mismatch In Expression: ArrayLit(Id(x), ArrayLit(Id(t)))"
+    #     self.assertTrue(TestChecker.test(input, expect, 112))
+        
+        

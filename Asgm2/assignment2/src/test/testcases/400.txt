@@ -1,8 +1,16 @@
-func main() begin
-                for i until temp1*temp2%(temp3-temp4)=temp5 by 1e-3 begin
-                if (i%x=1) then<-5
-                elif (i%x=2) eles<-10
-                else i<-i/2
-            end
+
+        func loop(string a[1, 2, 3, 3], number _112_[0], bool cc_c)
+        begin
+            if (a > b)
+                for a until a + 1 by b + 1 if (a > b)
+                        if (a > b) number c
+                        elif (a > b) number c
+                        elif (a > b) number c
+                        else number c
+                    else
+                        break
+            else
+                if (a < b)
+                    if (a == b) number c
+                else number c
         end
-        

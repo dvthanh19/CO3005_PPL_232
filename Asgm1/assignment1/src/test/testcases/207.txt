@@ -1,8 +1,0 @@
-
-            number a <- 1
-            func foo(bool b, bool c[6969])
-            begin
-                a <- 1   ## comment
-                b[1, 2, 3] <- (99999 + 1 > 2 + 3) * a[1 + 9]
-            end
-		

@@ -1,5 +1,10 @@
 
-            var c <- a[1,2]
-            var c <- fun()[1,2]
-            var c <- fun(1,2)[1,3]
+            func main()
+            begin
+                var c <- 2e5
+                dynamic c <- 2.56
+                dynamic c
+                number c[2e2, 2] <- 3.6
+                string c[3.823]
+            end
         

@@ -1,10 +1,7 @@
-func main() begin
-            number a <- foo(bar(1 + 2, 3 * 4), baz(5 - 6))
-            bool b <- ((a or false) and true) or not a
-            number c[4, 3] 
-            c <- temp(a, b, (a + b - 2 * a - 3 * b), foo((a * b), a + b))
-            var d <- c[2, 0] + c[3, 1] - c[2, 2]
-            return d
-        end
 
+            func main()
+                begin
+                    for i until i < 10 by i=i+1
+                        print(i) 
+                end
         

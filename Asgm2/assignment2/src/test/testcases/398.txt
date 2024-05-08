@@ -1,17 +1,15 @@
-func fibo(number n) begin
-            if (n <= 2) return 1
-            number f1 <- 0
-            number f2 <- 1
-            number f3 <- f1 + f2
-            number i <- 2
-            for i until i > n by 1 begin
-                f3 <- f1 + f2
-                f1 <- f2
-                f2 <- f3
-            end
-            return f3
-        end
-        func main() begin 
-            return fibo(50)
-        end
+
+            func main()
+                begin
+                    var a <- 1
+                    var b <- 2
+                    var c <- 3
+                    if (a < b)
+                        print("a < b")
+                    elif (a > b)
+                        print("a > b")
+                    else
+                        print("a = b")
+                    return 0
+                end 
         

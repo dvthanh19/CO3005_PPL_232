@@ -1,5 +1,5 @@
 # Author:       Thanh Dinh
-# Updated at:   19:50, Sun, 21/04/3024
+# Updated at:   21:45, Sun, 21/04/3024
 
 from AST import *
 from Visitor import *
@@ -130,10 +130,10 @@ class StaticChecker(BaseVisitor, Utils):
             
             # print(bool((_lhs.size == [-1]) or (_rhs.size == [-1])  or (_lhs.size == _rhs.size)))
             
-            if (_lhs.size == [-1]) and (_rhs.size != [-1]):
+            if ((-1) in _lhs.size) and ((-1) not in _rhs.size):
                 # print('ok1')
                 lhs.size = _rhs.size + []
-            if (_rhs.size == [-1]) and (_lhs.size != [-1]):
+            if ((-1) in _rhs.size) and ((-1) not in _lhs.size):
                 # print('ok2')
                 rhs.size = _lhs.size + []
             
@@ -353,7 +353,6 @@ class StaticChecker(BaseVisitor, Utils):
             elif not self.compareType(lhs, rhs):
                 # print('VarDecl 5')
                 raise TypeMismatchInStatement(ast)
-
     
     # name: Id
     # param: List[VarDecl]  # empty list if there is no parameter
@@ -436,7 +435,7 @@ class StaticChecker(BaseVisitor, Utils):
         # If stmt
         cond = self.visit(ast.expr, param)
         
-        if (type(cond) in [ArrayType, ArrayZcode]) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
+        if (type(cond) is ArrayZcode) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
             raise TypeCannotBeInferred(self.curStmt)
         
         if isinstance(cond, Zcode):
@@ -451,7 +450,7 @@ class StaticChecker(BaseVisitor, Utils):
         for (elifExpr, elifStmt) in ast.elifStmt:
             cond = self.visit(elifExpr, param)
             
-            if (type(cond) in [ArrayType, ArrayZcode]) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
+            if (type(cond) is ArrayZcode) or ((isinstance(cond, Zcode)) and cond.typ and (type(cond.typ) is ArrayZcode)):
                 raise TypeCannotBeInferred(ast)
             
             if isinstance(cond, Zcode):
@@ -527,11 +526,8 @@ class StaticChecker(BaseVisitor, Utils):
         
         funcType = self.function.typ if self.function.typ else self.function
         retType = self.visit(ast.expr, param) if ast.expr else VoidType()
-        
-        # ...
-        # Case 1: not sure: func foo() begin if a then return k else return 1
-            # Can we from 1 infer a then infer func ?
-        if (isinstance(funcType, Zcode) or isinstance(funcType, ArrayZcode)) \
+            
+        if (isinstance(funcType, Zcode) or isinstance(funcType, ArrayZcode))\
         and (isinstance(retType, Zcode) or isinstance(retType, ArrayZcode)):
             raise TypeCannotBeInferred(ast)
 
@@ -561,7 +557,7 @@ class StaticChecker(BaseVisitor, Utils):
     # lhs: Expr
     # rhs: Expr
     def visitAssign(self, ast, param):
-        # print('visitAssign')
+        # print('visitAssign:  ', ast)
         self.curStmt = ast 
         
         # print('assign - rhs: ', ast.rhs)
@@ -573,8 +569,8 @@ class StaticChecker(BaseVisitor, Utils):
         
         # print('assign ...')
         # Case 1: Both side can not be infered
-        if (isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode)) \
-        and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode)):
+        if ((isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode)) 
+        and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode))):
             # print('assign 1')
             raise TypeCannotBeInferred(self.curStmt)
         
@@ -927,7 +923,7 @@ class StaticChecker(BaseVisitor, Utils):
                     raise TypeMismatchInExpression(ast)
             
             # size = [-1 for x in range(len(ast.idx))]
-            size = [-1]
+            size = [-1]*len(ast.idx)
             arr = self.setType(ArrayType(size, VarZcode(None)), arr).typ
             return arr.eleType
             

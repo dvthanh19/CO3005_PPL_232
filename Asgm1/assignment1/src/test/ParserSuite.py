@@ -151,15 +151,17 @@ class ParserSuite(unittest.TestCase):
     
     def test_13(self):
         input = '''
+
 func kIN ()
 	begin
 		begin
 		end
+  
 		## |*kXgAK
 		continue
 	end
-var wi
-func Honh (var xBQ, var pmG[13,532E+29])	return
+var wi <- 1
+func Honh (number xBQ, number pmG[13,532E+29]) return 
 
 func kJE (number pU[9e+37,58], string KZ[51,334,786.701])
 	return false

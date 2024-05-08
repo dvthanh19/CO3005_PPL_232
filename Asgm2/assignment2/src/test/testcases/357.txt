@@ -1,5 +1,8 @@
 
-            string a <- "hello"
-            number b <- 1
-            bool c <- true 
-        
+		number arr[2,3] <- [1,2,3,[4,5]]
+		func main()
+begin
+	if (a<2) return true
+	else return false
+end
+		

@@ -1,3 +1,4 @@
-func isPrime(number n, string a[3])
-        func main()
+
+            string ppl[5] <- 1
+            string ppl[5]
         

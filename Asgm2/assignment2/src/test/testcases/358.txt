@@ -1,8 +1,11 @@
- 
-            string a <- "hello"
-            number b <- 1
-            bool c <- true
-            number d
-            string e
-            bool f
+
+        number arr[2,3] <- [1,2,3,[4,5]]
+        func main()
+        begin
+            if (a<2) return 1
+            if (a<3) return 2
+            elif (b == 3) return 4
+            elif (c / 3 == 1) return 5
+            else return 3
+        end
         

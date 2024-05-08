@@ -1,10 +1,3 @@
-func main() begin
-            number a<-10
-            string b[1] <- ["hello"]
-            bool c[1,2,3] <- [[[true,false],[true,false]],[[true,false],[true,false]],[[true,false],[true,false]]]
-        
-        end
 
-
-
+            var a <- foo(1 + 1, foo(100)[2, 1 + 1], foo([1, 9], [0, 9]))
         

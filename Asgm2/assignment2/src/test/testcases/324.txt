@@ -1,13 +1,9 @@
 
             func main()
                 begin
-                    continue
-                    continue
-                    break
-                    begin
-                        continue
-                        continue
-                        break                    
-                    end
+                    return  1 + 1
+                    return
                 end
+            func main()
+                return 1
         

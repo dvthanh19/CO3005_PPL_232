@@ -1,6 +1,3 @@
-func main()
-begin
-aPI <- 3.14
-l[3] <- value * aPI ## This is a comment
-end
+
+            var ppl <- 1
         

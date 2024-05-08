@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(isPrime), [VarDecl(Id(n), NumberType, None, None), VarDecl(Id(a), ArrayType([3.0], StringType), None, None)], None), FuncDecl(Id(main), [], None)])
+Program([VarDecl(Id(ppl), ArrayType([5.0], StringType), None, NumLit(1.0)), VarDecl(Id(ppl), ArrayType([5.0], StringType), None, None)])

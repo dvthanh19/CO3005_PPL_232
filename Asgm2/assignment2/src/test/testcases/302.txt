@@ -1,2 +1,3 @@
-number a <- 3 + 4 / 2
+
+            string ppl <- 10
         

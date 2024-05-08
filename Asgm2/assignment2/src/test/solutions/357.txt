@@ -1,1 +1,1 @@
-Program([VarDecl(Id(a), StringType, None, StringLit(hello)), VarDecl(Id(b), NumberType, None, NumLit(1.0)), VarDecl(Id(c), BoolType, None, BooleanLit(True))])
+Program([VarDecl(Id(arr), ArrayType([2.0, 3.0], NumberType), None, ArrayLit(NumLit(1.0), NumLit(2.0), NumLit(3.0), ArrayLit(NumLit(4.0), NumLit(5.0)))), FuncDecl(Id(main), [], Block([If((BinaryOp(<, Id(a), NumLit(2.0)), Return(BooleanLit(True))), [], Return(BooleanLit(False)))]))])

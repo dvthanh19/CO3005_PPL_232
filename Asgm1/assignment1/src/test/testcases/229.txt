@@ -1,8 +1,0 @@
- 
-            func main()
-            func main(number f1)
-            func main(number a[5],bool x[5,2,3], bool a[5,2,3], string b, bool c)
-            func main(number num1, number num2)
-                var PpL <- 1
-            func main(number f1 <- c)
-        

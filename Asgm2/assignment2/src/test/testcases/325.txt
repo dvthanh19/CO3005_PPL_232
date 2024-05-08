@@ -1,9 +1,11 @@
 
             func main()
                 begin
-                    return  1 + 1
-                    return
+                    main(a)
+                    main(1,1)
                 end
             func main()
-                return 1
+                begin
+                main()
+                end
         

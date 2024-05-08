@@ -1,3 +1,9 @@
 
-            var a <- 1
+            func inc(number ppl) return ppl + 1
+            func main()
+            begin
+                var ppl <- 10
+                inc(ppl)
+                writeNumber(ppl)
+            end
         

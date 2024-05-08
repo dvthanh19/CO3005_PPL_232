@@ -1,20 +1,10 @@
- 
-            func call()
-                begin
-                    continue
-                    continue
-                    break 
-                    break
-                    no <- yes
-                    begin
-                        return 0
-                    end
-                    for i until i < 10 by i=i+1
-                        print(i)
-                    return 0 
-                end
-            func main()
-                begin
-                    call() 
-                end 
+
+        func calculateAverage(number arr)
+            begin
+                var total <- 0
+                for i until len by 1
+                    total <- total + arr[i]
+                return total / len
+            end
+        func main() return calculateAverage([1, 2, 3, 4, 5])
         

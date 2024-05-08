@@ -1,7 +1,0 @@
- 
-            var PpL1 <- a[1] + 1
-            var PpL2 <- array[1,1+2][1][2,3]
-            var PpL3 <- array[1,(1)...2,array[ar[(1*2) and 1]],array[2]]
-            var PpL4 <- a[1] + fun()[1,fun()] 
-            var PpL5 <- 1[1]
-        

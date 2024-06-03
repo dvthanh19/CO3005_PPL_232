@@ -1,0 +1,7 @@
+
+        func main ()
+        begin
+            number a[2,2,2,2]
+           writeNumber(a[0,0,0,0])
+        end
+        

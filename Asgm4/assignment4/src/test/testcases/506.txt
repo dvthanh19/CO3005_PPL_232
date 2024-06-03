@@ -1,0 +1,11 @@
+
+        dynamic a
+        func main ()
+        begin
+            bool b <- true
+            begin
+                a <- b
+            end
+            writeBool(a)
+        end
+        

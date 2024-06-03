@@ -10,8 +10,8 @@ from ZCodeLexer import ZCodeLexer
 from ZCodeParser import ZCodeParser
 from lexererr import *
 from ASTGeneration import ASTGeneration
-# from StaticCheck import StaticChecker
-# from StaticError import *
+from StaticCheck import StaticChecker
+from StaticError import *
 from CodeGenerator import CodeGenerator
 import subprocess
 
@@ -196,7 +196,7 @@ class TestCodeGen():
             subprocess.call("java  -jar " + JASMIN_JAR + " " + path +
                             "/ZCodeClass.j", shell=True, stderr=subprocess.STDOUT)
 
-            subprocess.run("java -cp ./lib:. ZCodeClass",
+            subprocess.run("wsl -e java -cp ./lib:. ZCodeClass",
                            shell=True, stdout=f, timeout=10)
         except StaticError as e:
             f.write(str(e))

@@ -1,0 +1,8 @@
+
+        func main ()
+        begin
+            writeNumber(1.0)
+            writeBool(false)
+            writeString("")
+        end
+        

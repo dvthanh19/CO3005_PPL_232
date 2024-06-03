@@ -1,0 +1,10 @@
+
+        func foo(number a)
+        begin
+            return true
+        end
+        func main ()
+        begin
+            writeBool(foo(2))
+        end
+        

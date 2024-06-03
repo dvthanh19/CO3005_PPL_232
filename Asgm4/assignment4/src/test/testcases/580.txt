@@ -1,0 +1,6 @@
+
+            func main()
+            begin
+                if (2 = 2) writeNumber(1)
+            end
+        

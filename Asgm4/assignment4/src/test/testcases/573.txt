@@ -1,0 +1,12 @@
+
+        func foo()
+        begin
+            writeNumber(1.0)
+            return
+            writeNumber(1.0)
+        end        
+        func main ()
+        begin
+            foo()
+        end
+        

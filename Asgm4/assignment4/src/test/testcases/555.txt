@@ -1,0 +1,16 @@
+
+        func main ()
+        begin
+            bool a[2]
+            bool b[2,2]
+            writeBool(a[1])
+            writeBool(b[0,0])
+            a[0] <- true
+            writeBool(a[0])
+            b[0,0] <- true
+            writeBool(b[0,0])
+            var c <- b[0]
+            c[1] <- true
+            writeBool(b[0,1])
+        end
+        

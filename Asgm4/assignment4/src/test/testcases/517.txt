@@ -1,0 +1,11 @@
+
+        func main ()
+        begin
+            writeNumber(1 + 1)
+            writeNumber(1 - 1)
+            writeNumber(1 * 2)
+            writeNumber(1 / 2)
+            writeNumber(7.5%3.5)
+            writeNumber(7.8%3.38)
+        end
+        

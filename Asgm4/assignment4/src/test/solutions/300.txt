@@ -1,1 +1,0 @@
-Program([VarDecl(NumberType,Id(a))])

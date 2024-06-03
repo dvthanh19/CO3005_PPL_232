@@ -1,0 +1,9 @@
+
+        func foo()
+            return "ppl"
+        func main ()
+        begin
+            var a <- foo() ## true
+            writeString(a)
+        end
+        

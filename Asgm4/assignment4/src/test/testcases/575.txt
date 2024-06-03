@@ -1,0 +1,11 @@
+
+        func foo(string a)   
+        func main ()
+        begin
+            foo("ppl")
+        end
+        func foo(string a)
+        begin
+            writeString(a)
+        end     
+        

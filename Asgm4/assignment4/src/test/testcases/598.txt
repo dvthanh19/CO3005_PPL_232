@@ -1,0 +1,8 @@
+
+        func main()
+        begin
+            var a <- false
+            a <- true
+            writeBool(a)
+        end
+        

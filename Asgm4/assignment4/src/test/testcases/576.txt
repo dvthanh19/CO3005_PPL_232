@@ -1,0 +1,12 @@
+
+        func foo(string a, bool b)   
+        func main ()
+        begin
+            foo("ppl", true)
+        end
+        func foo(string a, bool b)
+        begin
+            writeString(a)
+            writeBool(true)
+        end     
+        

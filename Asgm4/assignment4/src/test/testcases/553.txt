@@ -1,0 +1,10 @@
+
+        func main ()
+        begin
+            number a[2,2]
+           var b <- a[0]
+           b[0] <- 1
+           writeNumber(a[0,0])
+           writeNumber(b[0])
+        end
+        

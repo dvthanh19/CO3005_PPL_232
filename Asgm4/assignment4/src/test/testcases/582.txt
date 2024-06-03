@@ -1,0 +1,9 @@
+
+            func main()
+            begin
+                var a <- 2
+                if (a = 0) writeNumber(1)
+                elif (a = 1) writeNumber(2)
+                elif (a = 2) writeNumber(3)
+            end
+        

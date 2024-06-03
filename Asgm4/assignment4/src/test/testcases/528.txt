@@ -1,0 +1,6 @@
+
+        func main ()
+        begin
+            writeString("ppl" ... "_tnbd") 
+        end
+        

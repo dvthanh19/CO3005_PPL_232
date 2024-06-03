@@ -1,0 +1,10 @@
+
+        var b <- [true]
+        func main ()
+        begin
+            bool a[2,1] <- [[true],[false]]
+            writeBool(a[1,0])
+            writeBool(a[0,0])
+            writeBool(b[0])
+        end
+        

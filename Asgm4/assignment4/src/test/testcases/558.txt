@@ -1,0 +1,9 @@
+
+        func main ()
+        begin
+            dynamic a 
+            a <- [1,2]
+            writeNumber(a[1])
+            writeNumber(a[0])
+        end
+        

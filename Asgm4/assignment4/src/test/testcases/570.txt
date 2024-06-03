@@ -1,0 +1,11 @@
+
+        var a <- [[[[1]]]]
+        func main ()
+        begin
+            var b <- a[0]
+            var c <- b[0]
+            var d <- c[0]
+            d[0] <- 2
+            writeNumber(a[0,0,0,0])
+        end
+        

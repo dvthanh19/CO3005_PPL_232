@@ -1,0 +1,11 @@
+
+            func main()
+            begin
+                dynamic a
+                
+                begin 
+                    a <- 1
+                end
+                    writeNumber(a)
+            end
+        

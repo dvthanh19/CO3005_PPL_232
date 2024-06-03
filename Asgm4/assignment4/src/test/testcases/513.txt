@@ -1,0 +1,9 @@
+
+        func main()
+        begin
+            number a[3] <- [1, 2, 3]
+            writeNumber(a[0])
+            writeNumber(a[1])
+            writeNumber(a[2])
+        end
+        

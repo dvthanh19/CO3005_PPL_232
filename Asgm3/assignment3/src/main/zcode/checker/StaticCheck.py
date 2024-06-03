@@ -334,24 +334,18 @@ class StaticChecker(BaseVisitor, Utils):
                 elif not self.setTypeArray(self.normalizeArray(lhs), rhs):
                     # print('VarDecl 2.2:  ', rhs.eleType)
                     raise TypeCannotBeInferred(self.curStmt)
-                    # if res == -2:
-                    #     # print('VarDecl 2.2.2')
-                    #     raise TypeMismatchInExpression(ast.varInit)
 
             # RHS infer type for LHS 
             # elif isinstance(lhs, Zcode) and (type(rhs) in [NumberType, BoolType, StringType, ArrayType]):
             elif isinstance(lhs, Zcode):
-                # print('VarDecl 3')
                 lhs = self.setType(rhs, lhs).typ
             
             # LHS infer type for RHS
             elif isinstance(rhs, Zcode):
-                # print('VarDecl 4')
                 rhs = self.setType(lhs, rhs).typ
             
             # Both sides not need infer type
             elif not self.compareType(lhs, rhs):
-                # print('VarDecl 5')
                 raise TypeMismatchInStatement(ast)
     
     # name: Id
@@ -549,7 +543,7 @@ class StaticChecker(BaseVisitor, Utils):
         elif isinstance(retType, Zcode):
             retType = self.setType(funcType, retType).typ
 
-        # Case 4: No need infering
+        # Case 5: No need infering
         elif not self.compareType(funcType, retType):
             raise TypeMismatchInStatement(ast)
     
@@ -560,18 +554,12 @@ class StaticChecker(BaseVisitor, Utils):
         # print('visitAssign:  ', ast)
         self.curStmt = ast 
         
-        # print('assign - rhs: ', ast.rhs)
         rhs = self.visit(ast.rhs, param)
-        # print('assign - visitRhs: ',rhs)
-        # print('assign - lhs: ', ast.lhs)
         lhs = self.visit(ast.lhs, param)
-        # print('assign - visitLhs: ', lhs.eleType)
         
-        # print('assign ...')
         # Case 1: Both side can not be infered
         if ((isinstance(lhs, Zcode) or isinstance(lhs, ArrayZcode)) 
         and (isinstance(rhs, Zcode) or isinstance(rhs, ArrayZcode))):
-            # print('assign 1')
             raise TypeCannotBeInferred(self.curStmt)
         
         # Case 2: rhs is ArrayZcode and can be infered by lhs
@@ -579,32 +567,24 @@ class StaticChecker(BaseVisitor, Utils):
         and (isinstance(rhs, ArrayZcode)):
             # print('assign 2')
             if type(lhs) in [NumberType, StringType, BoolType]:
-                # print('Assign 2.1')
                 raise TypeMismatchInStatement(ast)
             
             # lhs is arraytype
             if not self.setTypeArray(self.normalizeArray(lhs), rhs):
-                # print('Assign 2.2')
                 raise TypeMismatchInStatement(ast)
-            # print('Assign 2.3')
 
         # Case 3: lhs need infering from rhs
         elif isinstance(lhs, Zcode):
-            # print('assign 3')
             lhs.typ = rhs
             
         # Case 4: lhs need infering from rhs
         elif isinstance(rhs, Zcode):
-            # print('assign 4')
             rhs.typ = lhs
             
-
         # Case 5: No need infering
         elif not self.compareType(lhs, rhs):
-            # print('assign 5')
             raise TypeMismatchInStatement(ast)
 
-        # print('assign 6')
     
     
     # name: Id
@@ -633,8 +613,8 @@ class StaticChecker(BaseVisitor, Utils):
             x = method.param[i] # x always have primitive types
             y = self.visit(ast.args[i], param)  
             
-            if (not (isinstance(y, Zcode) or isinstance(y, ArrayZcode))):
-                if (not self.compareType(x, y)):
+            if not (isinstance(y, Zcode) or isinstance(y, ArrayZcode)):
+                if not self.compareType(x, y):
                     raise TypeMismatchInStatement(ast)
                 
             if isinstance(y, Zcode):
@@ -646,6 +626,7 @@ class StaticChecker(BaseVisitor, Utils):
             elif isinstance(y, ArrayZcode):
                 if type(x) is not ArrayType:
                     raise TypeCannotBeInferred(self.curStmt)
+                
                 if not self.setTypeArray(self.normalizeArray(x), y):
                     raise TypeCannotBeInferred(self.curStmt)
         
@@ -779,7 +760,7 @@ class StaticChecker(BaseVisitor, Utils):
                 baseType = ele
             
             elif isinstance(ele, ArrayZcode):
-                if (largestArr is None) or len(largestArr.size) < len(ele.size):
+                if (largestArr is None) or (len(largestArr.size) < len(ele.size)):
                     largestArr = ele
                     
                 elif len(largestArr.size) == len(ele.size):
@@ -821,7 +802,6 @@ class StaticChecker(BaseVisitor, Utils):
                             
                         if len(ele.size) < len(largestArr.size):
                             if not self.setTypeArrayZcode(largestArr, ele):
-                                # print('ok')
                                 raise TypeMismatchInExpression(ast)
                             
                 for x in ast.value:
@@ -832,14 +812,12 @@ class StaticChecker(BaseVisitor, Utils):
                             raise TypeMismatchInExpression(ast)
                         
                     if isinstance(ele, ArrayZcode) and (ele.size != largestArr.size):
-                        # print("long",largestArr.eleType, largestArr.size, ast)
-                        # print("m",ele.eleType[0].typ.size, ele.size)
                         raise TypeMismatchInExpression(ast)
 
                 
                 return ArrayZcode(eleTypes, [len(ast.value)] + largestArr.size)
             
-            return ArrayZcode(eleTypes, [len(ast.value)]) 
+            return ArrayZcode(eleTypes, [len(ast.value)])
         
         elif type(baseType) in [StringType, BoolType, NumberType]:
             # print('arrayLiteral 2.0')

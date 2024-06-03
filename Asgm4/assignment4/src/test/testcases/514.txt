@@ -1,0 +1,9 @@
+
+        func main()
+        begin
+            string a[3] <- ["A", "B", "C"]
+            writeString(a[0])
+            writeString(a[1])
+            writeString(a[2])
+        end
+        

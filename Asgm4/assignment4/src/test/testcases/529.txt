@@ -1,0 +1,7 @@
+
+        func main ()
+        begin
+            writeBool("ppl" == "8.5") 
+            writeBool("ppl" == "ppl")
+        end
+        

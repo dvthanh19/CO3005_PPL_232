@@ -1,0 +1,7 @@
+
+        func main ()
+        begin
+            writeNumber(--1) 
+            writeNumber(-1)
+        end
+        

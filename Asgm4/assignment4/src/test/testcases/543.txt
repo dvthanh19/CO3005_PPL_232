@@ -1,0 +1,8 @@
+
+        func main ()
+        begin
+            number a[2]
+            var x <- a[0] + 2.5
+            writeNumber(x)
+        end
+        

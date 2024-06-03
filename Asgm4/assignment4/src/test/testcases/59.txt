@@ -1,0 +1,10 @@
+
+        func main()
+        begin
+            var a <- 1
+            var b <- 3
+            writeNumber(a)
+            a <- b
+            writeNumber(a)
+        end
+        

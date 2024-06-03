@@ -1,0 +1,12 @@
+
+        func main()
+        begin
+            var i <- 0
+            for i until i >= 3 by 1
+            begin
+                writeNumber(i)
+                break
+            end
+            writeNumber(i)
+        end
+        

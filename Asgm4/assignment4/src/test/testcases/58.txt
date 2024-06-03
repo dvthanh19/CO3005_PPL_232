@@ -1,0 +1,7 @@
+
+            func main()
+            begin
+                if (2 > 3) writeNumber(1)
+                else writeNumber(0)
+            end
+        

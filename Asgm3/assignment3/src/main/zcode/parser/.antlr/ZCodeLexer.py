@@ -1,4 +1,4 @@
-# Generated from d://_ACADEMIC//HCMUT//Term232//PPL//Assignment//Asgm3//assignment3-initial//src//main//zcode//parser//ZCode.g4 by ANTLR 4.13.1
+# Generated from d://_ACADEMIC//HCMUT//Term232//PPL//Assignment//Asgm3//assignment3//src//main//zcode//parser//ZCode.g4 by ANTLR 4.13.1
 from antlr4 import *
 from io import StringIO
 import sys

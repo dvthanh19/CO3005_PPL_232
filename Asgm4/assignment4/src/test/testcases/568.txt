@@ -1,0 +1,10 @@
+
+        string a[2,1] <- [["v"],["o"]]
+        func main ()
+        begin
+            var b <- ["tien"]
+            writeString(a[1,0])
+            writeString(a[0,0])
+            writeString(b[0])
+        end
+        

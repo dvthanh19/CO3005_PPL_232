@@ -1,0 +1,10 @@
+
+        func foo(number a)
+        begin
+            return a
+        end
+        func main ()
+        begin
+            writeNumber(foo(2))
+        end
+        

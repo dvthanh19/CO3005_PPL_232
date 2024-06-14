@@ -11,7 +11,7 @@
     - Score: 100/100
 - **Assignment 3**:
     - Contents: Static Check
-    - Score:
+    - Score: 98/100
 - **Assignment 4**:
     - Contents:
     - Score:

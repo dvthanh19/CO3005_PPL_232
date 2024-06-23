@@ -13,5 +13,5 @@
     - Contents: Static Check
     - Score: 98/100
 - **Assignment 4**:
-    - Contents:
-    - Score:
+    - Contents: Code Generation
+    - Score: 70/100
